@@ -103,6 +103,7 @@ button{
 .slider img{
     width: inherit;
     height: inherit;
+    cursor: pointer;
 }
 @keyframes cambio {
     0%{margin-left: 0;}
@@ -118,8 +119,9 @@ button{
     100%{margin-left: -300%;}
 }
 footer{
+    position: absolute;
+    bottom: 0;
     width: 100%;
-    margin-top: 115px;
     background-color: black;
     color: #fff;
 }
