@@ -9,33 +9,16 @@
 body{
     background-color: #1d2026;
 }
-
-.inicio {
+.inicio-header {
     min-height: 20vh;
     width: 100%;
     color: #fff;
     position: relative;
 }
-.texto-inicio{
-    min-height: 20vh;
-    width: 100%;
-    color: #fff;
-    position: relative;
-}
-.Bienvenida{
-    font-size: 5rem;
-    font-weight: bold;
-    padding-top: 130px;
-    text-align: center;
-}
-.texto-bienvenida{
-    text-align: center;
-}
-
 nav{
     display: flex;
     align-items: center;
-    padding: 15px 8%;
+    padding: 15px 6%;
 }
 
 nav .logo{
@@ -89,3 +72,80 @@ button{
     font-size: 0.9rem;
 
 }
+.inicio{
+    min-height: 20vh;
+    width: 100%;
+    color: #fff;
+    position:relative;
+}
+.Bienvenida{
+    font-size: 5rem;
+    font-weight: bold;
+    text-align: left;
+}
+.texto-bienvenida{
+    text-align: left;
+}
+.slider{
+    width: 650px;
+    height: 320px;
+    overflow: hidden;
+}
+.slider ul{
+    display: flex;
+    animation: cambio 15s infinite alternate linear;
+    width: 400%;
+}
+.slider li{
+    width: 100%;
+    list-style: none;
+}
+.slider img{
+    width: inherit;
+    height: inherit;
+}
+@keyframes cambio {
+    0%{margin-left: 0;}
+    20%{margin-left: 0;}
+
+    25%{margin-left: -100%;}
+    45%{margin-left: -100%;}
+
+    50%{margin-left: -200%;}
+    70%{margin-left: -200%;}
+
+    75%{margin-left: -300%;}
+    100%{margin-left: -300%;}
+}
+footer{
+    width: 100%;
+    margin-top: 115px;
+    background-color: black;
+    color: #fff;
+}
+.contenedor-footer{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 25px;
+}
+.footer{
+    max-width:1200px;
+    margin: auto;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+}
+.copyrigth{
+    color: #c7c7c7;
+}
+.informacion a{
+    text-decoration: none;
+    color: #c7c7c7;
+}
+@media screen and (max-width: 1100px){
+    .footer{
+        flex-wrap: wrap;
+    }
+}
+    
