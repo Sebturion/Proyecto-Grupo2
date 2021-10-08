@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
-    <link rel="stylesheet" href="estilo.css" \>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
 </head>
 <body>
 <div class = "inicio-header">
     <nav>
-        <img src="images/LOGO.png" class="logo">
+        <img src="{{ url_for('static', filename='img/LOGO.png') }}" class="logo" alt="Logo">
         <ul>
             <li><a href="" class="link">Inicio</a></li>
             <li><a href="" class="link">Vuelos</a></li>
@@ -34,16 +34,16 @@
         <div class="slider">
             <ul>
                 <li id="slide1">
-                    <img src="images/lugar1.jpg" alt="">
+                    <img src="{{ url_for('static', filename='img/lugar1.jpg') }}" alt="">
                 </li>
                 <li id="slide2">
-                    <img src="images/lugar2.jpg" alt="">
+                    <img src="{{ url_for('static', filename='img/lugar2.jpg') }}" alt="">
                 </li>
                 <li id="slide3">
-                    <img src="images/lugar3.jpg" alt="">
+                    <img src="{{ url_for('static', filename='img/lugar3.jpg') }}" alt="">
                 </li>
                 <li id="slide4">
-                    <img src="images/lugar4.jpg" alt="">
+                    <img src="{{ url_for('static', filename='img/lugar4.jpg') }}" alt="">
                 </li>
             </ul>
         </div>
@@ -58,11 +58,11 @@
             <div class="informacion">
                 <a href="">Informacion Equipo</a> |
                 <a href="">Politica de Privacidad</a> |
-                <a href="">Terminos y Condiciones</a>  
+                <a href="">Terminos y Condiciones</a>
             </div>
         </div>
     </div>
-    
+
 </footer>
 </body>
 </html>
