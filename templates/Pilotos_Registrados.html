@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pilotos Registrados</title>
     <link rel="stylesheet" href="static/css/style_users_registrados.css">
 </head>
 <body>
@@ -17,13 +17,13 @@
         <div id="menu-items">
             <div class="item">
                 <a href="">
-                    <div class="icon"><img src="static/Images/icons/flight_black_24dp.svg" alt=""></div>
+                    <div class="icon"><img src="static/Images/icons/iconosBlancos/ReservasVuelos-blancos.svg" alt=""></div>
                     <div class="title"><span>Vuelos</span></div>
                 </a>
             </div>
             <div class="item">
                 <a href="">
-                    <div class="icon"><img src="static/Images/icons/person_black_24dp.svg" alt=""></div>
+                    <div class="icon"><img src="static/Images/icons/iconosBlancos/User-blanco.svg" alt=""></div>
                     <div class="title"><span>Usuarios Registrados</span></div>
                 </a>
             </div>
@@ -35,35 +35,26 @@
             </div>
             <div class="item">
                 <a href="">
-                    <div class="icon"><img src="static/Images/icons/bx-comment.svg" alt=""></div>
+                    <div class="icon"><img src="static/Images/icons/iconosBlancos/Comentarios-blanco.svg" alt=""></div>
                     <div class="title"><span>Comentarios</span></div>
                 </a>
             </div>
             <div class="item">
                 <a href="">
-                    <div class="icon"><img src="static/Images/icons/settings_black_24dp.svg" alt=""></div>
+                    <div class="icon"><img src="static/Images/icons/iconosBlancos/Setting-blanco.svg" alt=""></div>
                     <div class="title"><span>Configuraciones</span></div>
                 </a>
             </div>
             <div class="item">
                 <a href="">
-                    <div class="icon"><img src="static/Images/icons/logout_black_24dp.svg" alt=""></div>
+                    <div class="icon"><img src="static/Images/icons/iconosBlancos/Logout-blanco.svg" alt=""></div>
                     <div class="title"><span>Cerrar Sesion</span></div>
                 </a>
             </div>
         </div>
 
     </div>
-    <script>
-        const btn = document.querySelector('#header');
-        const menu = document.querySelector('#sidemenu');
-        btn.addEventListener('click', e =>{
-            menu.classList.toggle("menu-exanded");
-            menu.classList.toggle("menu-collapsed");
-            
-            document.querySelector('body').classList.toggle('body-expanded');
-        });
-    </script>
+    <script type="text/javascript" src="static/js/sidemenu.js"></script>
     <form autocomplete="on">
         <div class="autocomplete" style="width:400px;">
             <p>

@@ -95,10 +95,10 @@ body{
   width: var(--width-collapsed);
 }
 #sidemenu #menu-items .item .icon img{
-  margin-left: 18px;
+  margin-left: 21px;
   margin-top: 20px;
   width: 100%;
-  height: 35px;
+  height: 25px;
 }
 #sidemenu #menu-items .item .title{
   font-size: 16px;
