@@ -211,6 +211,9 @@ body{
     border: none;
     border-radius: 7px;
     outline: none;
+    padding: 10px;
+    color: white;
+    font-weight: 600;
 }
 
 
@@ -219,7 +222,6 @@ body{
 }
 .mostrar_contra input{
     margin-right: 10px;
-    padding: 10px;
 }
 .mostrar_contra button{
     width: 45px;
