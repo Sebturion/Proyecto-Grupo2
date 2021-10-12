@@ -33,7 +33,7 @@
                     <div class="title"><span>Pilotos Registrados</span></div>
                 </a>
             </div>
-            <div class="item">
+            <div class="item" id="separacion-icon">
                 <a href="">
                     <div class="icon"><img src="static/Images/icons/iconosBlancos/Comentarios-blanco.svg" alt=""></div>
                     <div class="title"><span>Comentarios</span></div>
@@ -54,7 +54,16 @@
         </div>
 
     </div>
-    <script type="text/javascript" src="static/js/sidemenu.js"></script>
+    <script>
+        const btn = document.querySelector('#header');
+        const menu = document.querySelector('#sidemenu');
+        btn.addEventListener('click', e =>{
+            menu.classList.toggle("menu-exanded");
+            menu.classList.toggle("menu-collapsed");
+            
+            document.querySelector('body').classList.toggle('body-expanded');
+        });
+    </script>
     <form autocomplete="on">
         <div class="autocomplete" style="width:400px;">
             <p>
