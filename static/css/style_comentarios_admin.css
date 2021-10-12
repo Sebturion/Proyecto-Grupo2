@@ -6,6 +6,7 @@
     --rosaPrimarioPress: #DF1C4B;
     --oscuroPrimario: #1e1e26;
     --oscuroSecundario: #313139;
+    --oscuroTerciario: #35353d;
     --width-collapsed: 90px;
     --width-expanded: 290px;
 }
@@ -77,9 +78,6 @@ body{
 #sidemenu #menu-items .item .icon{
   display: inline-block;
 }
-#separacion-icon{
-  margin-bottom: 170px;
-}
 #sidemenu #menu-items .item .title{
   font-size: 14px;
   vertical-align: middle;
@@ -96,6 +94,9 @@ body{
   box-sizing: border-box;
   padding: 10px;
   width: var(--width-collapsed);
+}
+#separacion-icon{
+  margin-bottom: 170px;
 }
 #sidemenu #menu-items .item .icon img{
   margin-left: 21px;
@@ -138,91 +139,159 @@ body{
 }
 /*termina el menu lateral*/
 
-/*aqui empieza el vizualisador delos usuarios/pilotos registrados*/
-.autocomplete {
-    /*el contenedor debe tener una posición relativa:*/
-    position: relative;
-    margin-left: 36%;
-    display: inline-block;
-  }
-  p{
-      margin-top: 30%;
-      font-size: 23px;
-      font-weight: bold;
-      color: #fff;
-      margin-bottom: 20px;
-  }
-  input {
-    outline: none;
-    border: 1px transparent;
-    background-color: var(--oscuroSecundario);
-    color: #fff;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 8px;
-    background-color: var(--oscuroSecundario);
-    width: 100%;
-  }
-  /*a aquellos que input que tienen la clase "daatos" no se les aplica la funcion de autocompletar
-  y deben ser donde se muestre la informacion del usuario/piloto seleccionado*/
-  .datos{
-      position: relative;
-      margin-top: 5%;
-      width: 100%;
-  }
-  .autocomplete-items {
-    position: absolute;
-    border: 1px solid var(--oscuroPrimario);
-    border-bottom: none;
-    border-top: none;
-    z-index: 99;
-    /*se hubican los elementos de autocompletar para que tengan el mismo ancho que el contenedor:*/
-    top: 100%;
-    left: 0;
-    right: 0;
-  }
-  .autocomplete-items div {
-    padding: 10px;
-    cursor: pointer;
-    background-color: var(--oscuroSecundario);
-    border-bottom: 1px solid var(--oscuroSecundario);
-    color: #fff;
-  }
-  .autocomplete-items div:hover {
-    /*when hovering an item:*/
-    background-color: #e9e9e9;
-    color: #1e1e26;
-  }
-  .autocomplete-active {
-    /*cuando se navega por los elementos utilizando las teclas de flecha:*/
-    background-color: var(--rosaPrimario) !important;
-    color: #fff;
-  }
-
-  button{
-    background-color:  var(--rosaPrimario);
-    padding: 12px 20px;
-    margin-top: 5%;
-    margin-inline: 4px;
-    border-radius: 7px;
-    border: 0;
-    outline: 0;
-    cursor: pointer;
+/*Se creo un table para contener los vuelos que tienen comentarios*/
+table {
+  margin: 60px auto;
+  border-spacing: 6px;
+}
+td{
+  padding: 7px;
+}
+.vuelo{
+  width: 400px;
+  height: 150px;
+  padding: 15px;
+  background-color: var(--oscuroSecundario);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 15px;
+}
+.vuelo:hover{
+  background-color: var(--oscuroTerciario);
+}
+#titulo-comentarios{
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+}
+.texto-vuelo-superior{
+  display: inline-block;
+  font-size: 14px;
+}
+#separacion{
+  margin-right: 150px;
+}
+.texto-vuelo-intermedio{
+  margin: 26px 0px;
+  font-size: 23px;
+}
+.texto-vuelo-inferior{
+  display: inline-block;
+  font-size: 14px;
+}
+.popup-link{
+  text-decoration: none;
+}
+.contenedor-comentarios{
+  background-color: var(--oscuroSecundario);
+  width:450px;
+  height: 450px;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin: 100px auto 0;
+  position: relative;
+}
+.comentarios-popup{
+  background-color: rgba(0, 0, 0, 0.59);
+  position:fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  opacity:0;
+  pointer-events:none;
+  transition: all 1s;
+}
+.cerrar-comentario{
+  text-decoration: none;
+  color: #fff;
+  margin-left: 400px;
+  font-size: 13px;
+  font-weight: bold;
+}
+.cerrar-comentario:hover{
+  color: var(--rosaPrimario);
+}
+.comentario{
+  width: 400px;
+  height: 100px;
+  padding: 15px;
+  margin: 9px auto;
+  background-color: var(--oscuroPrimario);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 15px;
+  display: flex;
+}
+.comentario:hover{
+  background-color: var(--oscuroTerciario);
+}
+.img-comentario{
+  width: 70px;
+  border-radius: 10px;
+}
+.info-comentario{
+  padding-left: 10px;
+}
+.nombre-comentario{
+  font-weight: bold;
+  font-size: 16px;
+}
+.user-comentario{
+  margin-top: 10px;
+  font-size: 12px;
+}
+button{
+  background-color:  var(--rosaPrimario);
+  padding: 14px 30px;
+  margin: 10px 125px;
+  border-radius: 7px;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+/*las clases "button:active", y "button:hover" corresponden al efecto
+hover de antes y despues (respectivamente) que se ve al pasar el cursor
+sobre los botones que estan en el header(Iniciar Sesion, y registrarse).*/
+button:active{
+  background-color:  var(--rosaPrimarioPress);
 }
 button:hover{
-    background-color:  var(--rosaPrimarioHover);
-}
-button:active{
-    background-color:  var(--rosaPrimarioPress);
+  background-color:  var(--rosaPrimarioHover);
 }
 .boton{
-    text-align: center;
-    text-decoration: none;
-    color: #fff;
-    font-size: 15px;
-    font-weight: 600;
-
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
 }
+#comentarios1:target{
+  opacity:1;
+  pointer-events:auto;
+}
+#comentarios2:target{
+  opacity:1;
+  pointer-events:auto;
+}
+#comentarios3:target{
+  opacity:1;
+  pointer-events:auto;
+}
+#comentarios4:target{
+  opacity:1;
+  pointer-events:auto;
+}
+#comentarios5:target{
+  opacity:1;
+  pointer-events:auto;
+}
+#comentarios6:target{
+  opacity:1;
+  pointer-events:auto;
+}
+
+/*Aqui terminan los contenedores de vuelos*/
 
 /* Desde aquí empieza el footer */
 footer{
