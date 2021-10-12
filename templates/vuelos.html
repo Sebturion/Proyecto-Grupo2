@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ofertas de vuelo</title>
-    <link rel="stylesheet" href="style_vuelos.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_vuelos.css') }}">
 </head>
 <body>
     <nav>
-        <img style="cursor: pointer;" src="logo.svg" class="logo" alt="Logo" width="160" height="75" >
+        <img style="cursor: pointer;" src="{{ url_for('static', filename='Images/logos/LogosinFondoSecundario.svg') }}" class="logo" alt="Logo" width="160" height="75" >
         <ul>
             <li id="inicio"><a href="" class="link">Inicio</a></li>
             <li id="vuelos"><a href="" class="link">Vuelos</a></li>
@@ -29,7 +29,7 @@
             <td id="ofertas" > <h2>Ofertas de vuelos</h2> </td>
             <td id="buscador" colspan="2"> 
                 <div id="divBuscador"> 
-                    <img src="bx-search.svg" title="Buscar" id="imgBuscar"> 
+                    <img src="{{ url_for('static', filename='Images/icons/bx-search.svg') }}" title="Buscar" id="imgBuscar"> 
                     <input type="text" id="txtBuscador" name="buscador"> 
                 </div>
             </td>

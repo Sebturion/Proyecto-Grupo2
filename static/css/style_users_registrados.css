@@ -153,6 +153,7 @@ body{
       margin-bottom: 20px;
   }
   input {
+    outline: none;
     border: 1px transparent;
     background-color: var(--oscuroSecundario);
     color: #fff;
