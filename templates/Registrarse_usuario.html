@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_registrarse.css') }} ">
+</head>
+<body>
+
+    <nav>
+        <img style="cursor: pointer;" src="{{ url_for('static', filename='Images/logos/LogosinFondoSecundario.svg') }}" class="logo" alt="Logo" width="160" height="75" >
+        <ul>
+            <li id="inicio"><a href="" class="link">Inicio</a></li>
+            <li id="vuelos"><a href="" class="link">Vuelos</a></li>
+            <li id="destinos"><a href="" class="link">Destinos</a></li>
+        </ul>
+    </nav>
+
+    <div id="divInputs">
+        <h2>Registrarse</h2> 
+        <div class="formulario">
+            <form id="registro" method="POST" action="" onSubmit="return validar_formulario();">
+                <div class="divInformacion"> 
+                    <input type="text" name="nombre" id="txtNombre" placeholder="Nombres y Apellidos" pattern="[A-Z a-z]{0,20}" minlength="5" maxlength="20" title="No use caracteres especiales"> <p class="errores" id="error1"></p> 
+                </div>
+                
+                <div class="divInformacion"> 
+                    <input type="number" name="contacto" id="telContacto" placeholder="Número de contacto"  maxlength="18"> <p class="errores" id="error2"></p> 
+                </div>
+    
+                <div class="divInformacion"> 
+                    <input type="email" name="correo" id="email" placeholder="Email"> <p class="errores" id="error3"></p> 
+                </div>
+    
+                <div class="divInformacion" id="divPassword"> 
+                    <input type="password" name="contraseña" id="password" placeholder="Contraseña" maxlength="16"><p class="errores" id="error4"></p> 
+                </div>
+    
+                <div class="divInformacion" id="divConfirmar"> 
+                    <input type="password" name="confirmarContraseña" id="confirmPassword" placeholder="Confirmar contraseña" maxlength="16"><p class="errores" id="error5"></p> 
+                </div>
+                    
+                <input type="submit" value="Registrarse" />
+            </form>
+        </div>
+        <p> ¿Ya tienes una cuenta? <a href="">Inicia Sesión </a> </p>
+    </div>
+
+    <footer>
+        <div class="contenedor-footer">
+            <div class="footer">
+                <div class="informacion">
+                    <a href="">Informacion Equipo</a> 
+                    <svg class="circle" version="1.1" xmlns="http://www.w3.org/2000/svg" width="3" heigth="3" viewBox="0 0 120 120">
+                        <circle cx="60" cy="60" r="50" fill="White"/>
+                    </svg>
+                    <a href="">Politica de Privacidad</a> 
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+<script src="{{ url_for('static', filename='js/registrarse.js') }}"></script>
+</html>
