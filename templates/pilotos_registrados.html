@@ -2,16 +2,6 @@
 {% block title %} Pilotos Registrados {% endblock %}
 {% block style %} <link rel="stylesheet" href="/static/css/style_users_registrados.css"> {% endblock %}
 {% block content %}
-<script>
-    const btn = document.querySelector('#header');
-    const menu = document.querySelector('#sidemenu');
-    btn.addEventListener('click', e =>{
-        menu.classList.toggle("menu-exanded");
-        menu.classList.toggle("menu-collapsed");
-
-        document.querySelector('body').classList.toggle('body-expanded');
-    });
-</script>
 <form autocomplete="on">
     <div class="autocomplete" style="width:400px;">
         <p>Pilotos Registrados</p>

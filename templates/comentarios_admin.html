@@ -1,76 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ver Comentarios</title>
-    <link rel="stylesheet" href="static/css/style_comentarios.css">
-</head>
-<body>
-    <div id="sidemenu" class="menu-collapsed">
-        <div id="header">
-            <div id="menu-btn">
-                <div class="logo-menu"><img src="static/Images/logos/LogosinFondoSecundario.svg" alt=""></div>
-            </div>
-        </div>
-        <div id="menu-items">
-            <div class="item">
-                <a href="">
-                    <div class="icon"><img src="static/Images/icons/iconosBlancos/ReservasVuelos-blancos.svg" alt=""></div>
-                    <div class="title"><span>Vuelos</span></div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="">
-                    <div class="icon"><img src="static/Images/icons/iconosBlancos/User-blanco.svg" alt=""></div>
-                    <div class="title"><span>Usuarios Registrados</span></div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="">
-                    <div class="icon"><img src="static/Images/icons/Pilot-Vector.svg" alt=""></div>
-                    <div class="title"><span>Pilotos Registrados</span></div>
-                </a>
-            </div>
-            <div class="item" id="separacion-icon">
-                <a href="">
-                    <div class="icon"><img src="static/Images/icons/iconosBlancos/Comentarios-blanco.svg" alt=""></div>
-                    <div class="title"><span>Comentarios</span></div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="">
-                    <div class="icon"><img src="static/Images/icons/iconosBlancos/Setting-blanco.svg" alt=""></div>
-                    <div class="title"><span>Configuraciones</span></div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="">
-                    <div class="icon"><img src="static/Images/icons/iconosBlancos/Logout-blanco.svg" alt=""></div>
-                    <div class="title"><span>Cerrar Sesion</span></div>
-                </a>
-            </div>
-        </div>
+{% extends "base-admin.html" %}
+{% block title %} Retroalimentaciones {% endblock %}
+{% block style %} <link rel="stylesheet" href="/static/css/style_comentarios_admin.css"> {% endblock %}
+{% block content %}
+<table>
+    <tr>
+        <td id="titulo-comentarios" > Vuelos y retroalimentaciones </td>
+    </tr>
 
-    </div>
-    <script type="text/javascript" src="static/js/sidemenu.js"></script>
-
-    <table>
-        <tr>
-            <td id="titulo-comentarios" > Vuelos y retroalimentaciones </td>
-        </tr>
-
-        <tr> 
-            <td class="contenedor-vuelo" id="vuelo1">
-                <a class="popup-link" href="#comentarios1">
-                <div class="vuelo">
-                    <p class="texto-vuelo-superior" id="separacion">codigo 123456-7890 </p> <p class="texto-vuelo-superior">15/10/2021</p>
-                    <p class="texto-vuelo-intermedio">Origen - Destino</p>
-                    <p class="texto-vuelo-inferior" id="separacion">Salida  00 : 00 am</p> <p class="texto-vuelo-inferior">Avion Boing 747</p>
+    <tr> 
+        <td class="contenedor-vuelo" id="vuelo1">
+            <a class="popup-link" href="#comentarios1">
+            <div class="vuelo">
+                <p class="texto-vuelo-superior" id="separacion">codigo 123456-7890 </p> <p class="texto-vuelo-superior">15/10/2021</p>
+                <p class="texto-vuelo-intermedio">Origen - Destino</p>
+                <p class="texto-vuelo-inferior" id="separacion">Salida  00 : 00 am</p> <p class="texto-vuelo-inferior">Avion Boing 747</p>
+            </div>
+            </a>
+                <div id="comentarios1" class="comentarios-popup">
+                <div class="contenedor-comentarios">
+                    <a href="#" class="cerrar-comentario">X</a>
+                    <div class="comentario">
+                        <img class="img-comentario" src="static/Images/Usuarios/Usuario1.jpg" alt="">
+                        <div class="info-comentario">
+                            <p class="nombre-comentario">Juan Antonio Diaz</p>
+                            <p class="user-comentario">Comentario acerca del vuelo realizado</p>
+                        </div>
+                    </div>
+                    <div class="comentario">
+                        <img class="img-comentario" src="static/Images/Usuarios/Usuario1.jpg" alt="">
+                        <div class="info-comentario">
+                            <p class="nombre-comentario">Juan Antonio Diaz</p>
+                            <p class="user-comentario">Comentario acerca del vuelo realizado</p>
+                        </div>
+                    </div>
+                    <div class="comentario">
+                        <img class="img-comentario" src="static/Images/Usuarios/Usuario1.jpg" alt="">
+                        <div class="info-comentario">
+                            <p class="nombre-comentario">Juan Antonio Diaz</p>
+                            <p class="user-comentario">Comentario acerca del vuelo realizado</p>
+                        </div>
+                    </div>
+                    <button type="button">
+                        <a href="" class="boton">Responder</a>
+                    </button>
+                </div>  
                 </div>
-                </a>
-                    <div id="comentarios1" class="comentarios-popup">
+        </td>
+        <td class="contenedor-vuelo" id="vuelo1">
+            <a class="popup-link" href="#comentarios2">
+            <div class="vuelo">
+                <p class="texto-vuelo-superior" id="separacion">codigo 123456-7890 </p> <p class="texto-vuelo-superior">15/10/2021</p>
+                <p class="texto-vuelo-intermedio">Origen - Destino</p>
+                <p class="texto-vuelo-inferior" id="separacion">Salida  00 : 00 am</p> <p class="texto-vuelo-inferior">Avion Boing 747</p>
+            </div>
+            </a>
+                <div id="comentarios2" class="comentarios-popup">
                     <div class="contenedor-comentarios">
                         <a href="#" class="cerrar-comentario">X</a>
                         <div class="comentario">
@@ -97,220 +81,167 @@
                         <button type="button">
                             <a href="" class="boton">Responder</a>
                         </button>
-                    </div>  
-                    </div>
-            </td>
-            <td class="contenedor-vuelo" id="vuelo1">
-                <a class="popup-link" href="#comentarios2">
-                <div class="vuelo">
-                    <p class="texto-vuelo-superior" id="separacion">codigo 123456-7890 </p> <p class="texto-vuelo-superior">15/10/2021</p>
-                    <p class="texto-vuelo-intermedio">Origen - Destino</p>
-                    <p class="texto-vuelo-inferior" id="separacion">Salida  00 : 00 am</p> <p class="texto-vuelo-inferior">Avion Boing 747</p>
+                    </div>    
                 </div>
-                </a>
-                    <div id="comentarios2" class="comentarios-popup">
-                        <div class="contenedor-comentarios">
-                            <a href="#" class="cerrar-comentario">X</a>
-                            <div class="comentario">
-                                <img class="img-comentario" src="static/Images/Usuarios/Usuario1.jpg" alt="">
-                                <div class="info-comentario">
-                                    <p class="nombre-comentario">Juan Antonio Diaz</p>
-                                    <p class="user-comentario">Comentario acerca del vuelo realizado</p>
-                                </div>
-                            </div>
-                            <div class="comentario">
-                                <img class="img-comentario" src="static/Images/Usuarios/Usuario1.jpg" alt="">
-                                <div class="info-comentario">
-                                    <p class="nombre-comentario">Juan Antonio Diaz</p>
-                                    <p class="user-comentario">Comentario acerca del vuelo realizado</p>
-                                </div>
-                            </div>
-                            <div class="comentario">
-                                <img class="img-comentario" src="static/Images/Usuarios/Usuario1.jpg" alt="">
-                                <div class="info-comentario">
-                                    <p class="nombre-comentario">Juan Antonio Diaz</p>
-                                    <p class="user-comentario">Comentario acerca del vuelo realizado</p>
-                                </div>
-                            </div>
-                            <button type="button">
-                                <a href="" class="boton">Responder</a>
-                            </button>
-                        </div>    
-                    </div>
-            </td>       
-        </tr>
+        </td>       
+    </tr>
 
-        <tr> 
-            <td class="contenedor-vuelo" id="vuelo1">
-                <a class="popup-link" href="#comentarios3">
-                <div class="vuelo">
-                    <p class="texto-vuelo-superior" id="separacion">codigo 123456-7890 </p> <p class="texto-vuelo-superior">15/10/2021</p>
-                    <p class="texto-vuelo-intermedio">Origen - Destino</p>
-                    <p class="texto-vuelo-inferior" id="separacion">Salida  00 : 00 am</p> <p class="texto-vuelo-inferior">Avion Boing 747</p>
-                </div>
-                </a>
-                    <div id="comentarios3" class="comentarios-popup">
-                        <div class="contenedor-comentarios">
-                            <a href="#" class="cerrar-comentario">X</a>
-                            <div class="comentario">
-                                <img class="img-comentario" src="static/Images/Usuarios/Usuario1.jpg" alt="">
-                                <div class="info-comentario">
-                                    <p class="nombre-comentario">Juan Antonio Diaz</p>
-                                    <p class="user-comentario">Comentario acerca del vuelo realizado</p>
-                                </div>
-                            </div>
-                            <div class="comentario">
-                                <img class="img-comentario" src="static/Images/Usuarios/Usuario1.jpg" alt="">
-                                <div class="info-comentario">
-                                    <p class="nombre-comentario">Juan Antonio Diaz</p>
-                                    <p class="user-comentario">Comentario acerca del vuelo realizado</p>
-                                </div>
-                            </div>
-                            <div class="comentario">
-                                <img class="img-comentario" src="static/Images/Usuarios/Usuario1.jpg" alt="">
-                                <div class="info-comentario">
-                                    <p class="nombre-comentario">Juan Antonio Diaz</p>
-                                    <p class="user-comentario">Comentario acerca del vuelo realizado</p>
-                                </div>
-                            </div>
-                            <button type="button">
-                                <a href="" class="boton">Responder</a>
-                            </button>
-                        </div>     
-                    </div>
-            </td>
-            <td class="contenedor-vuelo" id="vuelo1">
-                <a class="popup-link" href="#comentarios4">
-                <div class="vuelo">
-                    <p class="texto-vuelo-superior" id="separacion">codigo 123456-7890 </p> <p class="texto-vuelo-superior">15/10/2021</p>
-                    <p class="texto-vuelo-intermedio">Origen - Destino</p>
-                    <p class="texto-vuelo-inferior" id="separacion">Salida  00 : 00 am</p> <p class="texto-vuelo-inferior">Avion Boing 747</p>
-                </div>
-                </a>
-                    <div id="comentarios4" class="comentarios-popup">
-                        <div class="contenedor-comentarios">
-                            <a href="#" class="cerrar-comentario">X</a>
-                            <div class="comentario">
-                                <img class="img-comentario" src="static/Images/Usuarios/Usuario1.jpg" alt="">
-                                <div class="info-comentario">
-                                    <p class="nombre-comentario">Juan Antonio Diaz</p>
-                                    <p class="user-comentario">Comentario acerca del vuelo realizado</p>
-                                </div>
-                            </div>
-                            <div class="comentario">
-                                <img class="img-comentario" src="static/Images/Usuarios/Usuario1.jpg" alt="">
-                                <div class="info-comentario">
-                                    <p class="nombre-comentario">Juan Antonio Diaz</p>
-                                    <p class="user-comentario">Comentario acerca del vuelo realizado</p>
-                                </div>
-                            </div>
-                            <div class="comentario">
-                                <img class="img-comentario" src="static/Images/Usuarios/Usuario1.jpg" alt="">
-                                <div class="info-comentario">
-                                    <p class="nombre-comentario">Juan Antonio Diaz</p>
-                                    <p class="user-comentario">Comentario acerca del vuelo realizado</p>
-                                </div>
-                            </div>
-                            <button type="button">
-                                <a href="" class="boton">Responder</a>
-                            </button>
-                        </div>      
-                    </div>
-            </td>     
-        </tr>
-        <tr> 
-            <td class="contenedor-vuelo" id="vuelo1">
-                <a class="popup-link" href="#comentarios5">
-                <div class="vuelo">
-                    <p class="texto-vuelo-superior" id="separacion">codigo 123456-7890 </p> <p class="texto-vuelo-superior">15/10/2021</p>
-                    <p class="texto-vuelo-intermedio">Origen - Destino</p>
-                    <p class="texto-vuelo-inferior" id="separacion">Salida  00 : 00 am</p> <p class="texto-vuelo-inferior">Avion Boing 747</p>
-                </div>
-                </a>
-                    <div id="comentarios5" class="comentarios-popup">
-                        <div class="contenedor-comentarios">
-                            <a href="#" class="cerrar-comentario">X</a>
-                            <div class="comentario">
-                                <img class="img-comentario" src="static/Images/Usuarios/Usuario1.jpg" alt="">
-                                <div class="info-comentario">
-                                    <p class="nombre-comentario">Juan Antonio Diaz</p>
-                                    <p class="user-comentario">Comentario acerca del vuelo realizado</p>
-                                </div>
-                            </div>
-                            <div class="comentario">
-                                <img class="img-comentario" src="static/Images/Usuarios/Usuario1.jpg" alt="">
-                                <div class="info-comentario">
-                                    <p class="nombre-comentario">Juan Antonio Diaz</p>
-                                    <p class="user-comentario">Comentario acerca del vuelo realizado</p>
-                                </div>
-                            </div>
-                            <div class="comentario">
-                                <img class="img-comentario" src="static/Images/Usuarios/Usuario1.jpg" alt="">
-                                <div class="info-comentario">
-                                    <p class="nombre-comentario">Juan Antonio Diaz</p>
-                                    <p class="user-comentario">Comentario acerca del vuelo realizado</p>
-                                </div>
-                            </div>
-                            <button type="button">
-                                <a href="" class="boton">Responder</a>
-                            </button>
-                        </div>      
-                    </div>
-            </td>
-            <td class="contenedor-vuelo" id="vuelo1">
-                <a class="popup-link" href="#comentarios6">
-                <div class="vuelo">
-                    <p class="texto-vuelo-superior" id="separacion">codigo 123456-7890 </p> <p class="texto-vuelo-superior">15/10/2021</p>
-                    <p class="texto-vuelo-intermedio">Origen - Destino</p>
-                    <p class="texto-vuelo-inferior" id="separacion">Salida  00 : 00 am</p> <p class="texto-vuelo-inferior">Avion Boing 747</p>
-                </div>
-                </a>
-                    <div id="comentarios6" class="comentarios-popup">
-                        <div class="contenedor-comentarios">
-                            <a href="#" class="cerrar-comentario">X</a>
-                            <div class="comentario">
-                                <img class="img-comentario" src="static/Images/Usuarios/Usuario1.jpg" alt="">
-                                <div class="info-comentario">
-                                    <p class="nombre-comentario">Juan Antonio Diaz</p>
-                                    <p class="user-comentario">Comentario acerca del vuelo realizado</p>
-                                </div>
-                            </div>
-                            <div class="comentario">
-                                <img class="img-comentario" src="static/Images/Usuarios/Usuario1.jpg" alt="">
-                                <div class="info-comentario">
-                                    <p class="nombre-comentario">Juan Antonio Diaz</p>
-                                    <p class="user-comentario">Comentario acerca del vuelo realizado</p>
-                                </div>
-                            </div>
-                            <div class="comentario">
-                                <img class="img-comentario" src="static/Images/Usuarios/Usuario1.jpg" alt="">
-                                <div class="info-comentario">
-                                    <p class="nombre-comentario">Juan Antonio Diaz</p>
-                                    <p class="user-comentario">Comentario acerca del vuelo realizado</p>
-                                </div>
-                            </div>
-                            <button type="button">
-                                <a href="" class="boton">Responder</a>
-                            </button>
-                        </div>     
-                    </div>
-            </td>      
-        </tr>
-    
-    </table>
-
-    <footer>
-        <div class="contenedor-footer">
-            <div class="footer">
-                <div class="informacion">
-                    <a href="">Informacion Equipo</a> 
-                    <svg class="circle" version="1.1" xmlns="http://www.w3.org/2000/svg" width="3" heigth="3" viewBox="0 0 120 120">
-                        <circle cx="60" cy="60" r="50" fill="White"/>
-                    </svg>
-                    <a href="">Politica de Privacidad</a>
-                </div>
+    <tr> 
+        <td class="contenedor-vuelo" id="vuelo1">
+            <a class="popup-link" href="#comentarios3">
+            <div class="vuelo">
+                <p class="texto-vuelo-superior" id="separacion">codigo 123456-7890 </p> <p class="texto-vuelo-superior">15/10/2021</p>
+                <p class="texto-vuelo-intermedio">Origen - Destino</p>
+                <p class="texto-vuelo-inferior" id="separacion">Salida  00 : 00 am</p> <p class="texto-vuelo-inferior">Avion Boing 747</p>
             </div>
-        </div>
-    </footer>
-</body>
-</html>
+            </a>
+                <div id="comentarios3" class="comentarios-popup">
+                    <div class="contenedor-comentarios">
+                        <a href="#" class="cerrar-comentario">X</a>
+                        <div class="comentario">
+                            <img class="img-comentario" src="static/Images/Usuarios/Usuario1.jpg" alt="">
+                            <div class="info-comentario">
+                                <p class="nombre-comentario">Juan Antonio Diaz</p>
+                                <p class="user-comentario">Comentario acerca del vuelo realizado</p>
+                            </div>
+                        </div>
+                        <div class="comentario">
+                            <img class="img-comentario" src="static/Images/Usuarios/Usuario1.jpg" alt="">
+                            <div class="info-comentario">
+                                <p class="nombre-comentario">Juan Antonio Diaz</p>
+                                <p class="user-comentario">Comentario acerca del vuelo realizado</p>
+                            </div>
+                        </div>
+                        <div class="comentario">
+                            <img class="img-comentario" src="static/Images/Usuarios/Usuario1.jpg" alt="">
+                            <div class="info-comentario">
+                                <p class="nombre-comentario">Juan Antonio Diaz</p>
+                                <p class="user-comentario">Comentario acerca del vuelo realizado</p>
+                            </div>
+                        </div>
+                        <button type="button">
+                            <a href="" class="boton">Responder</a>
+                        </button>
+                    </div>     
+                </div>
+        </td>
+        <td class="contenedor-vuelo" id="vuelo1">
+            <a class="popup-link" href="#comentarios4">
+            <div class="vuelo">
+                <p class="texto-vuelo-superior" id="separacion">codigo 123456-7890 </p> <p class="texto-vuelo-superior">15/10/2021</p>
+                <p class="texto-vuelo-intermedio">Origen - Destino</p>
+                <p class="texto-vuelo-inferior" id="separacion">Salida  00 : 00 am</p> <p class="texto-vuelo-inferior">Avion Boing 747</p>
+            </div>
+            </a>
+                <div id="comentarios4" class="comentarios-popup">
+                    <div class="contenedor-comentarios">
+                        <a href="#" class="cerrar-comentario">X</a>
+                        <div class="comentario">
+                            <img class="img-comentario" src="static/Images/Usuarios/Usuario1.jpg" alt="">
+                            <div class="info-comentario">
+                                <p class="nombre-comentario">Juan Antonio Diaz</p>
+                                <p class="user-comentario">Comentario acerca del vuelo realizado</p>
+                            </div>
+                        </div>
+                        <div class="comentario">
+                            <img class="img-comentario" src="static/Images/Usuarios/Usuario1.jpg" alt="">
+                            <div class="info-comentario">
+                                <p class="nombre-comentario">Juan Antonio Diaz</p>
+                                <p class="user-comentario">Comentario acerca del vuelo realizado</p>
+                            </div>
+                        </div>
+                        <div class="comentario">
+                            <img class="img-comentario" src="static/Images/Usuarios/Usuario1.jpg" alt="">
+                            <div class="info-comentario">
+                                <p class="nombre-comentario">Juan Antonio Diaz</p>
+                                <p class="user-comentario">Comentario acerca del vuelo realizado</p>
+                            </div>
+                        </div>
+                        <button type="button">
+                            <a href="" class="boton">Responder</a>
+                        </button>
+                    </div>      
+                </div>
+        </td>     
+    </tr>
+    <tr> 
+        <td class="contenedor-vuelo" id="vuelo1">
+            <a class="popup-link" href="#comentarios5">
+            <div class="vuelo">
+                <p class="texto-vuelo-superior" id="separacion">codigo 123456-7890 </p> <p class="texto-vuelo-superior">15/10/2021</p>
+                <p class="texto-vuelo-intermedio">Origen - Destino</p>
+                <p class="texto-vuelo-inferior" id="separacion">Salida  00 : 00 am</p> <p class="texto-vuelo-inferior">Avion Boing 747</p>
+            </div>
+            </a>
+                <div id="comentarios5" class="comentarios-popup">
+                    <div class="contenedor-comentarios">
+                        <a href="#" class="cerrar-comentario">X</a>
+                        <div class="comentario">
+                            <img class="img-comentario" src="static/Images/Usuarios/Usuario1.jpg" alt="">
+                            <div class="info-comentario">
+                                <p class="nombre-comentario">Juan Antonio Diaz</p>
+                                <p class="user-comentario">Comentario acerca del vuelo realizado</p>
+                            </div>
+                        </div>
+                        <div class="comentario">
+                            <img class="img-comentario" src="static/Images/Usuarios/Usuario1.jpg" alt="">
+                            <div class="info-comentario">
+                                <p class="nombre-comentario">Juan Antonio Diaz</p>
+                                <p class="user-comentario">Comentario acerca del vuelo realizado</p>
+                            </div>
+                        </div>
+                        <div class="comentario">
+                            <img class="img-comentario" src="static/Images/Usuarios/Usuario1.jpg" alt="">
+                            <div class="info-comentario">
+                                <p class="nombre-comentario">Juan Antonio Diaz</p>
+                                <p class="user-comentario">Comentario acerca del vuelo realizado</p>
+                            </div>
+                        </div>
+                        <button type="button">
+                            <a href="" class="boton">Responder</a>
+                        </button>
+                    </div>      
+                </div>
+        </td>
+        <td class="contenedor-vuelo" id="vuelo1">
+            <a class="popup-link" href="#comentarios6">
+            <div class="vuelo">
+                <p class="texto-vuelo-superior" id="separacion">codigo 123456-7890 </p> <p class="texto-vuelo-superior">15/10/2021</p>
+                <p class="texto-vuelo-intermedio">Origen - Destino</p>
+                <p class="texto-vuelo-inferior" id="separacion">Salida  00 : 00 am</p> <p class="texto-vuelo-inferior">Avion Boing 747</p>
+            </div>
+            </a>
+                <div id="comentarios6" class="comentarios-popup">
+                    <div class="contenedor-comentarios">
+                        <a href="#" class="cerrar-comentario">X</a>
+                        <div class="comentario">
+                            <img class="img-comentario" src="static/Images/Usuarios/Usuario1.jpg" alt="">
+                            <div class="info-comentario">
+                                <p class="nombre-comentario">Juan Antonio Diaz</p>
+                                <p class="user-comentario">Comentario acerca del vuelo realizado</p>
+                            </div>
+                        </div>
+                        <div class="comentario">
+                            <img class="img-comentario" src="static/Images/Usuarios/Usuario1.jpg" alt="">
+                            <div class="info-comentario">
+                                <p class="nombre-comentario">Juan Antonio Diaz</p>
+                                <p class="user-comentario">Comentario acerca del vuelo realizado</p>
+                            </div>
+                        </div>
+                        <div class="comentario">
+                            <img class="img-comentario" src="static/Images/Usuarios/Usuario1.jpg" alt="">
+                            <div class="info-comentario">
+                                <p class="nombre-comentario">Juan Antonio Diaz</p>
+                                <p class="user-comentario">Comentario acerca del vuelo realizado</p>
+                            </div>
+                        </div>
+                        <button type="button">
+                            <a href="" class="boton">Responder</a>
+                        </button>
+                    </div>     
+                </div>
+        </td>      
+    </tr>
+
+</table>
+{% endblock %}
