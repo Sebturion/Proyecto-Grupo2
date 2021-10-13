@@ -23,6 +23,26 @@ def login():
 def registrase():
     return render_template('registrarse_usuario.html')
 
+@app.route('/plataforma-usuario-verificar')
+def plataforma_usuario_verificar():
+    return render_template('plataforma_usuario_verificar.html')
+
+@app.route('/pilotos-registrados')
+def pilotos_registrados():
+    return render_template('pilotos_registrados.html')
+
+@app.route('/configuracion-plataforma_usuario')
+def configuracion_plataforma_usuario():
+    return render_template('configuracion_plataforma_usuario.html')
+
+@app.route('/comentarios-admin')
+def comentarios_admin():
+    return render_template('comentarios_admin.html')
+
+@app.route('/usuarios-registrados')
+def usuarios_registrados():
+    return render_template('usuarios_registrados.html')
+
 @app.route('/validar-login', methods=['POST'])
 def validarlogin():
     email_recibido = request.form['correo']
@@ -44,7 +64,7 @@ def validarlogin():
         return render_template('vuelos.html')
 
     if (email_recibido == email_admin and contrasenia_recibida == contrasenia_admin):
-        return render_template('Comentarios_admin.html')
+        return render_template('configuracion_plataforma_usuario.html')
 
     return render_template('login.html')
 
