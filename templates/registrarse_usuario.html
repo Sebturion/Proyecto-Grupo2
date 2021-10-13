@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %} Registrarse {% endblock %}
+{% block style %} <link rel="stylesheet" href="{{ url_for('static', filename='css/style_registrarse.css') }} "> {% endblock %}
+{% block content %}
+<div id="divInputs">
+    <h2>Registrarse</h2>
+    <div class="formulario">
+        <form id="registro" method="POST" action="" onSubmit="return validar_formulario();">
+            <div class="divInformacion">
+                <input type="text" name="nombre" id="txtNombre" placeholder="Nombres y Apellidos" pattern="[A-Z a-z]{0,20}" minlength="5" maxlength="20" title="No use caracteres especiales"> <p class="errores" id="error1"></p>
+            </div>
+
+            <div class="divInformacion">
+                <input type="number" name="contacto" id="telContacto" placeholder="Número de contacto"  maxlength="18"> <p class="errores" id="error2"></p>
+            </div>
+
+            <div class="divInformacion">
+                <input type="email" name="correo" id="email" placeholder="Email"> <p class="errores" id="error3"></p>
+            </div>
+
+            <div class="divInformacion" id="divPassword">
+                <input type="password" name="contraseña" id="password" placeholder="Contraseña" maxlength="16"><p class="errores" id="error4"></p>
+            </div>
+
+            <div class="divInformacion" id="divConfirmar">
+                <input type="password" name="confirmarContraseña" id="confirmPassword" placeholder="Confirmar contraseña" maxlength="16"><p class="errores" id="error5"></p>
+            </div>
+
+            <input type="submit" value="Registrarse" />
+        </form>
+    </div>
+    <p> ¿Ya tienes una cuenta? <a href="">Inicia Sesión </a> </p>
+</div>
+{% endblock %}
+</body>
+<script src="{{ url_for('static', filename='js/registrarse.js') }}"></script>
+</html>
