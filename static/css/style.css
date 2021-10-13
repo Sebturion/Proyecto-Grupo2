@@ -1,14 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap');
+/* Variables de Colores */
+:root{
+    --rosaPrimario: #fc2c5e;
+    --rosaPrimarioHover: #FF3F6D;
+    --rosaPrimarioPress: #DF1C4B;
+    --oscuroPrimario: #1e1e26;
+    --oscuroSecundario: #313139;
+}
 
 *{
     margin: 0;
     padding: 0;
-    font-family: 'poppins', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
     box-sizing: border-box;
 }
+
 body{
-    background-color: #1d2026;
+    background-color: var(--oscuroPrimario);
 }
+
+/* Desde este punto empiezan los estilos para el header 
+de la pagina.*/
 .inicio-header {
     min-height: 20vh;
     width: 100%;
@@ -20,9 +32,9 @@ nav{
     align-items: center;
     padding: 15px 6%;
 }
-
 nav .logo{
-    width: 160;
+    width: 33px;
+    height: 65px;
     cursor: pointer;
 }
 nav ul{
@@ -34,18 +46,23 @@ nav ul li{
     list-style: none;
     margin: 0 20px;
 }
+
 .link{
     text-decoration: none;
     color: #fff;
     padding: 10px;
-    font-size: 1rem;
+    font-size: 15px;
+    font-weight: 600;
     position: relative;
 }
+/*las clases "link:after", y "link:hover::after" corresponden al efecto
+hover de antes y despues (respectivamente) que se ve al pasar el cursor
+sobre los links que estan en el header(Inicio, Vuelos, y Destinos).*/
 .link:after{
     content: "";
     width: 0;
     height: 2px;
-    background-color: #fc2c5e;
+    background-color: var(--rosaPrimario);
     position: absolute;
     bottom: 0;
     right: 50%;
@@ -56,8 +73,9 @@ nav ul li{
     width: 100%;
     right: 0;
 }
+
 button{
-    background-color: #fc2c5e;
+    background-color:  var(--rosaPrimario);
     padding: 14px 30px;
     margin: 0 10px;
     border-radius: 7px;
@@ -65,29 +83,44 @@ button{
     outline: 0;
     cursor: pointer;
 }
+/*las clases "button:active", y "button:hover" corresponden al efecto
+hover de antes y despues (respectivamente) que se ve al pasar el cursor
+sobre los botones que estan en el header(Iniciar Sesion, y registrarse).*/
+button:active{
+    background-color:  var(--rosaPrimarioPress);
+}
+button:hover{
+    background-color:  var(--rosaPrimarioHover);
+}
 .boton{
     text-align: center;
     text-decoration: none;
     color: #fff;
-    font-size: 0.9rem;
+    font-size: 15px;
+    font-weight: 600;
 
 }
-.inicio{
-    min-height: 20vh;
+/* Aquí finaliza los estilos para el header */
+
+/* Aquí inicia el título y mensaje principal más el carrusel de imagenes */
+.bienvenida{
+    display: block;
     width: 100%;
+    align-items: center;
+}
+.tituloPrincipal{
+    font-size: 87px;
+    color: #ffffff;
+}
+.mensajePrincipal{
+    font-size: 17px;
     color: #fff;
-    position:relative;
+    text-align: center;
 }
-.Bienvenida{
-    font-size: 5rem;
-    font-weight: bold;
-    text-align: left;
-}
-.texto-bienvenida{
-    text-align: left;
-}
+/* Carrusel de imagenes */
 .slider{
-    width: 650px;
+    right: 0;
+    width: 600px;
     height: 320px;
     overflow: hidden;
 }
@@ -118,11 +151,15 @@ button{
     75%{margin-left: -300%;}
     100%{margin-left: -300%;}
 }
+/* final de carrusel de imagenes */
+/* Aquí finaliza el el contenido de bienvenida */
+
+/* Desde aquí empieza el footer */
 footer{
     position: absolute;
     bottom: 0;
     width: 100%;
-    background-color: #1d2026;
+    background-color: var(--oscuroPrimario);
     color: #fff;
 }
 .contenedor-footer{
@@ -130,25 +167,28 @@ footer{
     max-width: 1200px;
     margin: auto;
     padding: 25px;
+    display: flex;
+    justify-content: center;
 }
 .footer{
     font-size: 80%;
     max-width:1200px;
     margin: auto;
-    background-color: #1d2026;
+    background-color:  var(--oscuroPrimario);
     display: flex;
     justify-content: space-between;
 }
-.copyrigth{
-    color: #c7c7c7;
-}
 .informacion a{
+    font-size: 11px;
     text-decoration: none;
-    color: #c7c7c7;
+    color: #ffffff;
+}
+.circle{
+    margin: 0px 6px;
 }
 @media screen and (max-width: 1100px){
     .footer{
         flex-wrap: wrap;
     }
 }
-    
+/* Aquí termina el footer */

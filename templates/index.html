@@ -8,9 +8,12 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
 </head>
 <body>
+
 <div class = "inicio-header">
     <nav>
-        <img src="{{ url_for('static', filename='img/LOGO.png') }}" class="logo" alt="Logo">
+        <a href="">
+            <img src="{{ url_for('static', filename='Images/logos/LogosinFondoSecundario.svg') }}" class="logo" alt="Logo">
+        </a>
         <ul>
             <li><a href="" class="link">Inicio</a></li>
             <li><a href="" class="link">Vuelos</a></li>
@@ -24,26 +27,26 @@
         </button>
     </nav>
 </div>
-<div class="inicio">
+<div class="bienvenida">
     <nav>
         <ul>
-            <h1 class="Bienvenida">Bienvenidos</h1>
-            <p class="texto-bienvenida">texto de prueba</p>
+            <h1 class="tituloPrincipal">Bienvenidos</h1>
+            <p class="mensajePrincipal">Texto de prueba.</p>
             </article>
         </ul>
         <div class="slider">
             <ul>
                 <li id="slide1">
-                    <img src="{{ url_for('static', filename='img/lugar1.jpg') }}" alt="">
+                    <img src="{{ url_for('static', filename='Images/destinos/CABO_SAN_JUAN.jpg') }}" alt="">
                 </li>
                 <li id="slide2">
-                    <img src="{{ url_for('static', filename='img/lugar2.jpg') }}" alt="">
+                    <img src="{{ url_for('static', filename='Images/destinos/Ciudad-Perdida - Magdalena.jpg') }}" alt="">
                 </li>
                 <li id="slide3">
-                    <img src="{{ url_for('static', filename='img/lugar3.jpg') }}" alt="">
+                    <img src="{{ url_for('static', filename='Images/destinos/fincas_eje_cafetero_sitios_turisticos_colombia_quindio_blog_cover.jpg') }}" alt="">
                 </li>
                 <li id="slide4">
-                    <img src="{{ url_for('static', filename='img/lugar4.jpg') }}" alt="">
+                    <img src="{{ url_for('static', filename='Images/destinos/San_Andres.jpg') }}" alt="">
                 </li>
             </ul>
         </div>
@@ -52,17 +55,15 @@
 <footer>
     <div class="contenedor-footer">
         <div class="footer">
-            <div class="copyrigth">
-                © 2021 Todos los Derechos Reservados
-            </div>
             <div class="informacion">
-                <a href="">Informacion Equipo</a> |
-                <a href="">Politica de Privacidad</a> |
-                <a href="">Terminos y Condiciones</a>
+                <a href="">Informacion Equipo</a> 
+                <svg class="circle" version="1.1" xmlns="http://www.w3.org/2000/svg" width="3" heigth="3" viewBox="0 0 120 120">
+                    <circle cx="60" cy="60" r="50" fill="White"/>
+                </svg>
+                <a href="">Politica de Privacidad</a> 
             </div>
         </div>
     </div>
-
 </footer>
 </body>
 </html>

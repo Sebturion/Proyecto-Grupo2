@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito Sans', sans-serif;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+body {
+    background-color: #1e1e26;
+}
+
+/*Estilos de la cabezera*/
+nav{
+    display: flex;
+    align-items: center;
+    padding: 15px 15% 18px 6%;
+    margin-bottom: 100px;
+}
+
+nav ul{
+    flex: 1;
+    text-align: center;
+}
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 0 20px;
+}
+
+nav a{
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    position: relative;
+}
+
+input[type="submit"] {
+    width: 450px;
+    height: 45px;
+    background-color: #fc2c5e;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 8px;
+}
+
+/*Estilos del contenido con sus input*/
+h2 {
+    margin-bottom: 50px;
+}
+
+input {
+    background-color: #313139;
+    line-height: 45px;
+    width: 450px;
+    border-style: none;
+    background-color: #313139;
+    border-radius: 10px;
+    padding-left: 20px;
+}
+body {
+    text-align: center;
+}
+
+p {
+    font-size: 12px;
+}
+
+span { 
+    font-size: 12px;
+}
+
+
+table {
+    margin: auto;
+    border-spacing: 140px 0;
+}
+
+a {
+    text-decoration: none;
+    color: red;
+}
+
+.divInformacion {
+    margin-bottom: 20px;
+}
+
+.errores {
+    font-size: 11px;
+    color: red;
+    text-align: center;
+}
+
+/*Estilos del footer*/
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+}
+.contenedor-footer{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+}
+.footer{
+    font-size: 80%;
+    max-width:1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.informacion a{
+    font-size: 11px;
+    text-decoration: none;
+    color: #ffffff;
+}
+.circle{
+    margin: 0px 6px;
+}
+@media screen and (max-width: 1100px){
+    .footer{
+        flex-wrap: wrap;
+    }
+}
