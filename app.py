@@ -3,19 +3,19 @@ from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def index():
     return render_template('index.html')
 
-@app.route('/vuelos')
+@app.route('/vuelos', methods=['GET'])
 def vuelos():
     return render_template('vuelos.html')
 
-@app.route('/destinos')
+@app.route('/destinos', methods=['GET'])
 def destinos():
     return render_template('index.html')
 
-@app.route('/inicio-sesion')
+@app.route('/inicio-sesion', methods=['GET'])
 def login():
     return render_template('login.html')
 
@@ -34,23 +34,23 @@ def registrarse():
 
     return render_template("registrarse_usuario.html")
 
-@app.route('/plataforma-usuario-verificar')
+@app.route('/plataforma-usuario-verificar', methods=['GET'])
 def plataforma_usuario_verificar():
     return render_template('plataforma_usuario_verificar.html')
 
-@app.route('/pilotos-registrados')
+@app.route('/pilotos-registrados', methods=['GET'])
 def pilotos_registrados():
     return render_template('pilotos_registrados.html')
 
-@app.route('/configuracion-plataforma_usuario')
+@app.route('/configuracion-plataforma_usuario', methods=['GET'])
 def configuracion_plataforma_usuario():
     return render_template('configuracion_plataforma_usuario.html')
 
-@app.route('/comentarios-admin')
+@app.route('/comentarios-admin', methods=['GET'])
 def comentarios_admin():
     return render_template('comentarios_admin.html')
 
-@app.route('/usuarios-registrados')
+@app.route('/usuarios-registrados', methods=['GET'])
 def usuarios_registrados():
     return render_template('usuarios_registrados.html')
 
@@ -80,4 +80,4 @@ def validarlogin():
     return render_template('login.html')
 
 
-app.run(port = 3000, debug = True)
+app.run(port = 3000)
