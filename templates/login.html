@@ -5,7 +5,7 @@
 <div id="divInputs">
     <h2>Iniciar Sesión</h2>
     <div class="formulario">
-        <form id="registro" method="POST" action="/validar-login" onSubmit="return validar_formulario();">
+        <form id="registro" method="POST" action="{{ url_for('login') }}" onSubmit="return validar_formulario();">
             <div class="divInformacion">
                 <input type="email" name="correo" id="email" placeholder="Email"> <p class="errores" id="error1"></p>
             </div>
