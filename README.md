@@ -9,3 +9,9 @@ En el momento tenemos pendientes los siguientes temas:
 4. Creación de API ?
 
 ## TODO DEBE ESTAR DESACOPLADO: https://www.aunitz.net/aplicaciones-web-front-end-back-end-desacoplado/
+
+Especificacion manejadores 
+==============
+| URL | Metodo HTTP  | Parametros  | Funcionalidad |
+| ------- | --- | --- | --- |
+| /validar-login | POST | [correo, contrasenia] | Valida si el usuario es valido y si es el super usuario, usuario final o piloto |
