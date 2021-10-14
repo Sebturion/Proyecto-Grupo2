@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %} Destinos {% endblock%}
+{% block style %} <link rel="stylesheet" href="{{ url_for('static', filename='css/style_destinos.css') }}" /> {% endblock %}
+{% block content %}
+
+<table class="contenido">
+
+    <tr>
+        <th style="text-align: left;"><h2>Destinos Turísticos</h2></th>
+
+        <td>
+            <div id="divBuscador">
+                <img src="{{ url_for('static', filename='Images/icons/bx-search.svg') }}" title="Buscar" id="imgBuscar">
+                <input type="text" id="txtBuscador" name="buscador">
+            </div>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td>
+            <h3>Santa Marta</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur</p> <p>adipiscing elit. Ut ac ultrices nisl. Cras facilisis</p> <p>ligula velit, id auctor.</p>
+        </td>
+
+        <td>
+            <img src="{{ url_for('static', filename='Images/destinos/CABO_SAN_JUAN.jpg') }}" width="400px" height="230px">
+        </td>
+    </tr>
+    
+
+    <tr>
+        <td>
+            <img src="{{ url_for('static', filename='Images/destinos/fincas_eje_cafetero_sitios_turisticos_colombia_quindio_blog_cover.jpg') }}" width="400px" height="230px">
+        </td>
+
+        <td>
+            <h3>Eje Cafetero</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur</p> <p>adipiscing elit. Ut ac ultrices nisl. Cras facilisis</p> <p>ligula velit, id auctor.</p>
+        </td>
+    </tr>
+</table>
+
+{% endblock %}

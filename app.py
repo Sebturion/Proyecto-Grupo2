@@ -13,7 +13,7 @@ def vuelos():
 
 @app.route('/destinos', methods=['GET'])
 def destinos():
-    return render_template('index.html')
+    return render_template('destinos.html')
 
 
 @app.route('/inicio-sesion', methods=['GET', 'POST'])

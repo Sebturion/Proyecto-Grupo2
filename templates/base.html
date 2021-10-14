@@ -15,15 +15,15 @@
                 <img src="{{ url_for('static', filename='Images/logos/LogosinFondoSecundario.svg') }}" class="logo" alt="Logo">
             </a>
             <ul>
-                <li><a href="/" class="link">Inicio</a></li>
-                <li><a href="/vuelos" class="link">Vuelos</a></li>
-                <li><a href="/destinos" class="link">Destinos</a></li>
+                <li><a href="{{ url_for('index') }}" class="link">Inicio</a></li>
+                <li><a href="{{ url_for('vuelos') }}" class="link">Vuelos</a></li>
+                <li><a href="{{ url_for('destinos') }}" class="link">Destinos</a></li>
             </ul>
             <button type="button">
-                <a href="/inicio-sesion" class="boton">Iniciar Sesion</a>
+                <a href="{{ url_for('login') }}" class="boton">Iniciar Sesion</a>
             </button>
             <button type="button">
-                <a href="/registrarse" class="boton">Registrarse</a>
+                <a href="{{ url_for('registrarse') }}" class="boton">Registrarse</a>
             </button>
         </nav>
     </div>
