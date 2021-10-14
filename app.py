@@ -21,20 +21,18 @@ def login():
 
 @app.route('/registrarse', methods=['GET','POST'])
 def registrarse():
-    if (request.method == 'GET'):
-        return render_template('registrarse_usuario.html')
-    elif (request.method == 'POST'):
+    if (request.method == 'POST'):
         nombre = request.form['nombre']
         contacto = request.form['contacto']
-        email = request.form['email']
-        contraseña = request.form['contraseña']
-        confirmarContraseña = request.form['confirmarContraseña']
+        email = request.form['correo']
+        contrasenia = request.form['contrasenia']
+        confirmarContrasenia = request.form['confirmarContrasenia']
 
-        if len(nombre == 0) or len(contacto == 0) or len(email == 0) or len(contraseña == 0) or len(confirmarContraseña == 0):
-            mensaje = "Debe completar todos los campos"
-            return render_template('registrarse_usuario.html', mensaje)
+        if len(nombre) == 0 or len(contacto) == 0 or len(email) == 0 or len(contrasenia) == 0 or len(confirmarContrasenia) == 0 :
+            return render_template('registrarse_usuario.html', mensaje = "Debe completar todos los campos")
+        return render_template("registrarse_usuario.html", mensaje = "Usuario creado exitosamente")
 
-        return redirect(url_for('registrarse_usuario.html'))
+    return render_template("registrarse_usuario.html")
 
 @app.route('/plataforma-usuario-verificar')
 def plataforma_usuario_verificar():
@@ -82,4 +80,4 @@ def validarlogin():
     return render_template('login.html')
 
 
-app.run(port = 3000)
+app.run(port = 3000, debug = True)
