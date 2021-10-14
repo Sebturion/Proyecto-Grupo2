@@ -4,8 +4,14 @@
 {% block content %}
 <div id="divInputs">
     <h2>Registrarse</h2>
+    <p class="errores" id="error2">
+        {% if mensaje %}
+            {{ mensaje }}
+        {% endif %}
+    </p>
+
     <div class="formulario">
-        <form id="registro" method="POST" action="" onSubmit="return validar_formulario();">
+        <form id="registro" method="POST" action="{{ url_for('registrarse') }}" onSubmit="return validar_formulario();">
             <div class="divInformacion">
                 <input type="text" name="nombre" id="txtNombre" placeholder="Nombres y Apellidos" pattern="[A-Z a-z]{0,20}" minlength="5" maxlength="20" title="No use caracteres especiales"> <p class="errores" id="error1"></p>
             </div>
