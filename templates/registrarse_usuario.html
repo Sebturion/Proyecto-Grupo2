@@ -4,7 +4,7 @@
 {% block content %}
 <div id="divInputs">
     <h2>Registrarse</h2>
-    <p class="errores" id="error2">
+    <p class="errores" >
         {% if mensaje %}
             {{ mensaje }}
         {% endif %}
@@ -37,7 +37,8 @@
     </div>
     <p> ¿Ya tienes una cuenta? <a href="{{ url_for('login') }}">Inicia Sesión </a> </p>
 </div>
+
+<script src="{{ url_for('static', filename='js/registrarse.js') }}"></script>
 {% endblock %}
 </body>
-<script src="{{ url_for('static', filename='js/registrarse.js') }}"></script>
 </html>
