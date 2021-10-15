@@ -32,13 +32,13 @@ def login():
         contrasenia_usuario_final = '123456'
 
         if (email_recibido == email_usuario_final and contrasenia_recibida == contrasenia_usuario_final):
-            return render_template('index.html')
+            return redirect(url_for('index'))
 
         if (email_recibido == email_piloto and contrasenia_recibida == contrasenia_piloto):
-            return render_template('vuelos.html')
+            return redirect(url_for('vuelos'))
 
         if (email_recibido == email_admin and contrasenia_recibida == contrasenia_admin):
-            return render_template('configuracion_plataforma_usuario.html')
+            return redirect(url_for('configuracion_plataforma_usuario'))
  
     return render_template('login.html')
 
