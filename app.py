@@ -1,7 +1,12 @@
 from logging import debug
 from flask import Flask, render_template, request, redirect, url_for
+from forms import formularioLogin, formularioRegistro
+import os
 
 app = Flask(__name__)
+
+SECRET_KEY = os.urandom(32)
+app.config['SECRET_KEY'] = SECRET_KEY
 
 @app.route('/', methods=['GET'])
 def index():
@@ -18,45 +23,52 @@ def destinos():
 
 @app.route('/inicio-sesion', methods=['GET', 'POST'])
 def login():
-    if (request.method == 'POST'):
-        email_recibido = request.form['correo']
-        contrasenia_recibida = request.form['contrasenia']
+    formulario = formularioLogin(request.form)
+    if (request.method == 'GET'):
+        return render_template('login.html', form = formularioLogin())
+    elif (request.method == 'POST'):
+        if formulario.validate_on_submit():
+            email_recibido = formulario.correo.data
+            contrasenia_recibida = formulario.contrasena.data
 
-        email_admin = 'admin@gmail.com'
-        contrasenia_admin = '123456'
+            email_admin = 'admin@gmail.com'
+            contrasenia_admin = '123456'
 
-        email_piloto = 'piloto@gmail.com'
-        contrasenia_piloto = '123456'
+            email_piloto = 'piloto@gmail.com'
+            contrasenia_piloto = '123456'
 
-        email_usuario_final = 'final@gmail.com'
-        contrasenia_usuario_final = '123456'
+            email_usuario_final = 'final@gmail.com'
+            contrasenia_usuario_final = '123456'
 
-        if (email_recibido == email_usuario_final and contrasenia_recibida == contrasenia_usuario_final):
-            return redirect(url_for('index'))
+            if (email_recibido == email_usuario_final and contrasenia_recibida == contrasenia_usuario_final):
+                return redirect(url_for('index'))
 
-        if (email_recibido == email_piloto and contrasenia_recibida == contrasenia_piloto):
-            return redirect(url_for('vuelos'))
+            if (email_recibido == email_piloto and contrasenia_recibida == contrasenia_piloto):
+                return redirect(url_for('vuelos'))
 
-        if (email_recibido == email_admin and contrasenia_recibida == contrasenia_admin):
-            return redirect(url_for('configuracion_plataforma_usuario'))
+            if (email_recibido == email_admin and contrasenia_recibida == contrasenia_admin):
+                return redirect(url_for('configuracion_plataforma_usuario'))
  
-    return render_template('login.html')
-
 
 @app.route('/registrarse', methods=['GET','POST'])
 def registrarse():
-    if (request.method == 'POST'):
-        nombre = request.form['nombre']
-        contacto = request.form['contacto']
-        email = request.form['correo']
-        contrasenia = request.form['contrasenia']
-        confirmarContrasenia = request.form['confirmarContrasenia']
+    error = False
+    formulario = formularioRegistro(request.form)
 
-        if len(nombre) == 0 or len(contacto) == 0 or len(email) == 0 or len(contrasenia) == 0 or len(confirmarContrasenia) == 0 :
-            return render_template('registrarse_usuario.html', mensaje = "Debe completar todos los campos")
-        return render_template("registrarse_usuario.html", mensaje = "Usuario creado exitosamente")
+    if formulario.confirmar.data != formulario.contrasena.data:
+        error = True
 
-    return render_template("registrarse_usuario.html")
+    if request.method == 'GET':
+        return render_template("registrarse_usuario.html", form = formularioRegistro())
+    elif request.method == 'POST':
+        if (formulario.validate_on_submit()) and (not error):
+            mensaje = "Registro exitoso"
+            return render_template("registrarse_usuario.html", form = formularioRegistro(), mensaje = mensaje)
+        
+        mensaje = "No se ha podido realizar el registro"
+        return render_template("registrarse_usuario.html", form = formularioRegistro(), mensaje = mensaje)
+
+
 
 @app.route('/plataforma-usuario-verificar', methods=['GET'])
 def plataforma_usuario_verificar():

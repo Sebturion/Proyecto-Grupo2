@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap');
 
+:root{
+    --rosaPrimario: #fc2c5e;
+    --rosaPrimarioHover: #FF3F6D;
+    --rosaPrimarioPress: #DF1C4B;
+    --oscuroPrimario: #1e1e26;
+    --oscuroSecundario: #313139;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -13,31 +21,65 @@ body {
 }
 
 /*Estilos de la cabezera*/
+.inicio-header {
+    min-height: 20vh;
+    width: 100%;
+    color: #fff;
+    position: relative;
+}
 nav{
     display: flex;
     align-items: center;
-    padding: 15px 15% 18px 6%;
-    margin-bottom: 100px;
+    padding: 15px 6%;
 }
-
+nav .logo{
+    width: 33px;
+    height: 65px;
+    cursor: pointer;
+}
 nav ul{
     flex: 1;
     text-align: center;
 }
-
 nav ul li{
     display: inline-block;
     list-style: none;
     margin: 0 20px;
 }
 
-nav a{
+.link{
     text-decoration: none;
     color: #fff;
     padding: 10px;
     font-size: 15px;
     font-weight: 600;
     position: relative;
+}
+
+.link:after{
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: var(--rosaPrimario);
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transition: all .3s;
+    will-change: width;
+}
+.link:hover::after{
+    width: 100%;
+    right: 0;
+}
+
+button{
+    background-color:  var(--rosaPrimario);
+    padding: 14px 30px;
+    margin: 0 10px;
+    border-radius: 7px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
 }
 
 input[type="submit"] {

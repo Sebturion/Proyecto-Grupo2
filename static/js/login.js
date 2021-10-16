@@ -24,6 +24,5 @@ function validar_formulario(){
         hay_errores = true;
     }    
 
-
     return !hay_errores;
 }
