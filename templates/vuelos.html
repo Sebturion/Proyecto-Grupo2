@@ -6,21 +6,25 @@
     <tr>
         <td id="ofertas" > <h2>Ofertas de vuelos</h2> </td>
         <td id="buscador" colspan="2">
-            <div id="divBuscador">
-                <img src="{{ url_for('static', filename='Images/icons/bx-search.svg') }}" title="Buscar" id="imgBuscar">
-                <input type="text" id="txtBuscador" name="buscador">
-            </div>
+            <form method="POST" onsubmit="{{ url_for('vuelos') }}">
+                <div id="divBuscador">
+                    <button class="buscador" onsubmit="{{ url_for('vuelos') }}">
+                        <img src="{{ url_for('static', filename='Images/icons/bx-search.svg') }}" title="Buscar" id="imgBuscar">
+                    </button>
+                    <input name="txtBuscador" type="text" id="txtBuscador" name="buscador">
+                </div>
+            </form>
         </td>
     </tr>
-    <tr>
-        <td class="ofertas" id="oferta1"><div class="oferta"> Ofertas a <br> <h3>Salida1 -  Llegada1</h3> <br><br> Desde $precio1 <br><br> <button class="boton"> Reservar</button> </div></td>
-        <td class="ofertas" id="oferta2"><div class="oferta"> Ofertas a <br> <h3>Salida2 -  Llegada2</h3> <br><br> Desde $precio2 <br><br> <button class="boton"> Reservar</button> </div></td>
-        <td class="ofertas" id="oferta3"><div class="oferta"> Ofertas a <br> <h3>Salida3 -  Llegada3</h3> <br><br> Desde $precio3 <br><br> <button class="boton"> Reservar</button> </div></td>
-    </tr>
-    <tr>
-        <td class="ofertas" id="oferta4"><div class="oferta"> Ofertas a <br> <h3>Salida4 -  Llegada4</h3> <br><br> Desde $precio4 <br><br> <button class="boton"> Reservar </button> </div></td>
-        <td class="ofertas" id="oferta5"><div class="oferta"> Ofertas a <br> <h3>Salida5 -  Llegada5</h3> <br><br> Desde $precio5 <br><br> <button class="boton"> Reservar </button> </div></td>
-        <td class="ofertas" id="oferta6"><div class="oferta"> Ofertas a <br> <h3>Salida6 -  Llegada6</h3> <br><br> Desde $precio6 <br><br> <button class="boton"> Reservar </button> </div></td>
-    </tr>
+        <tr>
+            <td class="ofertas" id="oferta1"><div class="oferta"> Ofertas a <br> <h3>Salida1 -  Llegada1</h3> <br><br> Desde $precio1 <br><br> <button class="boton"> Reservar</button> </div></td>
+            <td class="ofertas" id="oferta2"><div class="oferta"> Ofertas a <br> <h3>Salida2 -  Llegada2</h3> <br><br> Desde $precio2 <br><br> <button class="boton"> Reservar</button> </div></td>
+            <td class="ofertas" id="oferta3"><div class="oferta"> Ofertas a <br> <h3>Salida3 -  Llegada3</h3> <br><br> Desde $precio3 <br><br> <button class="boton"> Reservar</button> </div></td>
+        </tr>
+        <tr>
+            <td class="ofertas" id="oferta4"><div class="oferta"> Ofertas a <br> <h3>Salida4 -  Llegada4</h3> <br><br> Desde $precio4 <br><br> <button class="boton"> Reservar </button> </div></td>
+            <td class="ofertas" id="oferta5"><div class="oferta"> Ofertas a <br> <h3>Salida5 -  Llegada5</h3> <br><br> Desde $precio5 <br><br> <button class="boton"> Reservar </button> </div></td>
+            <td class="ofertas" id="oferta6"><div class="oferta"> Ofertas a <br> <h3>Salida6 -  Llegada6</h3> <br><br> Desde $precio6 <br><br> <button class="boton"> Reservar </button> </div></td>
+        </tr>
 </table>
 {% endblock %}

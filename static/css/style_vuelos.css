@@ -57,6 +57,15 @@ button{
     cursor: pointer;
 }
 
+.buscador {
+    width: 31px;
+    height: 44px;
+    padding: 0px;
+    margin: 0px;
+    background-color: #313139;
+}
+
+
 .boton{
     text-align: center;
     text-decoration: none;
@@ -70,7 +79,7 @@ button{
 /*Se creo una tabla para mostrar la informacionde los vuelos*/
 /*Estilos de la tabla*/
 table {
-    margin: 40px auto;
+    margin: 20px auto;
     border-spacing: 6px;
 }
 
@@ -93,11 +102,11 @@ td{
 
 #txtBuscador {
     line-height: 45px;
-    width: 93%;
+    width: 92%;
     border-style: none;
     background-color: #313139;
     border-radius: 10px;
-    padding-left: 10px;
+    padding: 0px;
 }
 
 #divBuscador {
@@ -105,7 +114,8 @@ td{
     border-radius: 10px;
     width: 450px;
     height: 45px;
-    padding-left: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 #imgBuscar {
@@ -116,7 +126,7 @@ td{
 
 /*estilos del footer*/
 footer{
-    position: static;
+    position: fixed;
     bottom: 0;
     width: 100%;
     color: #fff;

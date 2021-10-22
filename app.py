@@ -1,7 +1,8 @@
 from logging import debug
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, jsonify
 from forms import formularioLogin, formularioRegistro
 import os
+from models import *
 
 app = Flask(__name__)
 
@@ -48,25 +49,28 @@ def login():
 
             if (email_recibido == email_admin and contrasenia_recibida == contrasenia_admin):
                 return redirect(url_for('configuracion_plataforma_usuario'))
+        
  
 
 @app.route('/registrarse', methods=['GET','POST'])
 def registrarse():
-    error = False
-    formulario = formularioRegistro(request.form)
-
-    if formulario.confirmar.data != formulario.contrasena.data:
-        error = True
-
     if request.method == 'GET':
         return render_template("registrarse_usuario.html", form = formularioRegistro())
     elif request.method == 'POST':
-        if (formulario.validate_on_submit()) and (not error):
-            mensaje = "Registro exitoso"
-            return render_template("registrarse_usuario.html", form = formularioRegistro(), mensaje = mensaje)
+        formulario = formularioRegistro(request.form)
         
-        mensaje = "No se ha podido realizar el registro"
-        return render_template("registrarse_usuario.html", form = formularioRegistro(), mensaje = mensaje)
+        error = False
+        if formulario.confirmar.data != formulario.contrasena.data:
+            error = True
+
+        if (formulario.validate_on_submit()) and (not error):
+            nuevoUsuario = usuario(formulario.nombreApellido.data, formulario.numeroContacto.data, formulario.correo.data, formulario.contrasena.data)
+            if nuevoUsuario.insert():
+                return render_template("registrarse_usuario.html", form = formularioRegistro(), mensaje = "Registro exitoso")
+            else:
+                return render_template("registrarse_usuario.html", form = formularioRegistro(), mensaje = "Registro fallido. Consulte con soporte tecnico")
+        
+        return render_template("registrarse_usuario.html", form = formulario, mensaje = "Registro fallido")
 
 
 

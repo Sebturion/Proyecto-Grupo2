@@ -25,6 +25,9 @@
 
     <div id="divInputs">
         <h2>Iniciar Sesión</h2>
+        {% if mensaje %}
+            {{ mensaje }}
+        {% endif %}
         <div class="formulario">
             <form id="registro" method="POST" action="{{ url_for('login') }}" onSubmit="return validar_formulario();">
                     {{ form.hidden_tag() }}
