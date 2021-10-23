@@ -1,30 +1,13 @@
 {% extends "base.html" %}
 {% block title %} Oferta vuelos {% endblock%}
- {% block style %} <link rel="stylesheet" href="{{ url_for('static', filename='css/style_vuelos.css') }}"> {% endblock %}
 {% block content %}
-<table>
-    <tr>
-        <td id="ofertas" > <h2>Ofertas de vuelos</h2> </td>
-        <td id="buscador" colspan="2">
-            <form method="POST" onsubmit="{{ url_for('vuelos') }}">
-                <div id="divBuscador">
-                    <button class="buscador" onsubmit="{{ url_for('vuelos') }}">
-                        <img src="{{ url_for('static', filename='Images/icons/bx-search.svg') }}" title="Buscar" id="imgBuscar">
-                    </button>
-                    <input name="txtBuscador" type="text" id="txtBuscador" name="buscador">
-                </div>
-            </form>
-        </td>
-    </tr>
-        <tr>
-            <td class="ofertas" id="oferta1"><div class="oferta"> Ofertas a <br> <h3>Salida1 -  Llegada1</h3> <br><br> Desde $precio1 <br><br> <button class="boton"> Reservar</button> </div></td>
-            <td class="ofertas" id="oferta2"><div class="oferta"> Ofertas a <br> <h3>Salida2 -  Llegada2</h3> <br><br> Desde $precio2 <br><br> <button class="boton"> Reservar</button> </div></td>
-            <td class="ofertas" id="oferta3"><div class="oferta"> Ofertas a <br> <h3>Salida3 -  Llegada3</h3> <br><br> Desde $precio3 <br><br> <button class="boton"> Reservar</button> </div></td>
-        </tr>
-        <tr>
-            <td class="ofertas" id="oferta4"><div class="oferta"> Ofertas a <br> <h3>Salida4 -  Llegada4</h3> <br><br> Desde $precio4 <br><br> <button class="boton"> Reservar </button> </div></td>
-            <td class="ofertas" id="oferta5"><div class="oferta"> Ofertas a <br> <h3>Salida5 -  Llegada5</h3> <br><br> Desde $precio5 <br><br> <button class="boton"> Reservar </button> </div></td>
-            <td class="ofertas" id="oferta6"><div class="oferta"> Ofertas a <br> <h3>Salida6 -  Llegada6</h3> <br><br> Desde $precio6 <br><br> <button class="boton"> Reservar </button> </div></td>
-        </tr>
-</table>
+<div class="contenedor_vuelos">
+    <div class="sub_menu">
+        <h1>Ofertas de Vuelos</h1>
+        <div class="buscador">
+            <img src="{{ url_for('static', filename='Images/icons/iconosBlancos/lupa_blanca.svg') }}" alt="">
+            <input type="text" name="buscador" id="buscador">
+        </div>
+    </div>
+</div>
 {% endblock %}

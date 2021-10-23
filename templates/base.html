@@ -10,22 +10,24 @@
 </head>
 <body>
     <div class = "inicio-header">
-        <nav>
-            <a href="">
-                <img src="{{ url_for('static', filename='Images/logos/LogosinFondoSecundario.svg') }}" class="logo" alt="Logo">
-            </a>
+        <a href="/">
+            <img src="{{ url_for('static', filename='Images/logos/LogosinFondoSecundario.svg') }}" class="logo" alt="Logo">
+        </a>
+        <nav class="menu">
             <ul>
                 <li><a href="{{ url_for('index') }}" class="link">Inicio</a></li>
                 <li><a href="{{ url_for('vuelos') }}" class="link">Vuelos</a></li>
                 <li><a href="{{ url_for('destinos') }}" class="link">Destinos</a></li>
             </ul>
-            <button type="button">
-                <a href="{{ url_for('login') }}" class="boton">Iniciar Sesion</a>
-            </button>
-            <button type="button">
-                <a href="{{ url_for('registrarse') }}" class="boton">Registrarse</a>
-            </button>
         </nav>
+        <div class="botones">
+            <button type="button">
+                <a href="{{ url_for('login') }}" class="boton_login">Iniciar Sesion</a>
+            </button>
+            <button type="button">
+                <a href="{{ url_for('registrarse') }}" class="boton_logup">Registrarse</a>
+            </button>
+        </div>
     </div>
     {% block content %}
     {% endblock %}
