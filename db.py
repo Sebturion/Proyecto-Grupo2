@@ -38,11 +38,10 @@ def ejecutarRead(_sql, valores):
             cursor = conexion.cursor()
 
             if valores:
-                cursor.execute(_sql, valores)
+                filas = cursor.execute(_sql, valores).fetchall()
             else:
-                cursor.execute(_sql, None)
+                filas = cursor.execute(_sql).fetchall()
 
-            filas = cursor.fetchall()
             cursor.close()
             conexion.close()
 

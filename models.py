@@ -1,8 +1,11 @@
 from sqlite3.dbapi2 import Error
-import db
-from werkzeug.security import generate_password_hash, check_password_hash
 
-class usuario():
+from werkzeug.security import check_password_hash, generate_password_hash
+
+import db
+
+
+class Usuario():
 
     def __init__(self, NOMBRE, CONTACTO, EMAIL, CONTRASENA):
         self.nombre = NOMBRE
@@ -35,6 +38,19 @@ class usuario():
             print("Error en la autenticacion de usuario" + str(Error))
 
 
+
+class Vuelos:
+    @staticmethod
+    def mostarVuelos(LUGAR):
+        try:
+            if LUGAR:
+                sql = "SELECT * FROM vuelo WHERE origen_vuelo = ? OR destino_vuelo = ?"
+                return db.ejecutarRead(sql, [LUGAR, LUGAR])
+            else:
+                sql = "SELECT * FROM vuelo"
+                return db.ejecutarRead(sql, None)
+        except:
+            print("Error al ejecutar select. " + str(Error))
 
 
 

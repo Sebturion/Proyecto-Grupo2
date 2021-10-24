@@ -13,9 +13,21 @@ app.config['SECRET_KEY'] = SECRET_KEY
 def index():
     return render_template('index.html')
 
-@app.route('/vuelos', methods=['GET'])
+@app.route('/vuelos', methods=['GET', 'POST'])
 def vuelos():
-    return render_template('vuelos.html')
+    if (request.method == 'GET'):
+        objeto = Vuelos.mostarVuelos(None)
+        if objeto:
+            return render_template('vuelos.html', vuelos = objeto)
+        else:
+            return render_template('vuelos.html', mensaje = "En este momento no hay ofertas de vuelos.")
+    elif (request.method == 'POST'):
+        lugar = request.form['txtBuscador']
+        objeto = Vuelos.mostarVuelos(lugar)
+        if objeto:
+            return render_template('vuelos.html', vuelos = objeto)
+        else:
+            return render_template('vuelos.html', mensaje = ("En este momento no hay ofertas de vuelos a " + lugar))
 
 @app.route('/destinos', methods=['GET'])
 def destinos():
@@ -64,7 +76,7 @@ def registrarse():
             error = True
 
         if (formulario.validate_on_submit()) and (not error):
-            nuevoUsuario = usuario(formulario.nombreApellido.data, formulario.numeroContacto.data, formulario.correo.data, formulario.contrasena.data)
+            nuevoUsuario = Usuario(formulario.nombreApellido.data, formulario.numeroContacto.data, formulario.correo.data, formulario.contrasena.data)
             if nuevoUsuario.insert():
                 return render_template("registrarse_usuario.html", form = formularioRegistro(), mensaje = "Registro exitoso")
             else:

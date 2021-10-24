@@ -106,7 +106,7 @@ td{
     border-style: none;
     background-color: #313139;
     border-radius: 10px;
-    padding: 0px;
+    padding-left: 10px;
 }
 
 #divBuscador {

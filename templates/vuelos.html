@@ -1,13 +1,47 @@
 {% extends "base.html" %}
 {% block title %} Oferta vuelos {% endblock%}
+ {% block style %} <link rel="stylesheet" href="{{ url_for('static', filename='css/style_vuelos.css') }}"> {% endblock %}
 {% block content %}
-<div class="contenedor_vuelos">
-    <div class="sub_menu">
-        <h1>Ofertas de Vuelos</h1>
-        <div class="buscador">
-            <img src="{{ url_for('static', filename='Images/icons/iconosBlancos/lupa_blanca.svg') }}" alt="">
-            <input type="text" name="buscador" id="buscador">
-        </div>
-    </div>
-</div>
+<table>
+    <tr>
+        <td id="ofertas" > <h2>Ofertas de vuelos</h2> </td>
+        <td id="buscador" colspan="2">
+            <form method="POST" action="{{ url_for('vuelos') }}">
+                <div id="divBuscador">
+                    <button type="submit" class="buscador">
+                        <img src="{{ url_for('static', filename='Images/icons/bx-search.svg') }}" title="Buscar" id="imgBuscar">
+                    </button>
+                    <input name="txtBuscador" type="text" id="txtBuscador" name="buscador">
+                </div>
+            </form>
+        </td>
+    </tr>
+
+
+    {% if mensaje %}
+        <td id="ofertas" > <h2> {{ mensaje }} </h2> </td>
+    {% endif %}
+
+
+    {% if vuelos %}
+        <tr>
+            {% for i in range(3) %}
+                {% if vuelos[i] %}
+                    <td class="ofertas"><div class="oferta"> Ofertas a <br> <h3>{{ vuelos[i]['origen_vuelo'] }}  -  {{ vuelos[i]['destino_vuelo'] }}</h3> <br><br> 
+                        Desde ${{ vuelos[i]['costo'] }}<br><br> <button class="boton"> Reservar</button> </div></td>
+                {% endif %}
+            {% endfor %}
+        </tr>
+            
+            
+        <tr>
+            {% for i in range(3,6) %}
+                {% if vuelos[i] %}
+                    <td class="ofertas"><div class="oferta"> Ofertas a <br> <h3>{{ vuelos[i]['origen_vuelo'] }}  -  {{ vuelos[i]['destino_vuelo'] }}</h3> <br><br> 
+                        Desde ${{ vuelos[i]['costo'] }}<br><br> <button class="boton"> Reservar</button> </div></td>
+                {% endif %}
+            {% endfor %}
+        </tr>
+    {% endif %}
+</table>
 {% endblock %}
