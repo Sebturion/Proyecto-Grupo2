@@ -13,6 +13,8 @@ app.config['SECRET_KEY'] = SECRET_KEY
 def index():
     return render_template('index.html')
 
+
+
 @app.route('/vuelos', methods=['GET', 'POST'])
 def vuelos():
     if (request.method == 'GET'):
@@ -29,9 +31,24 @@ def vuelos():
         else:
             return render_template('vuelos.html', mensaje = ("En este momento no hay ofertas de vuelos a " + lugar))
 
-@app.route('/destinos', methods=['GET'])
+
+
+@app.route('/destinos', methods=['GET', 'POST'])
 def destinos():
-    return render_template('destinos.html')
+    if (request.method == 'GET'):
+        objeto = Destinos.mostrarDestinos(None)
+        if objeto:
+            return render_template('destinos.html', destinos = objeto)
+        else:
+            return render_template('destinos.html', mensaje = "En este momento no destinos disponibles.")
+    elif (request.method == 'POST'):
+        destino = request.form['txtBuscador']
+        objeto = Destinos.mostrarDestinos(destino)
+        if objeto:
+            return render_template('vuelos.html', destinos = objeto)
+        else:
+            return render_template('vuelos.html', mensaje = ("No se encontró el destino que desea"))
+
 
 
 @app.route('/inicio-sesion', methods=['GET', 'POST'])

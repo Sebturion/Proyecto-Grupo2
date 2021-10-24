@@ -38,7 +38,7 @@ nav ul li{
 /*estilos del contenido*/
 table {
     margin: 0px auto;
-    border-spacing: 20px 23px;
+    border-spacing: 40px 23px;
 }
 
 td {
@@ -51,7 +51,7 @@ td {
 
 #txtBuscador {
     line-height: 45px;
-    width: 92%;
+    width: 91%;
     border-style: none;
     background-color: #313139;
     border-radius: 10px;
@@ -75,6 +75,15 @@ td {
 h3 {
     margin-bottom: 30px;
 }
+
+.buscarDestino {
+    width: 31px;
+    height: 44px;
+    padding: 0px;
+    margin: 0px;
+    background-color: #313139;
+}
+
 
 /*estilos del footer*/
 footer{

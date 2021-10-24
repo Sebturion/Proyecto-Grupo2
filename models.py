@@ -39,7 +39,7 @@ class Usuario():
 
 
 
-class Vuelos:
+class Vuelos():
     @staticmethod
     def mostarVuelos(LUGAR):
         try:
@@ -50,7 +50,23 @@ class Vuelos:
                 sql = "SELECT * FROM vuelo"
                 return db.ejecutarRead(sql, None)
         except:
-            print("Error al ejecutar select. " + str(Error))
+            print("Error al mostrar los vuelos. " + str(Error))
+
+
+
+
+class Destinos():
+    @staticmethod
+    def mostrarDestinos(DESTINO):
+        try:
+            if DESTINO:
+                sql = "SELECT * FROM destinos WHERE titulo = ?"
+                return db.ejecutarRead(sql, [DESTINO])
+            else:
+                sql = "SELECT * FROM destinos"
+                return db.ejecutarRead(sql, None)
+        except:
+            print("Error al mostrar los destinos. " + str(Error))
 
 
 
