@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -7,29 +6,24 @@
     box-sizing: border-box;
     color: #fff;
 }
-
 body {
     background-color: #1e1e26;
 }
-
 /*Estilos de la cabezera*/
 nav{
     display: flex;
     align-items: center;
     padding: 15px 6%;
 }
-
 nav ul{
     flex: 1;
     text-align: center;
 }
-
 nav ul li{
     display: inline-block;
     list-style: none;
     margin: 0 20px;
 }
-
 nav a{
     text-decoration: none;
     color: #fff;
@@ -38,7 +32,6 @@ nav a{
     font-weight: 600;
     position: relative;
 }
-
 #vuelos {
     border-width: 4px;
     border-radius: 0 0 2px 2px;
@@ -46,7 +39,6 @@ nav a{
     border-color: #fc2c5e;
     padding-bottom: 3px;
 }
-
 button{
     width: 225px;
     height: 45px;
@@ -56,16 +48,14 @@ button{
     border-radius: 10px;
     cursor: pointer;
 }
-
 .buscador {
     width: 31px;
     height: 44px;
     padding: 0px;
     margin: 0px;
     background-color: #313139;
+    display: inline;
 }
-
-
 .boton{
     text-align: center;
     text-decoration: none;
@@ -74,23 +64,19 @@ button{
     font-size: 20px;
     font-weight: bold;
 }
-
-
 /*Se creo una tabla para mostrar la informacionde los vuelos*/
 /*Estilos de la tabla*/
 table {
     margin: 20px auto;
+    margin-top: 200px;
     border-spacing: 6px;
 }
-
 #buscador {
     padding: 0 0 0 186px;
 }
-
 td{
     padding: 10px;
 }
-
 .oferta{
     width: 300px;
     padding: 15px;
@@ -98,16 +84,16 @@ td{
     border-radius: 10px;
     font-size: 15px;
 }
-
-
 #txtBuscador {
     line-height: 45px;
-    width: 92%;
+    width: 90%;
     border-style: none;
     background-color: #313139;
     border-radius: 10px;
+    padding: 0px;
     padding-left: 10px;
 }
+
 
 #divBuscador {
     background-color: #313139;
@@ -117,13 +103,13 @@ td{
     padding-left: 0px;
     padding-right: 0px;
 }
-
 #imgBuscar {
     vertical-align: middle;
+    margin-left: 3px;
+    margin-right: 0px;
     cursor: pointer;
     filter: invert();
 }
-
 /*estilos del footer*/
 footer{
     position: fixed;
@@ -146,11 +132,14 @@ footer{
     display: flex;
     justify-content: space-between;
 }
+
 .informacion a{
     font-size: 11px;
     text-decoration: none;
     color: #ffffff;
 }
+
+
 .circle{
     margin: 0px 6px;
 }
