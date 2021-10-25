@@ -29,7 +29,10 @@ def vuelos():
         if objeto:
             return render_template('vuelos.html', vuelos = objeto)
         else:
-            return render_template('vuelos.html', mensaje = ("En este momento no hay ofertas de vuelos a " + lugar))
+            if lugar == "":
+                return render_template('vuelos.html', mensaje = "En este momento no hay ofertas de vuelos.")
+            else:
+                return render_template('vuelos.html', mensaje = ("En este momento no hay ofertas de vuelos a " + lugar))
 
 
 
@@ -40,7 +43,7 @@ def destinos():
         if objeto:
             return render_template('destinos.html', destinos = objeto)
         else:
-            return render_template('destinos.html', mensaje = "En este momento no destinos disponibles.")
+            return render_template('destinos.html', mensaje = "En este momento no hay destinos disponibles.")
     elif (request.method == 'POST'):
         destino = request.form['txtBuscador']
         objeto = Destinos.mostrarDestinos(destino)
