@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_registrarse.css') }}" />
+</head>
+<body>
+    <div class = "inicio-header">
+        <nav>
+            <a href="">
+                <img src="{{ url_for('static', filename='Images/logos/LogosinFondoSecundario.svg') }}" class="logo" alt="Logo">
+            </a>
+            <ul>
+                <li><a href="{{ url_for('main.index') }}" class="link">Inicio</a></li>
+
+            </ul>
+        </nav>
+    </div>
+
+
+
+    <div id="divInputs">
+        <h2>Registrarse</h2>
+        <p class="errores" id="mensaje">
+            {% if mensaje %}
+                {{ mensaje }}
+            {% endif %}
+        </p>
+
+        <div class="formulario">
+            <form id="registro" method="POST" action="{{ url_for('auth.register') }}" onSubmit="return validar_formulario();">
+                {{ form.hidden_tag() }}
+                <div class="divInformacion">
+                    {{ form.username(id="txtNombre", placeholder="Nombres y Apellidos", maxlength=30, pattern="[A-Z a-z]{0,30}", minlength=5, title="Ingrese su nombre y apellido. No use caracteres especiales") }}
+                    <p class="errores" id="error1"></p>
+                </div>
+
+
+                <div class="divInformacion">
+                    {{ form.email(id="email", placeholder="Email", maxlength=50) }}
+                    <p class="errores" id="error3"></p>
+                </div>
+
+                <div class="divInformacion" id="divPassword">
+                    {{ form.password(id="password", placeholder="Contraseña", maxlength=20) }}
+                    <p class="errores" id="error4"></p>
+                </div>
+
+                <div class="divInformacion" id="divConfirmar">
+                    {{ form.confirm_password(id="confirmPassword", placeholder="Confirmar contraseña", maxlength=20) }}
+                    <p class="errores" id="error5"></p>
+                </div>
+
+                {{ form.submit }}
+            </form>
+        </div>
+        <p> ¿Ya tienes una cuenta? <a href="{{ url_for('auth.login') }}">Inicia Sesión </a> </p>
+    </div>
+
+    <footer>
+        <div class="contenedor-footer">
+            <div class="footer">
+                <div class="informacion">
+                    <a href="">Informacion Equipo</a>
+                    <svg class="circle" version="1.1" xmlns="http://www.w3.org/2000/svg" width="3" heigth="3" viewBox="0 0 120 120">
+                        <circle cx="60" cy="60" r="50" fill="White"/>
+                    </svg>
+                    <a href="">Politica de Privacidad</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script src="{{ url_for('static', filename='js/registrarse.js') }}"></script>
+</body>
+</html>

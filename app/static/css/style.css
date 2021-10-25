@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap');
+/* Variables de Colores */
+:root{
+    --rosaPrimario: #fc2c5e;
+    --rosaPrimarioHover: #FF3F6D;
+    --rosaPrimarioPress: #DF1C4B;
+    --oscuroPrimario: #1e1e26;
+    --oscuroSecundario: #313139;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito Sans', sans-serif;
+    box-sizing: border-box;
+    color: white;
+}
+
+body{
+    background-color: var(--oscuroPrimario);
+}
+
+/* Desde este punto empiezan los estilos para el header 
+de la pagina.*/
+.inicio-header {
+    height: 70px;
+    width: 100%;
+    color: #fff;
+    top: 0;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 100px;
+    background-color: var(--oscuroPrimario);
+}
+
+.logo{
+    width: 30px;
+    height: 60px;
+    cursor: pointer;
+    padding-top: 10px;
+}
+
+.menu ul{
+    display: flex;
+    list-style: none;
+}
+
+.menu ul li{
+    margin: 0px 20px;
+}
+
+.link{
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    position: relative;
+}
+/*las clases "link:after", y "link:hover::after" corresponden al efecto
+hover de antes y despues (respectivamente) que se ve al pasar el cursor
+sobre los links que estan en el header(Inicio, Vuelos, y Destinos).*/
+.link:after{
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: var(--rosaPrimario);
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transition: all .3s;
+    will-change: width;
+}
+.link:hover::after{
+    width: 100%;
+    right: 0;
+}
+
+button{
+    background-color:  var(--rosaPrimario);
+    width: 150px;
+    height: 45px;
+    border-radius: 7px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+
+.botones{
+    width: 320px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*las clases "button:active", y "button:hover" corresponden al efecto
+hover de antes y despues (respectivamente) que se ve al pasar el cursor
+sobre los botones que estan en el header(Iniciar Sesion, y registrarse).*/
+button:active{
+    background-color:  var(--rosaPrimarioPress);
+}
+button:hover{
+    background-color:  var(--rosaPrimarioHover);
+}
+
+.boton_login{
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+}
+.boton_logup{
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+}
+/* Aquí finaliza los estilos para el header */
+
+/* Aquí inicia el título y mensaje principal más el carrusel de imagenes */
+.bienvenida{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 100px;
+    margin-bottom: 30px;
+}
+.tituloPrincipal{
+    font-size: 87px;
+    color: #ffffff;
+}
+.mensajePrincipal{
+    width: 450px;
+    font-size: 17px;
+    color: #fff;
+    text-align: center;
+}
+
+.textos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Carrusel de imagenes */
+.slider{
+    right: 0;
+    width: 600px;
+    height: 320px;
+    overflow: hidden;
+    border-radius: 7px;
+}
+.slider ul{
+    display: flex;
+    animation: cambio 15s infinite alternate linear;
+    width: 400%;
+}
+.slider li{
+    width: 100%;
+    list-style: none;
+}
+.slider img{
+    width: inherit;
+    height: inherit;
+    cursor: pointer;
+}
+@keyframes cambio {
+    0%{margin-left: 0;}
+    20%{margin-left: 0;}
+
+    25%{margin-left: -100%;}
+    45%{margin-left: -100%;}
+
+    50%{margin-left: -200%;}
+    70%{margin-left: -200%;}
+
+    75%{margin-left: -300%;}
+    100%{margin-left: -300%;}
+}
+/* final de carrusel de imagenes */
+/* Aquí finaliza el el contenido de bienvenida de los destinos */
+.contenido_destino{
+    width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.contenido_destino h1{
+    margin-bottom: 40px;
+}
+
+/* Desde aquí empieza el footer */
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--oscuroPrimario);
+    color: #fff;
+}
+.contenedor-footer{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer{
+    font-size: 80%;
+    max-width:1200px;
+    margin: auto;
+    background-color:  var(--oscuroPrimario);
+    display: flex;
+    justify-content: space-between;
+}
+.informacion a{
+    font-size: 11px;
+    text-decoration: none;
+    color: #ffffff;
+}
+.circle{
+    margin: 0px 6px;
+}
+@media screen and (max-width: 1100px){
+    .footer{
+        flex-wrap: wrap;
+    }
+}
+/* Aquí termina el footer */
+
+/* --------------------------------------VUELOS---------------------------------------------- */
+
+.contenedor_vuelos{
+    margin-top: 90px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0px 100px;
+}
+
+.sub_menu{
+    width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.sub_menu h1{
+    font-size: 25px;
+}
+
+.contendeor{
+    width: 800px;
+    margin: auto;
+}
+
+.buscador{
+    margin-left: 100px;
+    display: flex;
+    align-items: center;
+    width: 300px;
+    height: 45px;
+    background-color: var(--oscuroSecundario);
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+.buscador input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: var(--oscuroSecundario);
+    padding: 10px;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.buscador img{
+    width: 20px;
+    margin-left: 15px;
+}
+
+/* ------------------------------------------DESTINOS-------------------------------------------------- */
+

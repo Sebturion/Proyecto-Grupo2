@@ -17,3 +17,7 @@ Especificacion manejadores
 | /validar-login | POST | [correo, contrasenia] | Valida si el usuario es valido y si es un super usuario, usuario final o piloto |
 | /registrarse | POST | [nombre,telefono,correo, contrasenia,confirmarContrasenia] | Valida que los datos ingresados no esten vacios y registra un nuevo usuario final |
 | /registrarse | GET |  | Muestra la pantalla de creacion de usuarios finales |
+
+
+## RUN MIGRATIONS
+

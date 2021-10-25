@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap');
+/* Variables principales */
+:root{
+    --rosaPrimario: #fc2c5e;
+    --rosaPrimarioHover: #FF3F6D;
+    --rosaPrimarioPress: #DF1C4B;
+    --oscuroPrimario: #1e1e26;
+    --oscuroSecundario: #313139;
+    --width-collapsed: 90px;
+    --width-expanded: 290px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito Sans', sans-serif;
+    box-sizing: border-box;
+    color: white;
+}
+
+body{
+    background-color: var(--oscuroPrimario);
+    margin-left: var(--width-collapsed);
+}
+
+/*aqui empieza el menu lateral*/
+.body-expanded{
+  margin-left: 300px;
+}
+#main-container{
+  color: #fff;
+}
+#sidemenu{
+  background-color: var(--oscuroSecundario);
+  color: #fff;
+  position: fixed;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+#sidemenu a{
+  color: #fff;
+  text-decoration: none;
+}
+.logo-menu img{
+  height: 100%;
+  padding: 20px;
+}
+/*El header del menu es el logo de la pagina*/
+#sidemenu #header{
+  box-sizing: border-box;
+  border-bottom: solid 1px var(--oscuroSecundario);
+}
+#sidemenu #header #title{
+  box-sizing: border-box;
+  overflow: hidden;
+}
+#sidemenu #header #title, #sidemenu #header #menu-btn{
+  vertical-align: middle;
+}
+#sidemenu #header #menu-btn{
+  display: inline-block;
+  padding: 10px;
+  width: var(--width-collapsed);
+  box-sizing: border-box;
+}
+#sidemenu #header:hover{
+  cursor: pointer;
+  background-color: var(--oscuroPrimario);
+}
+/*El "#menu-items .item" contiene .icon y .title que corresponden(respectivamente) al icono y el texo que se ve al desplegar el menu*/
+#sidemenu #menu-items{
+  overflow: hidden;
+}
+#sidemenu #menu-items .item{
+  width: var(--width-expanded);
+}
+#sidemenu #menu-items .item .icon{
+  display: inline-block;
+}
+#sidemenu #menu-items .item .title{
+  font-size: 14px;
+  vertical-align: middle;
+  overflow: hidden;
+  display: inline-block;
+}
+#sidemenu #menu-items .item a{
+  display: block;
+}
+#sidemenu #menu-items .item a:hover{
+  background-color: var(--rosaPrimario);
+}
+#sidemeu #menu-items .item .icon{
+  box-sizing: border-box;
+  padding: 10px;
+  width: var(--width-collapsed);
+}
+#sidemenu #menu-items .item .icon img{
+  margin-left: 21px;
+  margin-top: 20px;
+  width: 100%;
+  height: 25px;
+}
+#sidemenu #menu-items .item .title{
+  font-size: 16px;
+  padding-left: 50px;
+  padding-bottom: 25px;
+}
+/*"menu-collapsed" corresponde a cuado el menu se encuentra contraido y 
+"menu-expanded" corresponde a cuando el menu esta desplegado*/
+.menu-expanded{
+  width: var(--width-expanded);
+  box-shadow: 0 0 10px var(--oscuroPrimario);
+}
+.menu-expanded #header #title{
+  display: inline-block;
+  width: calc(100% - 50px);
+  margin-right: -5px;
+  padding: 10px;
+}
+.menu-expanded #header #title span{
+  width: calc(var(--width-expanded) - var(--width-collapsed) - 5px);
+  overflow: hidden;
+}
+.menu-collapsed{
+  width: var(--width-collapsed);
+}
+.menu-collapsed #header #title{
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+}
+.menu-collapsed .item{
+  width: 100px;
+}
+/*termina el menu lateral*/
+/* ---------PERSONALIZACIÓN DEL CONTENIDO PRINCIPAL--------- */
+.contenido_principal{
+    width: 900px;
+    display: flex;
+    overflow: hidden;
+}
+
+.primera_columna{
+    width: 100%;
+    margin-right:20px;
+}
+
+.primera_columna h2{
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.primera_columna p{
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+#cvuelo{
+    outline: none;
+    width: 100%;
+    height: 45px;
+    margin-bottom: 20px; 
+    padding: 10px;
+    background-color: var(--oscuroSecundario);
+    border: none;
+    border-radius: 7px;
+}
+
+#vfvuelo{
+    width: 100%;
+    height: 45px;
+    background-color: var(--rosaPrimario);
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.mostrarDatosVuelo{
+    width: 100%;
+    height: 250px;
+    background-color: #313139;
+    border-radius: 7px;
+    margin-top: 20px;
+}
+
+/* ---------SEGUNDA COLUMNA--------- */
+.segunda_columna{
+    width: 700px;
+    padding-top: 60px;
+}
+.com_ranking{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.com_ranking h2{
+    font-size: 17px;
+}
+
+.contenido{
+    margin-left: 90px;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#textComent{
+    outline: none;
+    width: 100%;
+    background-color: var(--oscuroSecundario);
+    border: none;
+    padding: 10px;
+    border-radius: 7px;
+    margin-bottom: 10px;
+}
+
+#comentar{
+    width: 100%;
+    height: 45px;
+    background-color: var(--rosaPrimario);
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.can_mod{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+#canvuelo{
+    width: 48%;
+    height: 45px;
+    background-color: var(--rosaPrimario);
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+#movuelo{
+    width: 48%;
+    height: 45px;
+    background-color: var(--rosaPrimario);
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+}
+/* ---------FIN DE LA PERSONALIZACIÓN DEL CONTENIDO PRINCIPAL--------- */
+
+/* Desde aquí empieza el footer */
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--oscuroPrimario);
+    color: #fff;
+}
+.contenedor-footer{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+}
+.footer{
+    font-size: 80%;
+    max-width:1200px;
+    margin: auto;
+    background-color:  var(--oscuroPrimario);
+    display: flex;
+    justify-content: space-between;
+}
+.informacion a{
+    font-size: 11px;
+    text-decoration: none;
+    color: #ffffff;
+}
+.circle{
+    margin: 0px 6px;
+}
+
+@media screen and (max-width: 1100px){
+    .footer{
+        flex-wrap: wrap;
+    }
+}
+/* Aquí termina el footer */

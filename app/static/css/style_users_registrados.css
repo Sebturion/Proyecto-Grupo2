@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap');
+/* Variables principales */
+:root{
+    --rosaPrimario: #fc2c5e;
+    --rosaPrimarioHover: #FF3F6D;
+    --rosaPrimarioPress: #DF1C4B;
+    --oscuroPrimario: #1e1e26;
+    --oscuroSecundario: #313139;
+    --width-collapsed: 90px;
+    --width-expanded: 290px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--oscuroPrimario);
+    margin-left: var(--width-collapsed);
+}
+
+/*aqui empieza el menu lateral*/
+.body-expanded{
+  margin-left: 300px;
+}
+#main-container{
+  color: #fff;
+}
+#sidemenu{
+  background-color: var(--oscuroSecundario);
+  color: #fff;
+  position: fixed;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+#sidemenu a{
+  color: #fff;
+  text-decoration: none;
+}
+.logo-menu img{
+  height: 100%;
+  padding: 20px;
+}
+/*El header del menu es el logo de la pagina*/
+#sidemenu #header{
+  box-sizing: border-box;
+  border-bottom: solid 1px var(--oscuroSecundario);
+}
+#sidemenu #header #title{
+  box-sizing: border-box;
+  overflow: hidden;
+}
+#sidemenu #header #title, #sidemenu #header #menu-btn{
+  vertical-align: middle;
+}
+#sidemenu #header #menu-btn{
+  display: inline-block;
+  padding: 10px;
+  width: var(--width-collapsed);
+  box-sizing: border-box;
+}
+#sidemenu #header:hover{
+  cursor: pointer;
+  background-color: var(--oscuroPrimario);
+}
+/*El "#menu-items .item" contiene .icon y .title que corresponden(respectivamente) al icono y el texo que se ve al desplegar el menu*/
+#sidemenu #menu-items{
+  overflow: hidden;
+}
+#sidemenu #menu-items .item{
+  width: var(--width-expanded);
+}
+#sidemenu #menu-items .item .icon{
+  display: inline-block;
+}
+#separacion-icon{
+  margin-bottom: 170px;
+}
+#sidemenu #menu-items .item .title{
+  font-size: 14px;
+  vertical-align: middle;
+  overflow: hidden;
+  display: inline-block;
+}
+#sidemenu #menu-items .item a{
+  display: block;
+}
+#sidemenu #menu-items .item a:hover{
+  background-color: var(--rosaPrimario);
+}
+#sidemeu #menu-items .item .icon{
+  box-sizing: border-box;
+  padding: 10px;
+  width: var(--width-collapsed);
+}
+#sidemenu #menu-items .item .icon img{
+  margin-left: 21px;
+  margin-top: 20px;
+  width: 100%;
+  height: 25px;
+}
+#sidemenu #menu-items .item .title{
+  font-size: 16px;
+  padding-left: 50px;
+  padding-bottom: 25px;
+}
+/*"menu-collapsed" corresponde a cuado el menu se encuentra contraido y 
+"menu-expanded" corresponde a cuando el menu esta desplegado*/
+.menu-expanded{
+  width: var(--width-expanded);
+  box-shadow: 0 0 10px var(--oscuroPrimario);
+}
+.menu-expanded #header #title{
+  display: inline-block;
+  width: calc(100% - 50px);
+  margin-right: -5px;
+  padding: 10px;
+}
+.menu-expanded #header #title span{
+  width: calc(var(--width-expanded) - var(--width-collapsed) - 5px);
+  overflow: hidden;
+}
+.menu-collapsed{
+  width: var(--width-collapsed);
+}
+.menu-collapsed #header #title{
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+}
+.menu-collapsed .item{
+  width: 100px;
+}
+/*termina el menu lateral*/
+
+/*aqui empieza el vizualisador delos usuarios/pilotos registrados*/
+.autocomplete {
+    /*el contenedor debe tener una posición relativa:*/
+    position: relative;
+    margin-left: 36%;
+    display: inline-block;
+  }
+  p{
+      margin-top: 30%;
+      font-size: 23px;
+      font-weight: bold;
+      color: #fff;
+      margin-bottom: 20px;
+  }
+  input {
+    outline: none;
+    border: 1px transparent;
+    background-color: var(--oscuroSecundario);
+    color: #fff;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    background-color: var(--oscuroSecundario);
+    width: 100%;
+  }
+  /*a aquellos que input que tienen la clase "daatos" no se les aplica la funcion de autocompletar
+  y deben ser donde se muestre la informacion del usuario/piloto seleccionado*/
+  .datos{
+      position: relative;
+      margin-top: 5%;
+      width: 100%;
+  }
+  .autocomplete-items {
+    position: absolute;
+    border: 1px solid var(--oscuroPrimario);
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    /*se hubican los elementos de autocompletar para que tengan el mismo ancho que el contenedor:*/
+    top: 100%;
+    left: 0;
+    right: 0;
+  }
+  .autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: var(--oscuroSecundario);
+    border-bottom: 1px solid var(--oscuroSecundario);
+    color: #fff;
+  }
+  .autocomplete-items div:hover {
+    /*when hovering an item:*/
+    background-color: #e9e9e9;
+    color: #1e1e26;
+  }
+  .autocomplete-active {
+    /*cuando se navega por los elementos utilizando las teclas de flecha:*/
+    background-color: var(--rosaPrimario) !important;
+    color: #fff;
+  }
+
+  button{
+    background-color:  var(--rosaPrimario);
+    padding: 12px 20px;
+    margin-top: 5%;
+    margin-inline: 4px;
+    border-radius: 7px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+button:hover{
+    background-color:  var(--rosaPrimarioHover);
+}
+button:active{
+    background-color:  var(--rosaPrimarioPress);
+}
+.boton{
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+
+}
+
+/* Desde aquí empieza el footer */
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--oscuroPrimario);
+    color: #fff;
+}
+.contenedor-footer{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+}
+.footer{
+    font-size: 80%;
+    max-width:1200px;
+    margin: auto;
+    background-color:  var(--oscuroPrimario);
+    display: flex;
+    justify-content: space-between;
+}
+.informacion a{
+    font-size: 11px;
+    text-decoration: none;
+    color: #ffffff;
+}
+.circle{
+    margin: 0px 6px;
+}
+
+@media screen and (max-width: 1100px){
+    .footer{
+        flex-wrap: wrap;
+    }
+}
+/* Aquí termina el footer */
