@@ -17,9 +17,14 @@ def index():
 def vuelos():
     return render_template('vuelos.html')
 
+
 @app.route('/destinos', methods=['GET'])
 def destinos():
-    return render_template('destinos.html')
+    if (request.method == 'GET'):
+        objeto = Destinos.mostrarDestinos(None)
+        return render_template('destinos.html', destinos = objeto)
+    else:
+        print("hubo un error")
 
 
 @app.route('/inicio-sesion', methods=['GET', 'POST'])
@@ -94,7 +99,4 @@ def comentarios_admin():
 def usuarios_registrados():
     return render_template('usuarios_registrados.html')
 
-
-
-
-app.run(port = 3000)
+app.run(port = 3000, debug=True)

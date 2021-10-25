@@ -1,5 +1,5 @@
-from sqlite3.dbapi2 import Error
 import db
+from sqlite3.dbapi2 import Error
 from werkzeug.security import generate_password_hash, check_password_hash
 
 class usuario():
@@ -35,6 +35,18 @@ class usuario():
             print("Error en la autenticacion de usuario" + str(Error))
 
 
+class Destinos():
+    @staticmethod
+    def mostrarDestinos(DESTINO):
+        try:
+            if DESTINO:
+                sql = "SELECT * FROM destinos WHERE titulo = ?"
+                return db.ejecutarRead(sql, [DESTINO])
+            else:
+                sql = "SELECT * FROM destinos"
+                return db.ejecutarRead(sql, None)
+        except:
+            print("Error al mostrar los destinos. " + str(Error))
 
 
 

@@ -32,17 +32,16 @@ def ejecutarCUD(_sql, valores):
 
 def ejecutarRead(_sql, valores):
     try:
-        conexion = conectar()
+        conexion = conectar() 
         if conexion:
             conexion.row_factory = convertir_diccionarios
             cursor = conexion.cursor()
 
             if valores:
-                cursor.execute(_sql, valores)
+                filas = cursor.execute(_sql, valores).fetchall()
             else:
-                cursor.execute(_sql, None)
+                filas = cursor.execute(_sql).fetchall()
 
-            filas = cursor.fetchall()
             cursor.close()
             conexion.close()
 

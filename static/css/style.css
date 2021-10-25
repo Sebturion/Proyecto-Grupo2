@@ -27,18 +27,19 @@ de la pagina.*/
     width: 100%;
     color: #fff;
     top: 0;
-    position: fixed;
+    position: absolute;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 100px;
-    margin-top: 10px;
+    padding: 10px 100px;
+    background-color: var(--oscuroPrimario);
 }
 
 .logo{
-    width: 33px;
-    height: 65px;
+    width: 30px;
+    height: 60px;
     cursor: pointer;
+    padding-top: 10px;
 }
 
 .menu ul{
@@ -127,20 +128,25 @@ button:hover{
     justify-content: space-between;
     align-items: center;
     padding: 0px 100px;
+    margin-bottom: 30px;
 }
 .tituloPrincipal{
     font-size: 87px;
     color: #ffffff;
 }
 .mensajePrincipal{
+    width: 450px;
     font-size: 17px;
     color: #fff;
     text-align: center;
 }
 
 .textos{
-    margin-right: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
 /* Carrusel de imagenes */
 .slider{
     right: 0;
@@ -177,7 +183,16 @@ button:hover{
     100%{margin-left: -300%;}
 }
 /* final de carrusel de imagenes */
-/* Aquí finaliza el el contenido de bienvenida */
+/* Aquí finaliza el el contenido de bienvenida de los destinos */
+.contenido_destino{
+    width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.contenido_destino h1{
+    margin-bottom: 40px;
+}
 
 /* Desde aquí empieza el footer */
 footer{
@@ -222,26 +237,32 @@ footer{
 /* --------------------------------------VUELOS---------------------------------------------- */
 
 .contenedor_vuelos{
-    margin-top: 140px;
+    margin-top: 90px;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 0px 100px;
 }
 
 .sub_menu{
-    width: 100%;
+    width: 800px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .sub_menu h1{
     font-size: 25px;
 }
 
+.contendeor{
+    width: 800px;
+    margin: auto;
+}
+
 .buscador{
-    margin-left: 500px;
+    margin-left: 100px;
     display: flex;
     align-items: center;
     width: 300px;
@@ -265,3 +286,6 @@ footer{
     width: 20px;
     margin-left: 15px;
 }
+
+/* ------------------------------------------DESTINOS-------------------------------------------------- */
+
