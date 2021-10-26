@@ -1,53 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap');
-* {
-    margin: 0;
-    padding: 0;
-    font-family: 'Nunito Sans', sans-serif;
-    box-sizing: border-box;
-    color: #fff;
-}
-body {
-    background-color: #1e1e26;
-}
-/*Estilos de la cabezera*/
-nav{
-    display: flex;
-    align-items: center;
-    padding: 15px 6%;
-}
-nav ul{
-    flex: 1;
-    text-align: center;
-}
-nav ul li{
-    display: inline-block;
-    list-style: none;
-    margin: 0 20px;
-}
-nav a{
-    text-decoration: none;
-    color: #fff;
-    padding: 10px;
-    font-size: 15px;
-    font-weight: 600;
-    position: relative;
-}
-#vuelos {
-    border-width: 4px;
-    border-radius: 0 0 2px 2px;
-    border-style: none none solid ;
-    border-color: #fc2c5e;
-    padding-bottom: 3px;
-}
-button{
-    width: 225px;
-    height: 45px;
-    background-color: #fc2c5e;
-    padding: 0 14px ;
-    margin: 0 10px;
-    border-radius: 10px;
-    cursor: pointer;
-}
+
 .buscador {
     width: 31px;
     height: 44px;
@@ -56,14 +7,7 @@ button{
     background-color: #313139;
     display: inline;
 }
-.boton{
-    text-align: center;
-    text-decoration: none;
-    color: #fff;
-    width: 95%;
-    font-size: 20px;
-    font-weight: bold;
-}
+
 /*Se creo una tabla para mostrar la informacionde los vuelos*/
 /*Estilos de la tabla*/
 table {

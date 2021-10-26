@@ -1,42 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Nunito Sans', sans-serif;
-    color: #fff;
-    box-sizing: border-box;
-}
-.inicio-header {
-    min-height: 14vh;
-    width: 100%;
-    color: #fff;
-    position: relative;
-}
-nav{
-    display: flex;
-    align-items: center;
-    padding: 15px 6% 0px 6%;
-    margin-bottom: 0px;
-}
-nav .logo{
-    width: 33px;
-    height: 65px;
-    cursor: pointer;
-}
-nav ul{
-    flex: 1;
-    text-align: center;
-}
-nav ul li{
-    display: inline-block;
-    list-style: none;
-    margin: 0 20px;
-}
-
 
 /*estilos del contenido*/
 table {
+    padding-top: 80px;
     margin: 0px auto;
     border-spacing: 40px 23px;
 }
