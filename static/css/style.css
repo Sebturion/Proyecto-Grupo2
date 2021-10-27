@@ -27,7 +27,7 @@ de la pagina.*/
     width: 100%;
     color: #fff;
     top: 0;
-    position: fixed;
+    position: absolute;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -220,47 +220,108 @@ footer{
 
 /* --------------------------------------VUELOS---------------------------------------------- */
 
-.contenedor_vuelos{
-    margin-top: 140px;
-    width: 100%;
+.table_vuelo {
+    padding: 80px 0px;
+    margin: 0px auto;
+    border-spacing: 40px 23px;
+}
+
+td{
+    padding: 10px;
+}
+
+.contenedor_menu{
+    width: 880px;
     display: flex;
     justify-content: space-between;
-    padding: 0px 100px;
-}
-
-.sub_menu{
-    width: 100%;
-    display: flex;
     align-items: center;
-    justify-content: center;
 }
 
-.sub_menu h1{
-    font-size: 25px;
-}
 
-.buscador{
-    margin-left: 500px;
-    display: flex;
-    align-items: center;
-    width: 300px;
-    height: 45px;
-    background-color: var(--oscuroSecundario);
-    border-radius: 7px;
-    overflow: hidden;
-}
-
-.buscador input{
-    height: 45px;
-    width: 100%;
+#txtBuscador_vuelo {
+    line-height: 45px;
+    width: 90%;
+    border-style: none;
+    background-color: #313139;
+    border-radius: 10px;
+    padding: 0px;
+    padding:0px 10px;
     outline: none;
-    border: none;
-    background-color: var(--oscuroSecundario);
-    padding: 10px;
-    font-family: 'Nunito Sans', sans-serif;
 }
 
-.buscador img{
-    width: 20px;
-    margin-left: 15px;
+
+#divBuscador_vuelo{
+    background-color: #313139;
+    border-radius: 7px;
+    width: 400px;
+    height: 45px;
+    display: flex;
+}
+
+#divBuscador_vuelo button{
+    background-color: var(--oscuroSecundario);
+    width: 35px;
+}
+
+#imgBuscar_vuelo{
+    vertical-align: middle;
+    margin-right: 0px;
+    cursor: pointer;
+    filter: invert();
+}
+
+
+
+/* --------------------------------------------DESTINOS-------------------------------------- */
+
+
+/*estilos del contenido*/
+table {
+    padding: 80px 0px;
+    margin: 0px auto;
+    border-spacing: 40px 23px;
+}
+
+td {
+    text-align: center;
+}
+
+#buscador {
+    padding: 0 0 0 186px;
+}
+
+#txtBuscador {
+    line-height: 45px;
+    width: 91%;
+    border-style: none;
+    background-color: #313139;
+    border-radius: 10px;
+    padding: 0px 10px;
+    outline: none;
+}
+
+#divBuscador {
+    background-color: #313139;
+    border-radius: 10px;
+    width: 400px;
+    height: 45px;
+    padding-left: 10px;
+}
+
+#imgBuscar {
+    vertical-align: middle;
+    cursor: pointer;
+    filter: invert();
+}
+
+h3 {
+    margin-bottom: 30px;
+}
+
+.buscarDestino {
+    width: 31px;
+    height: 44px;
+    padding: 0px;
+    margin: 0px;
+    background-color: #313139;
 }

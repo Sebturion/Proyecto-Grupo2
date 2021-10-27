@@ -24,7 +24,7 @@ def vuelos():
         else:
             return render_template('vuelos.html', mensaje = "En este momento no hay ofertas de vuelos.")
     elif (request.method == 'POST'):
-        lugar = request.form['txtBuscador']
+        lugar = request.form['txtBuscador_vuelo']
         objeto = Vuelos.mostarVuelos(lugar)
         if objeto:
             return render_template('vuelos.html', vuelos = objeto)
@@ -129,4 +129,6 @@ def usuarios_registrados():
 
 
 
-app.run(port = 3000)
+if __name__ =="__main__":
+    app.run(port = 3000, debug=True)
+ 

@@ -1,17 +1,16 @@
 {% extends "base.html" %}
 {% block title %} Oferta vuelos {% endblock%}
- {% block style %} <link rel="stylesheet" href="{{ url_for('static', filename='css/style_vuelos.css') }}"> {% endblock %}
 {% block content %}
-<table>
-    <tr>
+<table class="table_vuelo">
+    <tr class="contenedor_menu">
         <td id="ofertas" > <h2>Ofertas de vuelos</h2> </td>
-        <td id="buscador" colspan="2">
+        <td id="buscador_vuelo" colspan="2">
             <form method="POST" action="{{ url_for('vuelos') }}">
-                <div id="divBuscador">
-                    <button type="submit" class="buscador">
-                        <img src="{{ url_for('static', filename='Images/icons/bx-search.svg') }}" title="Buscar" id="imgBuscar">
+                <div id="divBuscador_vuelo">
+                    <button type="submit" class="buscador_vuelo">
+                        <img src="{{ url_for('static', filename='Images/icons/bx-search.svg') }}" title="Buscar" id="imgBuscar_vuelo">
                     </button>
-                    <input name="txtBuscador" type="text" id="txtBuscador" name="buscador">
+                    <input name="txtBuscador_vuelo" type="text" id="txtBuscador_vuelo" name="buscador">
                 </div>
             </form>
         </td>
