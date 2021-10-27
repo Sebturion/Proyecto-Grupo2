@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuracion</title>
+    <link rel="stylesheet" href="static/css/style_configuracion_piloto.css">
+</head>
+<body>
+    <div id="sidemenu" class="menu-collapsed">
+        <div id="header">
+            <div id="menu-btn">
+                <div class="logo-menu"><img src="static/Images/logos/LogosinFondoSecundario.svg" alt=""></div>
+            </div>
+        </div>
+        <div id="menu-items">
+            <div class="item" id="separacion-icon">
+                <a href="">
+                    <div class="icon"><img src="static/Images/icons/iconosBlancos/VuelosAsigados-blanco.svg" alt=""></div>
+                    <div class="title"><span>Vuelos Asignados</span></div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="">
+                    <div class="icon"><img src="static/Images/icons/iconosBlancos/Setting-blanco.svg" alt=""></div>
+                    <div class="title"><span>Configuraciones</span></div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="">
+                    <div class="icon"><img src="static/Images/icons/iconosBlancos/Logout-blanco.svg" alt=""></div>
+                    <div class="title"><span>Cerrar Sesion</span></div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <script type="text/javascript" src="static/js/sidemenu.js"></script>
+
+    <div class="contenido_principal">
+        <div class="content">
+            <h2>Información Personal</h2>
+            <div class="informacion_usuario">
+                <div class="contenedor_recorte">
+                    <img src="/static/Images/Usuarios/Usuario1.jpg" alt="">
+                </div>
+                <h4 id="nombre_usuario">Nombre de la Persona</h4>
+                <p id="numero_usuario">123 456 78 90</p>
+            </div>
+            <div class="informacion_contacto">
+                <div class="correo">
+                    <h4>Correo</h4>
+                    <input type="text" id="correo_usuario">
+                </div>
+                <div class="contrasena">
+                    <h4>Contraseña</h4>
+                    <div class="mostrar_contra">
+                        <input type="password" id="contraseña_usuario">
+                        <button><img src="/static/Images/icons/iconosBlancos/Mostrar-blanco.svg" alt=""></button>
+                    </div>
+                </div>
+            </div>
+            <div class="botones">
+                <button id="editar">Guardar</button>
+                <button id="eliminar">Eliminar Cuenta</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="contenedor-footer">
+            <div class="footer">
+                <div class="informacion">
+                    <a href="">Informacion Equipo</a>
+                    <svg class="circle" version="1.1" xmlns="http://www.w3.org/2000/svg" width="3" heigth="3" viewBox="0 0 120 120">
+                        <circle cx="60" cy="60" r="50" fill="White"/>
+                    </svg>
+                    <a href="">Politica de Privacidad</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
