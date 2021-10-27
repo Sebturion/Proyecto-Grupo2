@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap');
+/* Variables principales */
+:root{
+    --rosaPrimario: #fc2c5e;
+    --rosaPrimarioHover: #FF3F6D;
+    --rosaPrimarioPress: #DF1C4B;
+    --oscuroPrimario: #1e1e26;
+    --oscuroSecundario: #313139;
+    --oscuroTerciario: #35353d;
+    --width-collapsed: 90px;
+    --width-expanded: 290px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--oscuroPrimario);
+    margin-left: var(--width-collapsed);
+}
+
+/*aqui empieza el menu lateral*/
+.body-expanded{
+  margin-left: 300px;
+}
+#main-container{
+  color: #fff;
+}
+#sidemenu{
+  background-color: var(--oscuroSecundario);
+  color: #fff;
+  position: fixed;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+#sidemenu a{
+  color: #fff;
+  text-decoration: none;
+}
+.logo-menu img{
+  height: 100%;
+  padding: 20px;
+}
+/*El header del menu es el logo de la pagina*/
+#sidemenu #header{
+  box-sizing: border-box;
+  border-bottom: solid 1px var(--oscuroSecundario);
+}
+#sidemenu #header #title{
+  box-sizing: border-box;
+  overflow: hidden;
+}
+#sidemenu #header #title, #sidemenu #header #menu-btn{
+  vertical-align: middle;
+}
+#sidemenu #header #menu-btn{
+  display: inline-block;
+  padding: 10px;
+  width: var(--width-collapsed);
+  box-sizing: border-box;
+}
+#sidemenu #header:hover{
+  cursor: pointer;
+  background-color: var(--oscuroPrimario);
+}
+/*El "#menu-items .item" contiene .icon y .title que corresponden(respectivamente) al icono y el texo que se ve al desplegar el menu*/
+#sidemenu #menu-items{
+  overflow: hidden;
+}
+#sidemenu #menu-items .item{
+  width: var(--width-expanded);
+}
+#sidemenu #menu-items .item .icon{
+  display: inline-block;
+}
+#sidemenu #menu-items .item .title{
+  font-size: 14px;
+  vertical-align: middle;
+  overflow: hidden;
+  display: inline-block;
+}
+#sidemenu #menu-items .item a{
+  display: block;
+}
+#sidemenu #menu-items .item a:hover{
+  background-color: var(--rosaPrimario);
+}
+#sidemeu #menu-items .item .icon{
+  box-sizing: border-box;
+  padding: 10px;
+  width: var(--width-collapsed);
+}
+#separacion-icon{
+  margin-bottom: 300px;
+}
+#sidemenu #menu-items .item .icon img{
+  margin-left: 21px;
+  margin-top: 20px;
+  width: 100%;
+  height: 25px;
+}
+#sidemenu #menu-items .item .title{
+  font-size: 16px;
+  padding-left: 50px;
+  padding-bottom: 25px;
+}
+/*"menu-collapsed" corresponde a cuado el menu se encuentra contraido y 
+"menu-expanded" corresponde a cuando el menu esta desplegado*/
+.menu-expanded{
+  width: var(--width-expanded);
+  box-shadow: 0 0 10px var(--oscuroPrimario);
+}
+.menu-expanded #header #title{
+  display: inline-block;
+  width: calc(100% - 50px);
+  margin-right: -5px;
+  padding: 10px;
+}
+.menu-expanded #header #title span{
+  width: calc(var(--width-expanded) - var(--width-collapsed) - 5px);
+  overflow: hidden;
+}
+.menu-collapsed{
+  width: var(--width-collapsed);
+}
+.menu-collapsed #header #title{
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+}
+.menu-collapsed .item{
+  width: 100px;
+}
+/*termina el menu lateral*/
+
+/* Aquí empieza los estilos para el contenido principal de la página */
+.contenido_principal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 600px;
+    height: 600px;
+}
+
+.contenido_principal h2{
+    margin-bottom: 20px;
+    font-size: 23px;
+}
+
+.contenedor_recorte{
+    border-radius: 7px;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.contenedor_recorte img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.informacion_usuario p{
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.informacion_usuario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#nombre_usuario{
+    font-size: 23px;
+    margin-top: 10px;
+}
+
+.informacion_contacto{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.informacion_contacto h4{
+    margin-bottom: 10px;
+}
+
+.informacion_contacto input{
+    height: 45px;
+    background-color: var(--oscuroSecundario);
+    width: 260px;
+    border: none;
+    border-radius: 7px;
+    outline: none;
+    padding: 10px;
+    color: white;
+    font-weight: 600;
+}
+
+
+.mostrar_contra{
+    display: flex;
+}
+.mostrar_contra input{
+    margin-right: 10px;
+}
+.mostrar_contra button{
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    background-color: var(--rosaPrimario);
+    border: none;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botones{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+#editar{
+    margin-right: 20px;
+    width: 260px;
+    height: 45px;
+    background-color: var(--rosaPrimario);
+    border: none;
+    border-radius: 7px;
+    color: white;
+    cursor: pointer;
+}
+#eliminar{
+    width: 315px;
+    height: 45px;
+    background-color: var(--rosaPrimario);
+    border: none;
+    border-radius: 7px;
+    color: white;
+    cursor: pointer;
+}
+/* Aquí finalizan los estilos para el contenido principal de la página */
+/* Desde aquí empieza el footer */
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--oscuroPrimario);
+    color: #fff;
+}
+.contenedor-footer{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+}
+.footer{
+    font-size: 80%;
+    max-width:1200px;
+    margin: auto;
+    background-color:  var(--oscuroPrimario);
+    display: flex;
+    justify-content: space-between;
+}
+.informacion a{
+    font-size: 11px;
+    text-decoration: none;
+    color: #ffffff;
+}
+.circle{
+    margin: 0px 6px;
+}
+
+@media screen and (max-width: 1100px){
+    .footer{
+        flex-wrap: wrap;
+    }
+}
+/* Aquí termina el footer */
