@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservar vuelos</title>
+    <link rel="stylesheet" href="static/css/style_reservar_vuelos.css">
+</head>
+<body>
+    <div id="sidemenu" class="menu-collapsed">
+        <div id="header">
+            <div id="menu-btn">
+                <div class="logo-menu"><img src="static/Images/logos/LogosinFondoSecundario.svg" alt=""></div>
+            </div>
+        </div>
+        <div id="menu-items">
+            <div class="item">
+                <a href="">
+                    <div class="icon"><img src="static/Images/icons/iconosBlancos/TicketVuelo-blanco.svg" alt=""></div>
+                    <div class="title"><span>Reservar vuelos</span></div>
+                </a>
+            </div>
+            <div class="item" id="separacion-icon">
+                <a href="">
+                    <div class="icon"><img src="static/Images/icons/iconosBlancos/ReservasVuelos-blancos.svg" alt=""></div>
+                    <div class="title"><span>Vuelos comprados</span></div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="">
+                    <div class="icon"><img src="static/Images/icons/iconosBlancos/Setting-blanco.svg" alt=""></div>
+                    <div class="title"><span>Configuraciones</span></div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="">
+                    <div class="icon"><img src="static/Images/icons/iconosBlancos/Logout-blanco.svg" alt=""></div>
+                    <div class="title"><span>Cerrar Sesion</span></div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <script type="text/javascript" src="static/js/sidemenu.js"></script>
+
+    <table>
+        <tr>
+            <td>
+                <p class="titulo-reservas">Reservar vuelos</p>
+                <div class="desplegables" id="separador_datos_reserva">
+                    <select name="" id="">
+                        <option value="0">Origen</option>
+                        <option value="1">Bogota</option>
+                        <option value="2">Medellin</option>
+                        <option value="3">Barranquilla</option>
+                        <option value="4">Cucuta</option>
+                        <option value="5">Santa Marta</option>
+                        <option value="6">Sucre</option>
+                        <option value="7">Monteria</option>
+                    </select>
+                </div>
+                <div class="desplegables" id="separador_datos_reserva">
+                    <select name="" id="">
+                        <option value="0">Destino</option>
+                        <option value="1">Bogota</option>
+                        <option value="2">Medellin</option>
+                        <option value="3">Barranquilla</option>
+                        <option value="4">Cucuta</option>
+                        <option value="5">Santa Marta</option>
+                        <option value="6">Sucre</option>
+                        <option value="7">Monteria</option>
+                    </select>
+                </div>
+                <p class="texto-Datos">Fecha y Hora del vuelo</p>
+                <div class="fecha_hora" id="separador_datos_reserva">
+                    <input class="fecha" type="date">
+                    <input class="hora" type="time">
+                </div>
+                <p class="texto-Datos">Costo</p>
+                <div class="contenedor-rango">
+                    <div ><input type="number" name="" class="input-valor" id="minvalue"> <p class="texto-valor2">min</p></div> 
+                    <div>
+                        <div class="slider">
+                            <input type="range" name="" id="rango" min="100000" max="10000000" step="100">
+                        </div>
+                        <div  class="texto-valor"id="valor">$100000</div>
+                    </div>
+                    <div ><input type="number" name="" class="input-valor" id="maxvalue"> <p class="texto-valor2">max</p></div>
+                </div>
+                <script type="text/javascript" src="static/js/rango_precio.js"></script>
+                <button type="button" style="width: 350px;">
+                    <a href="" class="boton">Buscar</a>
+                </button>
+            </td>
+            <td class="contenedor-vuelo" id="vuelos">
+                <div class="vuelo" id="separador_datos_reserva">
+                    <div class="cont-text-vuelo1">
+                        <p class="texto-vuelo1" id="separacion">Origen - Destino </p> <p class="texto-vuelo2">15/10/2021</p>
+                    </div>
+                    <p class="texto-vuelo2">codigo 123456-7890</p>
+                    <div class="cont-text-vuelo1"> 
+                        <div>
+                            <p class="texto-vuelo3" id="separacion">$000000</p> <p class="texto-vuelo2">Salida 00:00</p>
+                        </div>
+                        <button type="button" style="width: 150px; height: 50px; margin-top: 30px;">
+                            <a href="" class="boton">Reservar</a>
+                        </button>
+                    </div>
+                </div>
+                <div class="vuelo" id="separador_datos_reserva">
+                    <div class="cont-text-vuelo1">
+                        <p class="texto-vuelo1" id="separacion">Origen - Destino </p> <p class="texto-vuelo2">15/10/2021</p>
+                    </div>
+                    <p class="texto-vuelo2">codigo 123456-7890</p>
+                    <div class="cont-text-vuelo1"> 
+                        <div>
+                            <p class="texto-vuelo3" id="separacion">$000000</p> <p class="texto-vuelo2">Salida 00:00</p>
+                        </div>
+                        <button type="button" style="width: 150px; height: 50px; margin-top: 30px;">
+                            <a href="" class="boton">Reservar</a>
+                        </button>
+                    </div>
+                </div>
+                <div class="vuelo" id="separador_datos_reserva">
+                    <div class="cont-text-vuelo1">
+                        <p class="texto-vuelo1" id="separacion">Origen - Destino </p> <p class="texto-vuelo2">15/10/2021</p>
+                    </div>
+                    <p class="texto-vuelo2">codigo 123456-7890</p>
+                    <div class="cont-text-vuelo1"> 
+                        <div>
+                            <p class="texto-vuelo3" id="separacion">$000000</p> <p class="texto-vuelo2">Salida 00:00</p>
+                        </div>
+                        <button type="button" style="width: 150px; height: 50px; margin-top: 30px;">
+                            <a href="" class="boton">Reservar</a>
+                        </button>
+                    </div>
+                </div>
+            </td>   
+        </tr>
+    </table>
+    
+    <footer>
+        <div class="contenedor-footer">
+            <div class="footer">
+                <div class="informacion">
+                    <a href="">Informacion Equipo</a>
+                    <svg class="circle" version="1.1" xmlns="http://www.w3.org/2000/svg" width="3" heigth="3" viewBox="0 0 120 120">
+                        <circle cx="60" cy="60" r="50" fill="White"/>
+                    </svg>
+                    <a href="">Politica de Privacidad</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

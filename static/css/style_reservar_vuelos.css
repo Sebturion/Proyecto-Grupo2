@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap');
+/* Variables principales */
+:root{
+    --rosaPrimario: #fc2c5e;
+    --rosaPrimarioHover: #FF3F6D;
+    --rosaPrimarioPress: #DF1C4B;
+    --oscuroPrimario: #1e1e26;
+    --oscuroSecundario: #313139;
+    --oscuroTerciario: #35353d;
+    --width-collapsed: 90px;
+    --width-expanded: 290px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--oscuroPrimario);
+    margin-left: var(--width-collapsed);
+}
+
+/*aqui empieza el menu lateral*/
+.body-expanded{
+  margin-left: 300px;
+}
+#main-container{
+  color: #fff;
+}
+#sidemenu{
+  background-color: var(--oscuroSecundario);
+  color: #fff;
+  position: fixed;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+#sidemenu a{
+  color: #fff;
+  text-decoration: none;
+}
+.logo-menu img{
+  height: 100%;
+  padding: 20px;
+}
+/*El header del menu es el logo de la pagina*/
+#sidemenu #header{
+  box-sizing: border-box;
+  border-bottom: solid 1px var(--oscuroSecundario);
+}
+#sidemenu #header #title{
+  box-sizing: border-box;
+  overflow: hidden;
+}
+#sidemenu #header #title, #sidemenu #header #menu-btn{
+  vertical-align: middle;
+}
+#sidemenu #header #menu-btn{
+  display: inline-block;
+  padding: 10px;
+  width: var(--width-collapsed);
+  box-sizing: border-box;
+}
+#sidemenu #header:hover{
+  cursor: pointer;
+  background-color: var(--oscuroPrimario);
+}
+/*El "#menu-items .item" contiene .icon y .title que corresponden(respectivamente) al icono y el texo que se ve al desplegar el menu*/
+#sidemenu #menu-items{
+  overflow: hidden;
+}
+#sidemenu #menu-items .item{
+  width: var(--width-expanded);
+}
+#sidemenu #menu-items .item .icon{
+  display: inline-block;
+}
+#sidemenu #menu-items .item .title{
+  font-size: 14px;
+  vertical-align: middle;
+  overflow: hidden;
+  display: inline-block;
+}
+#sidemenu #menu-items .item a{
+  display: block;
+}
+#sidemenu #menu-items .item a:hover{
+  background-color: var(--rosaPrimario);
+}
+#sidemeu #menu-items .item .icon{
+  box-sizing: border-box;
+  padding: 10px;
+  width: var(--width-collapsed);
+}
+#separacion-icon{
+  margin-bottom: 300px;
+}
+#sidemenu #menu-items .item .icon img{
+  margin-left: 21px;
+  margin-top: 20px;
+  width: 100%;
+  height: 25px;
+}
+#sidemenu #menu-items .item .title{
+  font-size: 16px;
+  padding-left: 50px;
+  padding-bottom: 25px;
+}
+/*"menu-collapsed" corresponde a cuado el menu se encuentra contraido y 
+"menu-expanded" corresponde a cuando el menu esta desplegado*/
+.menu-expanded{
+  width: var(--width-expanded);
+  box-shadow: 0 0 10px var(--oscuroPrimario);
+}
+.menu-expanded #header #title{
+  display: inline-block;
+  width: calc(100% - 50px);
+  margin-right: -5px;
+  padding: 10px;
+}
+.menu-expanded #header #title span{
+  width: calc(var(--width-expanded) - var(--width-collapsed) - 5px);
+  overflow: hidden;
+}
+.menu-collapsed{
+  width: var(--width-collapsed);
+}
+.menu-collapsed #header #title{
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+}
+.menu-collapsed .item{
+  width: 100px;
+}
+/*termina el menu lateral*/
+
+
+/*Aqui empieza el contenido de la pagina*/
+table {
+  border-spacing: 6px;
+  margin: 60px auto;
+}
+
+td{
+  padding: 7px;
+}
+
+.titulo-reservas{
+  color: #fff;
+  font-size: 28px;
+  margin-bottom: 50px;
+}
+
+#separador_datos_reserva{
+  margin: 10px 0px;
+}
+
+.desplegables {
+    position: relative;
+}
+
+.desplegables select {
+    width: 350px;
+    height: 40px;
+    padding-left: 15px;
+    background-color: var(--oscuroSecundario);
+    border-radius: 7px;
+    border-color:transparent;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.texto-Datos{
+  color: #fff;
+  font-size: 16px;
+  margin: 20px 0 7px 0;
+}
+
+.fecha_hora{
+  display: flex;
+}
+.fecha{
+  width: 210px;
+  margin-right: 10px;
+  background-color: var(--oscuroSecundario);
+  border-style: none;
+  border-radius: 7px;
+  color: #fff;
+  font-size: 15px;
+  padding-left: 20px;
+  cursor: text;
+}
+/*::-webkit-calendar-picker-indicator permite modificar los iconos predeterminados de los inputs(date, time)*/
+::-webkit-calendar-picker-indicator{
+  background-color: #fff;
+  margin-right: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.hora{
+  width: 130px;
+  height: 35px;
+  background-color: var(--oscuroSecundario);
+  border-radius: 7px;
+  border-style: none;
+  padding-left: 15px;
+  color: #fff;
+  font-size: 15px;
+  cursor: text;
+}
+
+/*las clases derivadas de rango modifican el imput[type="range"]*/
+.contenedor-rango{
+  background: var(--oscuroSecundario);
+  padding: 10px 0;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+.contenedor-rango .slider{
+  height:20px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+}
+.contenedor-rango .slider input{
+  height: 100%;
+  width: 100%;
+  -webkit-appearance: none;
+  background: var(--oscuroSecundario);
+
+}
+.slider input::-webkit-slider-runnable-track{
+  height: 15px;
+  border-radius: 25px;
+  border: 2px solid var(--rosaPrimario);
+}
+.slider input::-webkit-slider-thumb{
+  height: 11px;
+  width: 11px;
+  border-radius: 50%;
+  background: var(--rosaPrimarioPress);
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+.input-valor{
+  width: 80px;
+  height: 30px;
+  margin: 0 10px;
+  padding-left: 10px;
+  border-style: none;
+  border-radius: 7px;
+  background-color: var(--oscuroPrimario);
+  color: #fff;
+  font-size: 12px;
+}
+.contenedor-rango .texto-valor{
+  font-size: 18px;
+  font-weight: 600;
+  font-family: sans-serif;
+  margin-top: 10px;
+  color: #fff;
+  text-align: center;
+}
+.texto-valor2{
+  font-size: 15px;
+  font-weight: 600;
+  font-family: sans-serif;
+  margin: 0px 15px;
+  color: var(--rosaPrimario);
+  text-align: center;
+}
+
+button{
+  background-color:  var(--rosaPrimario);
+  padding: 14px 30px;
+  margin: 10px 0;
+  border-radius: 7px;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+/*las clases "button:active", y "button:hover" corresponden al efecto
+hover de antes y despues (respectivamente) que se ve al pasar el cursor
+sobre los botones que estan en el header(Iniciar Sesion, y registrarse).*/
+button:active{
+  background-color:  var(--rosaPrimarioPress);
+}
+button:hover{
+  background-color:  var(--rosaPrimarioHover);
+}
+.boton{
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+
+}
+.vuelo{
+  width: 400px;
+  height: 150px;
+  padding: 15px;
+  background-color: var(--oscuroSecundario);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 15px;
+}
+.cont-text-vuelo1{
+  display: flex;
+}
+.cont-text-vuelo{
+  width: 100px;
+}
+.texto-vuelo1{
+    display: inline-block;
+    font-size: 18px;
+}
+#separacion{
+    margin-right: 150px;
+}
+.texto-vuelo2{
+    font-size: 12px;
+}
+.texto-vuelo3{
+    font-size: 24px;
+    margin-top: 30px;
+}
+/*aqui termina el contenido de la pagina*/
+
+/* Desde aquí empieza el footer */
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--oscuroPrimario);
+    color: #fff;
+}
+.contenedor-footer{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+}
+.footer{
+    font-size: 80%;
+    max-width:1200px;
+    margin: auto;
+    background-color:  var(--oscuroPrimario);
+    display: flex;
+    justify-content: space-between;
+}
+.informacion a{
+    font-size: 11px;
+    text-decoration: none;
+    color: #ffffff;
+}
+.circle{
+    margin: 0px 6px;
+}
+
+@media screen and (max-width: 1100px){
+    .footer{
+        flex-wrap: wrap;
+    }
+}
+/* Aquí termina el footer */
