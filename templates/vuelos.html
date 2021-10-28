@@ -36,8 +36,13 @@
         <tr>
             {% for i in range(3,6) %}
                 {% if vuelos[i] %}
-                    <td class="ofertas"><div class="oferta"> Ofertas a <br> <h3>{{ vuelos[i]['origen_vuelo'] }}  -  {{ vuelos[i]['destino_vuelo'] }}</h3> <br><br> 
-                        Desde ${{ vuelos[i]['costo'] }}<br><br> <button class="boton"> Reservar</button> </div></td>
+                    <td class="ofertas">
+                        <div class="oferta"> Ofertas a <br> 
+                            <h3>{{ vuelos[i]['origen_vuelo'] }}  -  {{ vuelos[i]['destino_vuelo'] }}</h3><br><br> 
+                            Desde ${{ vuelos[i]['costo'] }}<br><br> 
+                            <button class="boton"> Reservar</button> 
+                        </div>
+                    </td>
                 {% endif %}
             {% endfor %}
         </tr>
