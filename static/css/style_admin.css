@@ -343,7 +343,7 @@ footer{
     margin-left: 36%;
     display: inline-block;
   }
-  p{
+  .titulo-usuarios-registrados{
       margin-top: 30%;
       font-size: 23px;
       font-weight: bold;
