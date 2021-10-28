@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_login-reg.css') }}" />
+
+</head>
+<body>
+    <div class = "inicio-header">
+        <nav>
+            <a href="{{ url_for('index') }}">
+                <img src="{{ url_for('static', filename='Images/logos/LogosinFondoSecundario.svg') }}" class="logo" alt="Logo">
+            </a>
+            <ul>
+                <li><a href="{{ url_for('index') }}" class="link">Inicio</a></li>
+                <li><a href="{{ url_for('vuelos') }}" class="link">Vuelos</a></li>
+                <li><a href="{{ url_for('destinos') }}" class="link">Destinos</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    {% block content %}
+    {% endblock %}
+
+    <footer>
+        <div class="contenedor-footer">
+            <div class="footer">
+                <div class="informacion">
+                    <a href="">Informacion Equipo</a>
+                    <svg class="circle" version="1.1" xmlns="http://www.w3.org/2000/svg" width="3" heigth="3" viewBox="0 0 120 120">
+                        <circle cx="60" cy="60" r="50" fill="White"/>
+                    </svg>
+                    <a href="">Politica de Privacidad</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+</body>
+</html>
