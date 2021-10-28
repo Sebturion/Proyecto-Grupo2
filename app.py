@@ -77,7 +77,7 @@ def login():
                 return redirect(url_for('index'))
 
             if (email_recibido == email_piloto and contrasenia_recibida == contrasenia_piloto):
-                return redirect(url_for('vuelos'))
+                return redirect(url_for('vuelos_asignados'))
 
             if (email_recibido == email_admin and contrasenia_recibida == contrasenia_admin):
                 return redirect(url_for('configuracion_plataforma_usuario'))
@@ -118,6 +118,14 @@ def pilotos_registrados():
 def configuracion_plataforma_usuario():
     return render_template('configuracion_plataforma_usuario.html')
 
+@app.route('/configuracion-piloto', methods=['GET'])
+def configuracion_piloto():
+    return render_template('configuracion_piloto.html')
+
+@app.route('/configuracion-usuario', methods=['GET'])
+def configuracion_usuario():
+    return render_template('configuracion_usuarioF.html')
+
 @app.route('/comentarios-admin', methods=['GET'])
 def comentarios_admin():
     return render_template('comentarios_admin.html')
@@ -125,6 +133,10 @@ def comentarios_admin():
 @app.route('/usuarios-registrados', methods=['GET'])
 def usuarios_registrados():
     return render_template('usuarios_registrados.html')
+
+@app.route('/vuelos-asignados', methods=['GET'])
+def base_pilotos():
+    return render_template('vuelos_asignados.html')
 
 
 
