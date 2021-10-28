@@ -82,7 +82,7 @@ def login():
                 return redirect(url_for('reservar_vuelos'))
 
             if (email_recibido == email_piloto and contrasenia_recibida == contrasenia_piloto):
-                return redirect(url_for('vuelos'))
+                return redirect(url_for('vuelos_asignados'))
 
             if (email_recibido == email_admin and contrasenia_recibida == contrasenia_admin):
                 return redirect(url_for('configuracion_plataforma_usuario'))
