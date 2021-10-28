@@ -489,3 +489,8 @@ button:active{
 .botones button{
   width: 50%;
 }
+
+.informacion_usuario h5{
+  margin: 20px 0px;
+  font-weight: normal;
+}
