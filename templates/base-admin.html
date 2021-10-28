@@ -15,49 +15,50 @@
     <div id="sidemenu" class="menu-collapsed">
         <div id="header">
             <div id="menu-btn">
-                <div class="logo-menu"><img src="/static/Images/logos/LogosinFondoSecundario.svg" alt=""></div>
+                <div class="logo-menu"><img src="{{ url_for('static',filename='Images/logos/LogosinFondoSecundario.svg') }}" alt=""></div>
             </div>
         </div>
         <div id="menu-items">
             <div class="item">
-                <a href="/vuelos">
-                    <div class="icon"><img src="/static/Images/icons/iconosBlancos/ReservasVuelos-blancos.svg" alt=""></div>
+                <a href="{{ url_for('vuelos') }}">
+                    <div class="icon"><img src="{{ url_for('static', filename='Images/icons/iconosBlancos/ReservasVuelos-blancos.svg') }}" alt=""></div>
                     <div class="title"><span>Vuelos</span></div>
                 </a>
             </div>
             <div class="item">
-                <a href="/usuarios-registrados">
-                    <div class="icon"><img src="/static/Images/icons/iconosBlancos/User-blanco.svg" alt=""></div>
+                <a href="{{ url_for('usuarios_registrados') }}">
+                    <div class="icon"><img src="{{ url_for('static', filename='Images/icons/iconosBlancos/User-blanco.svg') }}" alt=""></div>
                     <div class="title"><span>Usuarios Registrados</span></div>
                 </a>
             </div>
             <div class="item">
-                <a href="/pilotos-registrados">
-                    <div class="icon"><img src="/static/Images/icons/Pilot-Vector.svg" alt=""></div>
+                <a href="{{ url_for('pilotos_registrados') }}">
+                    <div class="icon"><img src="{{ url_for('static', filename='Images/icons/Pilot-Vector.svg') }}" alt=""></div>
                     <div class="title"><span>Pilotos Registrados</span></div>
                 </a>
             </div>
-            <div class="item" id="separacion-icon">
-                <a href="/comentarios-admin">
-                    <div class="icon"><img src="/static/Images/icons/iconosBlancos/Comentarios-blanco.svg" alt=""></div>
+            <div class="item">
+                <a href="{{ url_for('static', filename='comentarios-admin') }}">
+                    <div class="icon"><img src="{{ url_for('static', filename='Images/icons/iconosBlancos/Comentarios-blanco.svg') }}" alt=""></div>
                     <div class="title"><span>Comentarios</span></div>
                 </a>
             </div>
             <div class="item">
-                <a href="/configuracion-plataforma_usuario">
-                    <div class="icon"><img src="/static/Images/icons/iconosBlancos/Setting-blanco.svg" alt=""></div>
+                <a href="{{ url_for('static', filename='configuracion_plataforma_usuario') }}">
+                    <div class="icon"><img src="{{ url_for('static', filename='Images/icons/iconosBlancos/Setting-blanco.svg') }}" alt=""></div>
                     <div class="title"><span>Configuraciones</span></div>
                 </a>
             </div>
             <div class="item">
                 <a href="/">
-                    <div class="icon"><img src="/static/Images/icons/iconosBlancos/Logout-blanco.svg" alt=""></div>
+                    <div class="icon"><img src="{{ url_for('static', filename='Images/icons/iconosBlancos/Logout-blanco.svg') }}" alt=""></div>
                     <div class="title"><span>Cerrar Sesion</span></div>
                 </a>
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="static/js/sidemenu.js"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='js/autocompletar.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='js/sidemenu.js') }}"></script>
     {% block content %}
     {% endblock %}
     <footer>

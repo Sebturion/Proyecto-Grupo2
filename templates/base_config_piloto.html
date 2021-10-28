@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Configuracion</title>
+    <title>{% block title %} {% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style_configuracion_piloto.css') }}">
 </head>
 <body>
@@ -16,19 +16,19 @@
         </div>
         <div id="menu-items">
             <div class="item" id="separacion-icon">
-                <a href="">
+                <a href="{{ url_for('vuelos_asignados') }}">
                     <div class="icon"><img src="{{ url_for('static', filename='Images/icons/iconosBlancos/VuelosAsigados-blanco.svg') }}" alt=""></div>
                     <div class="title"><span>Vuelos Asignados</span></div>
                 </a>
             </div>
             <div class="item">
-                <a href="">
+                <a href="{{ url_for('configuracion_piloto') }}">
                     <div class="icon"><img src="{{ url_for('static', filename='Images/icons/iconosBlancos/Setting-blanco.svg') }}" alt=""></div>
                     <div class="title"><span>Configuraciones</span></div>
                 </a>
             </div>
             <div class="item">
-                <a href="">
+                <a href="{{ url_for('index') }}">
                     <div class="icon"><img src="{{ url_for('static', filename='Images/icons/iconosBlancos/Logout-blanco.svg') }}" alt=""></div>
                     <div class="title"><span>Cerrar Sesion</span></div>
                 </a>

@@ -116,7 +116,7 @@ def plataforma_usuario_verificar():
 def pilotos_registrados():
     return render_template('pilotos_registrados.html')
 
-@app.route('/configuracion-plataforma_usuario', methods=['GET'])
+@app.route('/configuracion_plataforma_usuario', methods=['GET'])
 def configuracion_plataforma_usuario():
     return render_template('configuracion_plataforma_usuario.html')
 
@@ -128,9 +128,9 @@ def comentarios_admin():
 def usuarios_registrados():
     return render_template('usuarios_registrados.html')
 
-@app.route('/usuario-final')
-def plataforma_usuario_final():
-    return render_template('configuracion_usuarioF.html')
+@app.route('/configuracion-piloto', methods=['GET'])
+def configuracion_piloto():
+    return render_template('configuracion_piloto.html')
 
 @app.route('/vuelos-asignados', methods=['GET'])
 def vuelos_asignados():
