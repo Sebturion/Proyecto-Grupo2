@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="static/css/style_reservar_vuelos.css">
 </head>
 <body>
+    
     <div id="sidemenu" class="menu-collapsed">
         <div id="header">
             <div id="menu-btn">
@@ -16,25 +17,25 @@
         </div>
         <div id="menu-items">
             <div class="item">
-                <a href="">
+                <a href="/reservar-vuelos">
                     <div class="icon"><img src="static/Images/icons/iconosBlancos/TicketVuelo-blanco.svg" alt=""></div>
                     <div class="title"><span>Reservar vuelos</span></div>
                 </a>
             </div>
             <div class="item" id="separacion-icon">
-                <a href="">
+                <a href="/verificar-vuelos">
                     <div class="icon"><img src="static/Images/icons/iconosBlancos/ReservasVuelos-blancos.svg" alt=""></div>
                     <div class="title"><span>Vuelos comprados</span></div>
                 </a>
             </div>
             <div class="item">
-                <a href="">
+                <a href="/">
                     <div class="icon"><img src="static/Images/icons/iconosBlancos/Setting-blanco.svg" alt=""></div>
                     <div class="title"><span>Configuraciones</span></div>
                 </a>
             </div>
-            <div class="item">
-                <a href="">
+            <div class="item cerrar_sesion">
+                <a href="/">
                     <div class="icon"><img src="static/Images/icons/iconosBlancos/Logout-blanco.svg" alt=""></div>
                     <div class="title"><span>Cerrar Sesion</span></div>
                 </a>
@@ -43,7 +44,7 @@
 
     </div>
     <script type="text/javascript" src="static/js/sidemenu.js"></script>
-
+    {% block contenido %}
     <table>
         <tr>
             <form method="post" action="{{ url_for('reservar_vuelos') }}" onSubmit="return hora();">
@@ -158,7 +159,7 @@
 
         </tr>
     </table>
-    
+    {% endblock %}
     <footer>
         <div class="contenedor-footer">
             <div class="footer">

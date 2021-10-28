@@ -136,6 +136,10 @@ def plataforma_usuario_final():
 def vuelos_asignados():
     return render_template('vuelos_asignados.html')
 
+@app.route('/verificar-vuelos')
+def verificar_vuelos():
+    return render_template('plataforma_usuario_verificar.html')
+
 @app.route('/reservar-vuelos', methods=['GET','POST'])
 def reservar_vuelos():
     listaDestinos = Destinos.listaDestinos()

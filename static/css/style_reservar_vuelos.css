@@ -96,7 +96,7 @@ body{
   width: var(--width-collapsed);
 }
 #separacion-icon{
-  margin-bottom: 300px;
+  margin-bottom: 200px;
 }
 #sidemenu #menu-items .item .icon img{
   margin-left: 21px;
@@ -109,6 +109,8 @@ body{
   padding-left: 50px;
   padding-bottom: 25px;
 }
+
+
 /*"menu-collapsed" corresponde a cuado el menu se encuentra contraido y 
 "menu-expanded" corresponde a cuando el menu esta desplegado*/
 .menu-expanded{
