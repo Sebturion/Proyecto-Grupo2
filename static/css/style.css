@@ -20,8 +20,7 @@ body{
     background-color: var(--oscuroPrimario);
 }
 
-/* Desde este punto empiezan los estilos para el header 
-de la pagina.*/
+/* Desde este punto empiezan los estilos para el header de la pagina.*/
 .inicio-header {
     height: 70px;
     width: 100%;
@@ -219,109 +218,106 @@ footer{
 /* Aquí termina el footer */
 
 /* --------------------------------------VUELOS---------------------------------------------- */
-
-.table_vuelo {
-    padding: 80px 0px;
-    margin: 0px auto;
-    border-spacing: 40px 23px;
-}
-
-td{
-    padding: 10px;
-}
-
 .contenedor_menu{
     width: 880px;
+    height: 45px;
     display: flex;
+    align-items: center;
+    margin: 90px auto;
     justify-content: space-between;
+}
+
+.buscador{
+    height: 45px;
+    width: 400px;
+    background-color: var(--oscuroSecundario);
+    border-radius: 7px;
+    overflow: hidden;
+    display: flex;
     align-items: center;
 }
 
+.buscador button{
+    width: 45px;
+    height: 45px;
+    background-color: var(--oscuroSecundario);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-#txtBuscador_vuelo {
-    line-height: 45px;
-    width: 90%;
-    border-style: none;
-    background-color: #313139;
-    border-radius: 10px;
-    padding: 0px;
-    padding:0px 10px;
+.buscador input{
+    height: 45px;
+    width: 100%;
+    background-color: var(--oscuroSecundario);
+    border: none;
     outline: none;
 }
 
-
-#divBuscador_vuelo{
-    background-color: #313139;
-    border-radius: 7px;
-    width: 400px;
-    height: 45px;
-    display: flex;
-}
-
-#divBuscador_vuelo button{
-    background-color: var(--oscuroSecundario);
-    width: 35px;
-}
-
-#imgBuscar_vuelo{
-    vertical-align: middle;
-    margin-right: 0px;
-    cursor: pointer;
+.buscador img{
     filter: invert();
 }
 
+.table_vuelo{
+    width: 880px;
+    margin: 0px auto;
+}
+
+.columnas_tabla_vuelo{
+    width: 400px;
+}
 
 
 /* --------------------------------------------DESTINOS-------------------------------------- */
 
-
-/*estilos del contenido*/
-table {
-    padding: 80px 0px;
-    margin: 0px auto;
-    border-spacing: 40px 23px;
+.contenedor_menu_destinos{
+    width: 880px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    margin: 90px auto 0px;
+    justify-content: space-between;
 }
 
-td {
-    text-align: center;
+.buscador_destinos{
+    height: 45px;
+    width: 400px;
+    background-color: var(--oscuroSecundario);
+    border-radius: 7px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;  
 }
 
-#buscador {
-    padding: 0 0 0 186px;
+.buscador_destinos button{
+    width: 45px;
+    height: 45px;
+    background-color: var(--oscuroSecundario);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#txtBuscador {
-    line-height: 45px;
-    width: 91%;
-    border-style: none;
-    background-color: #313139;
-    border-radius: 10px;
-    padding: 0px 10px;
+.buscador_destinos input{
+    height: 45px;
+    width: 100%;
+    background-color: var(--oscuroSecundario);
+    border: none;
     outline: none;
 }
 
-#divBuscador {
-    background-color: #313139;
-    border-radius: 10px;
-    width: 400px;
-    height: 45px;
-    padding-left: 10px;
-}
-
-#imgBuscar {
-    vertical-align: middle;
-    cursor: pointer;
+.buscador_destinos img{
     filter: invert();
 }
 
-h3 {
-    margin-bottom: 30px;
+.tabla_destinos{
+    width: 880px;
+    padding: 0;
 }
 
-.buscarDestino {
-    width: 31px;
-    height: 44px;
-    padding: 0px;
-    margin: 0px;
-    background-color: #313139;
+.informacion_destinos{
+    width: 400px;
+    height: 250px;
 }
+
+ 

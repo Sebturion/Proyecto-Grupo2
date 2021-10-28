@@ -3,28 +3,23 @@
 {% block style %} <link rel="stylesheet" href="{{ url_for('static', filename='css/style_destinos.css') }}" /> {% endblock %}
 {% block content %}
 
-<table class="contenido">
-
-    <tr>
-        <th style="text-align: left;"><h2>Destinos Turísticos</h2></th>
-
-        <td id="buscador">
-            <form method="POST" action="{{ url_for('destinos') }}">
-                <div id="divBuscador">
-                    <button type="submit" class="buscador">
-                        <img src="{{ url_for('static', filename='Images/icons/bx-search.svg') }}" title="Buscar" id="imgBuscar">
-                    </button>
-                    <input name="txtBuscador" type="text" id="txtBuscador" name="buscador">
-                </div>
-            </form>
-        </td>
-    </tr>
-
+<div class="contenedor_menu_destinos">
+    <h2>Ofertas de Vuelo</h2>
+    <form method="POST" action="{{ url_for('vuelos') }}">
+        <div class="buscador_destinos">
+            <button type="submit">
+                <img src="{{ url_for('static', filename='Images/icons/bx-search.svg') }}" title="Buscar" id="imgBuscar_destinos">
+            </button>
+            <input name="txtBuscador_destinos" type="text" id="txtBuscador_destinos" name="buscador">
+        </div>
+    </form>
+</div>
+<table class="tabla_destinos">
     {% if destinos %}
         {% for i in range(5) %}
             {% if destinos[i] %}
                 <tr>
-                    <td class="informacionDestinos">
+                    <td class="informacion_destinos">
                         <h3>{{ destinos[i]['titulo'] }}</h3>
                         <p>{{ destinos[i]['descripcion'] }}</p>
                     </td>
