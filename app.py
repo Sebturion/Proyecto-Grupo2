@@ -76,7 +76,7 @@ def login():
             contrasenia_usuario_final = '123456'
 
             if (email_recibido == email_usuario_final and contrasenia_recibida == contrasenia_usuario_final):
-                return redirect(url_for('plataforma_usuario_final'))
+                return redirect(url_for('reservar_vuelos'))
 
             if (email_recibido == email_piloto and contrasenia_recibida == contrasenia_piloto):
                 return redirect(url_for('vuelos'))
@@ -176,7 +176,5 @@ def reservar_vuelos():
         
         #datetime.date(2021, 10, 30)
         #datetime.time(12, 0)
-
-
 
 app.run(port = 3000, debug=True)
