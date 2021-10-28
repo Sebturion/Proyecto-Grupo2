@@ -14,24 +14,6 @@
     </form>
 </div>
 
-<!-- <table class="tabla_menu">
-    <tr class="contenedor_menu">
-        <th style="text-align: left;">
-            <h2>Ofertas de Vuelos</h2>
-        </th>
-        <td id="buscador_vuelo" colspan="2">
-            <form method="POST" action="{{ url_for('vuelos') }}">
-                <div id="divBuscador_vuelo">
-                    <button type="submit" class="buscador_vuelo">
-                        <img src="{{ url_for('static', filename='Images/icons/bx-search.svg') }}" title="Buscar" id="imgBuscar_vuelo">
-                    </button>
-                    <input name="txtBuscador_vuelo" type="text" id="txtBuscador_vuelo" name="buscador">
-                </div>
-            </form>
-        </td>
-    </tr>
-</table> -->
-
 <table class="tabla_vuelo">
 {% if mensaje %}
     <td id="ofertas" > <h2> {{ mensaje }} </h2> </td>

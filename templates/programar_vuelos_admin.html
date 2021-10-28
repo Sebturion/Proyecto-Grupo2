@@ -1,0 +1,33 @@
+{% extends "base-admin.html" %}
+{% block title %} Programar Vuelos{% endblock %}
+{% block content %}
+<div class="programar_vuelos">
+    <h2>Programar Vuelos</h2>
+    <div class="contenedor_columnas">
+        <div class="columna_programar">
+            <input type="text" name="codigo_vuelo">
+            {% if destinos %}
+            <div class="origen_destino">
+                <select name="origen" id="" >
+                    {% for destino in destinos %}
+                    {% if destinos %}
+                        <option value={{destino['titulo']}} > {{ destino['titulo'] }} </option>
+                    {% endif %}
+                {% endfor %}
+                </select>
+                <select name="destino" id="">
+                    {% for destino in destinos %}
+                    {% if destinos %}
+                        <option value={{destino['titulo']}} > {{ destino['titulo'] }} </option>
+                    {% endif %}
+                {% endfor %}
+                </select>
+            </div>
+            {% endif %}
+        </div>
+    </div>   
+</div>
+
+
+
+{% endblock %}
