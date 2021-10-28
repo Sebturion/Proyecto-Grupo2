@@ -53,6 +53,38 @@ class Vuelos():
             print("Error al mostrar los vuelos. " + str(Error))
 
 
+    @staticmethod
+    def buscarVuelos(ORIGEN, DESTINO, FECHA, HORA, MINIMO, MAXIMO):
+        try:
+            if ORIGEN and DESTINO and FECHA and HORA and MINIMO and MAXIMO:
+                sql = "SELECT * FROM vuelo WHERE origen_vuelo = ? AND destino_vuelo = ? AND fecha_salida = ? AND hora_salida = ?  AND costo >= ? AND costo <= ?"
+                return db.ejecutarRead(sql, [ORIGEN, DESTINO, FECHA, HORA, MINIMO, MAXIMO])
+            
+            elif ORIGEN and DESTINO and (not FECHA) and (not HORA) and MINIMO and MAXIMO:
+                sql = "SELECT * FROM vuelo WHERE origen_vuelo = ? AND destino_vuelo = ? AND costo >= ? AND costo <= ?"
+                return db.ejecutarRead(sql, [ORIGEN, DESTINO, MINIMO, MAXIMO])
+
+            elif ORIGEN and DESTINO and (not FECHA) and (not HORA) and (not MINIMO) and (not MAXIMO):
+                sql = "SELECT * FROM vuelo WHERE origen_vuelo = ? AND destino_vuelo = ?"
+                return db.ejecutarRead(sql, [ORIGEN, DESTINO])
+
+            elif ORIGEN and (not DESTINO) and (not FECHA) and (not HORA) and (not MINIMO) and (not MAXIMO):
+                sql = "SELECT * FROM vuelo WHERE origen_vuelo = ?"
+                return db.ejecutarRead(sql, [ORIGEN])
+
+            elif (not ORIGEN) and DESTINO and (not FECHA) and (not HORA) and (not MINIMO) and (not MAXIMO):
+                sql = "SELECT * FROM vuelo WHERE destino_vuelo = ?"
+                return db.ejecutarRead(sql, [DESTINO])  
+
+            elif (not ORIGEN) and (not DESTINO) and (not FECHA) and (not HORA) and (not MINIMO) and MAXIMO:
+                sql = "SELECT * FROM vuelo WHERE costo <= ?"
+                return db.ejecutarRead(sql, [MAXIMO])   
+
+        except:
+            print("Error al buscar vuelos. " + str(Error))
+
+
+
 
 
 class Destinos():
@@ -67,6 +99,14 @@ class Destinos():
                 return db.ejecutarRead(sql, None)
         except:
             print("Error al mostrar los destinos. " + str(Error))
+
+    @staticmethod
+    def listaDestinos():
+        try:
+            sql = "SELECT titulo FROM destinos"
+            return db.ejecutarRead(sql, None)
+        except:
+            print("Error al buscar las lista de destinos. " + str(Error))
 
 
 
