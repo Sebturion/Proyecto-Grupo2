@@ -46,57 +46,56 @@
 
     <table>
         <tr>
-            <form>
+            <form method="post" action="{{ url_for('reservar_vuelos') }}" onSubmit="return hora();">
                 <td>
                     <p class="titulo-reservas">Reservar vuelos</p>
-                    <div class="desplegables" id="separador_datos_reserva">
-                        <select name="" id="">
-                            <option value="0">Origen</option>
-                            <option value="1">Bogota</option>
-                            <option value="2">Medellin</option>
-                            <option value="3">Barranquilla</option>
-                            <option value="4">Cucuta</option>
-                            <option value="5">Santa Marta</option>
-                            <option value="6">Sucre</option>
-                            <option value="7">Monteria</option>
-                        </select>
-                    </div>
-                    <div class="desplegables" id="separador_datos_reserva">
-                        <select name="" id="">
-                            <option value="0">Destino</option>
-                            <option value="1">Bogota</option>
-                            <option value="2">Medellin</option>
-                            <option value="3">Barranquilla</option>
-                            <option value="4">Cucuta</option>
-                            <option value="5">Santa Marta</option>
-                            <option value="6">Sucre</option>
-                            <option value="7">Monteria</option>
-                        </select>
-                    </div>
+                    {% if destinos %}
+                        <div class="desplegables" id="separador_datos_reserva">
+                            <select name="origen" id="origen">
+                                    <option value="">Origen</option>
+                                    {% for destino in destinos %}
+                                        {% if destinos %}
+                                            <option value={{destino['titulo']}} > {{ destino['titulo'] }} </option>
+                                        {% endif %}
+                                    {% endfor %}
+                            </select>
+                        </div>
+
+
+                        <div class="desplegables" id="separador_datos_reserva">
+                            <select name="destino" id="destino">
+                                    <option value="">Destino</option>
+                                    {% for destino in destinos %}
+                                        {% if destinos %}
+                                            <option value={{destino['titulo']}} > {{ destino['titulo'] }} </option>
+                                        {% endif %}
+                                    {% endfor %}
+                            </select>
+                        </div>
+                    {% endif %}
 
                     {{ form.hidden_tag() }}
 
+                    {{ form.language }}
+
                     <p class="texto-Datos">Fecha y Hora del vuelo</p>
                     <div class="fecha_hora" id="separador_datos_reserva">
-                        {{ form.fecha(class="fecha") }}
-                        {{ form.hora(class="hora") }}
+                        {{ form.fecha(class="fecha", id="fecha", min="2021-01-01", max="2021-12-31") }}
+                        {{ form.hora(class="hora", id="hora") }}
                     </div>
                     <p class="texto-Datos">Costo</p>
                     <div class="contenedor-rango">
                         <div >
-                            {{ form.minimo(class="input-valor", id="minvalue", min="0", step="100") }}
-                            <p class="texto-valor2">{{ form.minimo.label }}</p></div> 
-                        <div>
-                            <div class="slider">
-                                {{ form.rango(id="rango", min="100000", max="10000000", step="100") }}
-                            </div>
-                            <div  class="texto-valor"id="valor">$100000</div>
-                        </div>
+                            {{ form.minimo(class="input-valor", id="minvalue", min="0") }}
+                            <p class="texto-valor2">{{ form.minimo.label }}</p>
+                        </div> 
+                        
                         <div >
-                            {{ form.maximo(class="input-valor", id="maxvalue", min="1000000", max="10000000", step="100") }}
+                            {{ form.maximo(class="input-valor", id="maxvalue", min="100000", max="10000000") }}
                             <p class="texto-valor2">{{ form.maximo.label }}</p>
                         </div>
                     </div>
+                    
                     <script type="text/javascript" src="static/js/rango_precio.js"></script>
                     {{ form.buscar(class="buscarVuelo") }}
                 </td>
@@ -104,49 +103,59 @@
 
             
             <td class="contenedor-vuelo" id="vuelos">
-                <div class="vuelo" id="separador_datos_reserva">
-                    <div class="cont-text-vuelo1">
-                        <p class="texto-vuelo1" id="separacion">Origen - Destino </p> <p class="texto-vuelo2">15/10/2021</p>
-                    </div>
-                    <p class="texto-vuelo2">codigo 123456-7890</p>
-                    <div class="cont-text-vuelo1"> 
-                        <div>
-                            <p class="texto-vuelo3" id="separacion">$000000</p> <p class="texto-vuelo2">Salida 00:00</p>
-                        </div>
-                        <button type="button" style="width: 150px; height: 50px; margin-top: 30px;">
-                            <a href="" class="boton">Reservar</a>
-                        </button>
-                    </div>
-                </div>
-                <div class="vuelo" id="separador_datos_reserva">
-                    <div class="cont-text-vuelo1">
-                        <p class="texto-vuelo1" id="separacion">Origen - Destino </p> <p class="texto-vuelo2">15/10/2021</p>
-                    </div>
-                    <p class="texto-vuelo2">codigo 123456-7890</p>
-                    <div class="cont-text-vuelo1"> 
-                        <div>
-                            <p class="texto-vuelo3" id="separacion">$000000</p> <p class="texto-vuelo2">Salida 00:00</p>
-                        </div>
-                        <button type="button" style="width: 150px; height: 50px; margin-top: 30px;">
-                            <a href="" class="boton">Reservar</a>
-                        </button>
-                    </div>
-                </div>
-                <div class="vuelo" id="separador_datos_reserva">
-                    <div class="cont-text-vuelo1">
-                        <p class="texto-vuelo1" id="separacion">Origen - Destino </p> <p class="texto-vuelo2">15/10/2021</p>
-                    </div>
-                    <p class="texto-vuelo2">codigo 123456-7890</p>
-                    <div class="cont-text-vuelo1"> 
-                        <div>
-                            <p class="texto-vuelo3" id="separacion">$000000</p> <p class="texto-vuelo2">Salida 00:00</p>
-                        </div>
-                        <button type="button" style="width: 150px; height: 50px; margin-top: 30px;">
-                            <a href="" class="boton">Reservar</a>
-                        </button>
-                    </div>
-                </div>
+                {% if busqueda %}
+                    {% for i in range(4) %}
+                        {% if busqueda[i] %}
+                            <div class="vuelo" id="separador_datos_reserva">
+                                <div class="cont-text-vuelo1">
+                                    <p class="texto-vuelo1" id="separacion">{{ busqueda[i]['origen_vuelo'] }} - {{ busqueda[i]['destino_vuelo'] }} </p> <p class="texto-vuelo2">{{ busqueda[i]['fecha_salida'] }}</p>
+                                </div>
+                                <p class="texto-vuelo2">codigo: {{ busqueda[i]['ID_vuelo'] }}</p>
+                                <div class="cont-text-vuelo1"> 
+                                    <div>
+                                        <p class="texto-vuelo3" id="separacion">${{ busqueda[i]['costo'] }}</p> <p class="texto-vuelo2">Salida: {{ busqueda[i]['hora_salida'] }}</p>
+                                    </div>
+                                    <button type="button" style="width: 150px; height: 50px; margin-top: 30px;">
+                                        <a href="" class="boton">Reservar</a>
+                                    </button>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+
+                {% if mensaje %}
+                    {{ mensaje }}
+                {% endif %}
             </td>   
+
+
+
+            <td class="contenedor-vuelo" id="vuelos">
+                {% if busqueda %}
+                    {% for i in range(4,8) %}
+                        {% if busqueda[i] %}
+                            <div class="vuelo" id="separador_datos_reserva">
+                                <div class="cont-text-vuelo1">
+                                    <p class="texto-vuelo1" id="separacion">{{ busqueda[i]['origen_vuelo'] }} - {{ busqueda[i]['destino_vuelo'] }} </p> <p class="texto-vuelo2">{{ busqueda[i]['fecha_salida'] }}</p>
+                                </div>
+                                <p class="texto-vuelo2">codigo: {{ busqueda[i]['ID_vuelo'] }}</p>
+                                <div class="cont-text-vuelo1"> 
+                                    <div>
+                                        <p class="texto-vuelo3" id="separacion">${{ busqueda[i]['costo'] }}</p> <p class="texto-vuelo2">Salida: {{ busqueda[i]['hora_salida'] }}</p>
+                                    </div>
+                                    <button type="button" style="width: 150px; height: 50px; margin-top: 30px;">
+                                        <a href="" class="boton">Reservar</a>
+                                    </button>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            </td>  
+
+
+
         </tr>
     </table>
     

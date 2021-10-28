@@ -47,7 +47,7 @@ def destinos():
         else:
             return render_template('destinos.html', mensaje = "En este momento no hay destinos disponibles.")
     elif (request.method == 'POST'):
-        destino = request.form['txtBuscador_destinos']
+        destino = request.form['txtBuscador']
         objeto = Destinos.mostrarDestinos(destino)
         if objeto:
             return render_template('destinos.html', destinos = objeto)
@@ -134,13 +134,43 @@ def usuarios_registrados():
 def vuelos_asignados():
     return render_template('vuelos_asignados.html')
 
-@app.route('/reservar-vuelos', methods=['GET', 'POST'])
+@app.route('/reservar-vuelos', methods=['GET','POST'])
 def reservar_vuelos():
+    listaDestinos = Destinos.listaDestinos()
     if request.method == 'GET':
-        return render_template('reservar_vuelos.html', form = buscarVuelos())
+        formulario = buscarVuelos(request.form)
+        return render_template('reservar_vuelos.html', form = buscarVuelos(), destinos = listaDestinos)
     elif request.method == 'POST':
         formulario = buscarVuelos(request.form)
+        origen = request.form['origen']
+        destino = request.form['destino']
+
+        if (origen != '') and (destino != '') and (formulario.fecha.data != None) and (formulario.hora.data != None) and (formulario.minimo.data != None) and (formulario.maximo.data != None):
+            objeto = Vuelos.buscarVuelos(origen, destino, str(formulario.fecha.data), str(formulario.hora.data), formulario.minimo.data, formulario.maximo.data)
+
+        elif (origen != '') and (destino != '') and (formulario.fecha.data == None) and (formulario.hora.data == None) and (formulario.minimo.data != None) and (formulario.maximo.data != None):
+            objeto = Vuelos.buscarVuelos(origen, destino, None, None, formulario.minimo.data, formulario.maximo.data)
+
+        elif (origen != '') and (destino != '') and (formulario.fecha.data == None) and (formulario.hora.data == None) and (formulario.minimo.data == None) and (formulario.maximo.data == None):
+            objeto = Vuelos.buscarVuelos(origen, destino, None, None, None, None)
+
+        elif (origen != '') and (destino == '') and (formulario.fecha.data == None) and (formulario.hora.data == None or formulario.hora.data != None) and (formulario.minimo.data == None) and (formulario.maximo.data == None):
+            objeto = Vuelos.buscarVuelos(origen, None, None, None, None, None)
+
+        elif (origen == '') and (destino != '') and (formulario.fecha.data == None) and (formulario.hora.data == None or formulario.hora.data != None) and (formulario.minimo.data == None) and (formulario.maximo.data == None):
+            objeto = Vuelos.buscarVuelos(None, destino, None, None, None, None)
+
+        elif (origen == '') and (destino == '') and (formulario.fecha.data == None) and (formulario.hora.data == None or formulario.hora.data != None) and (formulario.minimo.data == None) and (formulario.maximo.data != None):
+            objeto = Vuelos.buscarVuelos(None, None, None, None, None, formulario.maximo.data)
+
+        if objeto:
+            return render_template('reservar_vuelos.html', form = buscarVuelos(), busqueda = objeto, destinos = listaDestinos)
+
+        return render_template('reservar_vuelos.html', form = buscarVuelos(), mensaje = "no encuentra", destinos = listaDestinos)
+        
+        #datetime.date(2021, 10, 30)
+        #datetime.time(12, 0)
 
 
 
-app.run(port = 3000, debug=True)
+app.run(port = 3000)
