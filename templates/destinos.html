@@ -18,19 +18,18 @@
     {% if destinos %}
         {% for i in range(5) %}
             {% if destinos[i] %}
-                <tr >
+                <tr class="tabla_por_destinos">
                     <td class="informacion_destinos">
                         <h3>{{ destinos[i]['titulo'] }}</h3>
                         <p>{{ destinos[i]['descripcion'] }}</p>
                     </td>
             
-                    <td>
-                        aqui va la imagen
+                    <td class="imagen_destinos">
+                        <img src="{{ destinos[i]['imagen']}}" alt="">
                     </td>
                 </tr>
             {% endif %}
         {% endfor %}
     {% endif %}
-
-
+</table>
 {% endblock %}

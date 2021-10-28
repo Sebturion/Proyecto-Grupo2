@@ -4,6 +4,8 @@ from forms import buscarVuelos, formularioLogin, formularioRegistro
 import os
 from models import *
 
+
+
 app = Flask(__name__)
 
 SECRET_KEY = os.urandom(32)

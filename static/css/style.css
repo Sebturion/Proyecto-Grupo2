@@ -327,12 +327,29 @@ footer{
 .tabla_destinos{
     width: 880px;
     padding: 0;
-    margin: auto;
+    margin: 90px auto;
 }
 
 .informacion_destinos{
+    width: 350px;
+    height: 250px;
+}
+
+.informacion_destinos p{
+    text-align: center;
+}
+
+.informacion_destinos h3{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.imagen_destinos img{
     width: 400px;
     height: 250px;
 }
 
+.tabla_por_destinos td{
+    border: 5px solid var(--oscuroPrimario);
+}
  
