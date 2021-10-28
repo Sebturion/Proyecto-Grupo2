@@ -16,6 +16,7 @@
     padding: 0;
     font-family: 'Nunito Sans', sans-serif;
     box-sizing: border-box;
+    color: white;
 }
 
 body{
@@ -408,4 +409,72 @@ footer{
 
 .desplegables select{
   outline: none;
+}
+
+/* ---------------------------------------------------------VERIFICAR VUELOS------------------------------------------------- */
+.contenido_verificar{
+  margin: 90px auto;
+  width: 880px;
+}
+
+.contenido_principal_verificar{
+  display: flex;
+}
+
+.primera_columna{
+  width: 50%;
+}
+
+#cvuelo{
+  width: 96%;
+  height: 45px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  background-color: var(--oscuroSecundario);
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 7px;
+}
+
+#vfvuelo{
+  width: 96%;
+  height: 45px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.segunda_columna{
+  width: 50%;
+}
+
+.com_ranking{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+#textComent{
+  width: 100%;
+  background-color: var(--oscuroSecundario);
+  padding: 10px;
+  outline: none;
+  border: none;
+  border-radius: 7px;
+}
+
+#comentar{
+  width: 100%;
+  height: 45px;
+}
+
+.can_mod{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.can_mod button{
+  width: 47%
 }
