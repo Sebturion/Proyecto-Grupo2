@@ -327,6 +327,7 @@ footer{
 .tabla_destinos{
     width: 880px;
     padding: 0;
+    margin: auto;
 }
 
 .informacion_destinos{
