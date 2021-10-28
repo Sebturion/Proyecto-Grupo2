@@ -303,6 +303,19 @@ button:hover{
   font-weight: 600;
 
 }
+
+.buscarVuelo {
+  color: #fff;
+  width: 350px;
+  background-color: var(--rosaPrimario);
+  padding: 14px 30px;
+  margin: 10px 0;
+  border-radius: 7px;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+
 .vuelo{
   width: 400px;
   height: 150px;

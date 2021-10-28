@@ -46,53 +46,63 @@
 
     <table>
         <tr>
-            <td>
-                <p class="titulo-reservas">Reservar vuelos</p>
-                <div class="desplegables" id="separador_datos_reserva">
-                    <select name="" id="">
-                        <option value="0">Origen</option>
-                        <option value="1">Bogota</option>
-                        <option value="2">Medellin</option>
-                        <option value="3">Barranquilla</option>
-                        <option value="4">Cucuta</option>
-                        <option value="5">Santa Marta</option>
-                        <option value="6">Sucre</option>
-                        <option value="7">Monteria</option>
-                    </select>
-                </div>
-                <div class="desplegables" id="separador_datos_reserva">
-                    <select name="" id="">
-                        <option value="0">Destino</option>
-                        <option value="1">Bogota</option>
-                        <option value="2">Medellin</option>
-                        <option value="3">Barranquilla</option>
-                        <option value="4">Cucuta</option>
-                        <option value="5">Santa Marta</option>
-                        <option value="6">Sucre</option>
-                        <option value="7">Monteria</option>
-                    </select>
-                </div>
-                <p class="texto-Datos">Fecha y Hora del vuelo</p>
-                <div class="fecha_hora" id="separador_datos_reserva">
-                    <input class="fecha" type="date">
-                    <input class="hora" type="time">
-                </div>
-                <p class="texto-Datos">Costo</p>
-                <div class="contenedor-rango">
-                    <div ><input type="number" name="" class="input-valor" id="minvalue"> <p class="texto-valor2">min</p></div> 
-                    <div>
-                        <div class="slider">
-                            <input type="range" name="" id="rango" min="100000" max="10000000" step="100">
-                        </div>
-                        <div  class="texto-valor"id="valor">$100000</div>
+            <form>
+                <td>
+                    <p class="titulo-reservas">Reservar vuelos</p>
+                    <div class="desplegables" id="separador_datos_reserva">
+                        <select name="" id="">
+                            <option value="0">Origen</option>
+                            <option value="1">Bogota</option>
+                            <option value="2">Medellin</option>
+                            <option value="3">Barranquilla</option>
+                            <option value="4">Cucuta</option>
+                            <option value="5">Santa Marta</option>
+                            <option value="6">Sucre</option>
+                            <option value="7">Monteria</option>
+                        </select>
                     </div>
-                    <div ><input type="number" name="" class="input-valor" id="maxvalue"> <p class="texto-valor2">max</p></div>
-                </div>
-                <script type="text/javascript" src="static/js/rango_precio.js"></script>
-                <button type="button" style="width: 350px;">
-                    <a href="" class="boton">Buscar</a>
-                </button>
-            </td>
+                    <div class="desplegables" id="separador_datos_reserva">
+                        <select name="" id="">
+                            <option value="0">Destino</option>
+                            <option value="1">Bogota</option>
+                            <option value="2">Medellin</option>
+                            <option value="3">Barranquilla</option>
+                            <option value="4">Cucuta</option>
+                            <option value="5">Santa Marta</option>
+                            <option value="6">Sucre</option>
+                            <option value="7">Monteria</option>
+                        </select>
+                    </div>
+
+                    {{ form.hidden_tag() }}
+
+                    <p class="texto-Datos">Fecha y Hora del vuelo</p>
+                    <div class="fecha_hora" id="separador_datos_reserva">
+                        {{ form.fecha(class="fecha") }}
+                        {{ form.hora(class="hora") }}
+                    </div>
+                    <p class="texto-Datos">Costo</p>
+                    <div class="contenedor-rango">
+                        <div >
+                            {{ form.minimo(class="input-valor", id="minvalue", min="0", step="100") }}
+                            <p class="texto-valor2">{{ form.minimo.label }}</p></div> 
+                        <div>
+                            <div class="slider">
+                                {{ form.rango(id="rango", min="100000", max="10000000", step="100") }}
+                            </div>
+                            <div  class="texto-valor"id="valor">$100000</div>
+                        </div>
+                        <div >
+                            {{ form.maximo(class="input-valor", id="maxvalue", min="1000000", max="10000000", step="100") }}
+                            <p class="texto-valor2">{{ form.maximo.label }}</p>
+                        </div>
+                    </div>
+                    <script type="text/javascript" src="static/js/rango_precio.js"></script>
+                    {{ form.buscar(class="buscarVuelo") }}
+                </td>
+            </form>
+
+            
             <td class="contenedor-vuelo" id="vuelos">
                 <div class="vuelo" id="separador_datos_reserva">
                     <div class="cont-text-vuelo1">

@@ -1,6 +1,6 @@
 from logging import debug
 from flask import Flask, render_template, request, redirect, url_for, jsonify
-from forms import formularioLogin, formularioRegistro
+from forms import buscarVuelos, formularioLogin, formularioRegistro
 import os
 from models import *
 
@@ -24,7 +24,7 @@ def vuelos():
         else:
             return render_template('vuelos.html', mensaje = "En este momento no hay ofertas de vuelos.")
     elif (request.method == 'POST'):
-        lugar = request.form['txtBuscador']
+        lugar = request.form['txtBuscador_vuelo']
         objeto = Vuelos.mostarVuelos(lugar)
         if objeto:
             return render_template('vuelos.html', vuelos = objeto)
@@ -132,6 +132,12 @@ def usuarios_registrados():
 def vuelos_asignados():
     return render_template('vuelos_asignados.html')
 
+@app.route('/reservar-vuelos', methods=['GET', 'POST'])
+def reservar_vuelos():
+    if request.method == 'GET':
+        return render_template('reservar_vuelos.html', form = buscarVuelos())
+    elif request.method == 'POST':
+        formulario = buscarVuelos(request.form)
 
 
 
