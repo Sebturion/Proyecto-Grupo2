@@ -1,10 +1,11 @@
 import re
 from flask_wtf import FlaskForm
 from flask_wtf.recaptcha import validators
-from wtforms.fields.core import DateField, IntegerField, StringField, TimeField
+from wtforms.fields.core import BooleanField, DateField, IntegerField, SelectField, StringField, TimeField
 from wtforms import validators, ValidationError
 from wtforms.fields.simple import PasswordField, SubmitField
 from wtforms.widgets import html5 as h5widgets
+from models import Destinos
 
 
 class formularioRegistro(FlaskForm):
@@ -24,6 +25,7 @@ class formularioLogin(FlaskForm):
 
 
 class buscarVuelos(FlaskForm):
+
     fecha = DateField(widget=h5widgets.DateInput(), validators=[validators.optional(), validators.length(max=10)])
     hora = TimeField(widget=h5widgets.TimeInput(),validators=[validators.optional(), validators.length(max=12)])
     minimo = IntegerField(widget=h5widgets.NumberInput(), validators=[validators.number_range(min=0), validators.length(max=10) ] )
