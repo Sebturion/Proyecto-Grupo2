@@ -76,7 +76,7 @@ def login():
             contrasenia_usuario_final = '123456'
 
             if (email_recibido == email_usuario_final and contrasenia_recibida == contrasenia_usuario_final):
-                return redirect(url_for('index'))
+                return redirect(url_for('plataforma_usuario_final'))
 
             if (email_recibido == email_piloto and contrasenia_recibida == contrasenia_piloto):
                 return redirect(url_for('vuelos'))
@@ -128,7 +128,9 @@ def comentarios_admin():
 def usuarios_registrados():
     return render_template('usuarios_registrados.html')
 
-
+@app.route('/usuario-final')
+def plataforma_usuario_final():
+    return render_template('configuracion_usuarioF.html')
 
 @app.route('/vuelos-asignados', methods=['GET'])
 def vuelos_asignados():

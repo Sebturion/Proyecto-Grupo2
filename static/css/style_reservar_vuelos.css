@@ -387,3 +387,23 @@ footer{
     }
 }
 /* Aquí termina el footer */
+
+.contenedor-rango{
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-valor{
+  padding: 10px;
+  outline: none;
+}
+
+.fecha, .hora{
+  outline: none;
+  padding: 10px;
+  height: 45px;
+}
+
+.desplegables select{
+  outline: none;
+}
