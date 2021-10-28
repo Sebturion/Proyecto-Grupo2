@@ -47,12 +47,15 @@ def destinos():
         else:
             return render_template('destinos.html', mensaje = "En este momento no hay destinos disponibles.")
     elif (request.method == 'POST'):
-        destino = request.form['txtBuscador']
+        destino = request.form['txtBuscador_destinos']
         objeto = Destinos.mostrarDestinos(destino)
         if objeto:
             return render_template('destinos.html', destinos = objeto)
         else:
-            return render_template('destinos.html', mensaje = ("No se encontró el destino que desea"))
+            if destino == "":
+                return render_template('destinos.html', mensaje = ("Porfavor indique el destino que desea buscar"))
+            else:
+                return render_template('destinos.html', mensaje = ("No se encontró destino para " + destino))
 
 
 

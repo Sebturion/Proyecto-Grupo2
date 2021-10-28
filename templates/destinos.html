@@ -4,8 +4,8 @@
 {% block content %}
 
 <div class="contenedor_menu_destinos">
-    <h2>Ofertas de Vuelo</h2>
-    <form method="POST" action="{{ url_for('vuelos') }}">
+    <h2>Destinos Turísticos</h2>
+    <form method="POST" action="{{ url_for('destinos') }}">
         <div class="buscador_destinos">
             <button type="submit">
                 <img src="{{ url_for('static', filename='Images/icons/bx-search.svg') }}" title="Buscar" id="imgBuscar_destinos">
@@ -15,10 +15,13 @@
     </form>
 </div>
 <table class="tabla_destinos">
+    {% if mensaje %}
+        <td id="destinos_mensaje" > <h2> {{ mensaje }} </h2> </td>
+    {% endif %}
     {% if destinos %}
         {% for i in range(5) %}
             {% if destinos[i] %}
-                <tr >
+                <tr class="row">
                     <td class="informacion_destinos">
                         <h3>{{ destinos[i]['titulo'] }}</h3>
                         <p>{{ destinos[i]['descripcion'] }}</p>

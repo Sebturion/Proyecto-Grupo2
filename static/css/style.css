@@ -283,7 +283,6 @@ footer{
 
 
 /* --------------------------------------------DESTINOS-------------------------------------- */
-
 .contenedor_menu_destinos{
     width: 880px;
     height: 45px;
@@ -328,6 +327,7 @@ footer{
     width: 880px;
     padding: 0;
     margin: 90px auto;
+    border-spacing: 20px;
 }
 
 .informacion_destinos{
@@ -344,12 +344,16 @@ footer{
     margin-bottom: 10px;
 }
 
-.tabla_destinos img{
-    width: 400px;
-    height: 250px;
+.imagen_destinos{
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
 }
 
-.tabla_por_destinos td{
-    border: 5px solid var(--oscuroPrimario);
+.imagen_destinos img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 7px;
 }
- 
