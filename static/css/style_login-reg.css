@@ -140,10 +140,11 @@ a {
 
 /*Estilos del footer*/
 footer{
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
     color: #fff;
+    height: 70px;
 }
 .contenedor-footer{
     width: 100%;
@@ -172,4 +173,15 @@ footer{
     .footer{
         flex-wrap: wrap;
     }
+}
+
+/* ------------------------------LOGIN----------------------------------------- */
+
+#password, #txtNombre, #telContacto, #email, #confirmPassword{
+    outline: none;
+}
+
+
+.acceso_login{
+    margin-bottom: 90px;
 }
