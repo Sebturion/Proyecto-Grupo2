@@ -540,3 +540,42 @@ button:active{
 .programar_vuelos h2{
   margin-bottom: 20px;
 }
+
+.fecha_hora{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.fecha{
+  margin-right: 10px;
+  color: white;
+}
+
+.hora{
+  margin-left: 10px;
+}
+
+.campo_valor{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.campo_valor input{
+  height: 45px;
+  width: 60px;
+}
+
+.boton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 45px;
+}
+
+.boton button{
+  width: 200px;
+}

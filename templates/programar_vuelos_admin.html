@@ -5,7 +5,7 @@
     <h2>Programar Vuelos</h2>
     <div class="contenedor_columnas">
         <div class="columna_programar">
-            <input type="text" name="codigo_vuelo" id="codigo_vuelo">
+            <input type="text" name="codigo_vuelo" id="codigo_vuelo" placeholder="Código del vuelo">
             {% if destinos %}
             <div class="origen_destino">
                 <select name="origen" id="origen_programar" >
@@ -33,7 +33,20 @@
             <select name="estado" id="">
                 <option value="">bueno</option>
             </select>
-        </div>
+            <div class="fecha_hora" id="separador_datos_reserva">
+                {{ form.fecha(class="fecha", id="fecha", min="2021-01-01", max="2021-12-31") }}
+                {{ form.hora(class="hora", id="hora") }}
+            </div>
+            <div class="contador_costo">
+                <input type="range" name="valor" id="" aria-valuemin="50000" aria-valuemax="150000">
+                <div class="campo_valor">
+                    <input type="text" name="valor_max" id="valor_max">
+                    <input type="text" name="valor_min" id="valor_min">
+                </div>
+            </div>
+            <div class="boton">
+                <button class="btn_programar">Programar</button>
+            </div>
     </div>   
 </div>
 
