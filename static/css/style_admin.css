@@ -499,7 +499,8 @@ button:active{
 
 .programar_vuelos{
   width: 880px;
-  margin: 90px auto;
+  margin: 0px auto 90px;
+  display: flex;
 }
 
 .columna_programar{
@@ -537,6 +538,70 @@ button:active{
   margin-bottom: 10px;
 }
 
-.programar_vuelos h2{
-  margin-bottom: 20px;
+.contenido_titulo{
+  width: 880px;
+  margin: 80px auto 20px;
+}
+
+.fecha_hora{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.fecha{
+  margin-right: 10px;
+  color: white;
+}
+
+.hora{
+  margin-left: 10px;
+}
+
+.campo_valor{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.campo_valor input{
+  height: 45px;
+  width: 60px;
+}
+
+.boton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 45px;
+}
+
+.boton button{
+  width: 200px;
+}
+
+.columna_vista_vuelos{
+  width: 440px;
+  margin-left: 20px;
+
+}
+
+
+.tabla_vuelos_programados{
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.botones_actualizar_eliminar{
+  width: 100%;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.botones_actualizar_eliminar button{
+  width: 46%;
 }
