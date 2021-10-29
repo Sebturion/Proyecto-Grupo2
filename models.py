@@ -54,6 +54,15 @@ class Vuelos():
 
 
     @staticmethod
+    def vueloCodigo(CODIGO):
+        try:
+            sql = "SELECT * FROM vuelo WHERE ID_vuelo = ?"
+            return db.ejecutarRead(sql, [CODIGO])
+        except:
+            print("Error al buscar el vuelo por codigo. " + str(Error))
+
+
+    @staticmethod
     def buscarVuelos(ORIGEN, DESTINO, FECHA, HORA, MINIMO, MAXIMO):
         try:
             if ORIGEN and DESTINO and FECHA and HORA and MINIMO and MAXIMO:

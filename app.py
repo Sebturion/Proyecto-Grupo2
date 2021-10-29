@@ -1,6 +1,6 @@
 from logging import debug
 from flask import Flask, render_template, request, redirect, url_for, jsonify
-from forms import buscarVuelos, formularioLogin, formularioRegistro
+from forms import buscarVuelos, formularioLogin, formularioRegistro, verificar_comentarios
 import os
 from models import *
 
@@ -111,10 +111,6 @@ def registrarse():
 
 
 
-@app.route('/plataforma-usuario-verificar', methods=['GET'])
-def plataforma_usuario_verificar():
-    return render_template('plataforma_usuario_verificar.html')
-
 @app.route('/pilotos-registrados', methods=['GET'])
 def pilotos_registrados():
     return render_template('pilotos_registrados.html')
@@ -139,9 +135,21 @@ def configuracion_piloto():
 def vuelos_asignados():
     return render_template('vuelos_asignados.html')
 
-@app.route('/verificar-vuelos')
+
+@app.route('/verificar-vuelos', methods = ['GET','POST'])
 def verificar_vuelos():
-    return render_template('plataforma_usuario_verificar.html')
+    if request.method == 'GET':
+        return render_template('plataforma_usuario_verificar.html', form = verificar_comentarios())
+    elif request.method == 'POST':
+        formulario = verificar_comentarios(request.form)
+        objeto = Vuelos.vueloCodigo(str(formulario.codigo.data))
+        if objeto:
+            return render_template('plataforma_usuario_verificar.html', form = verificar_comentarios(), vuelo = objeto)
+        else:
+            print("no existe")
+
+
+
 
 @app.route('/programar-vuelos', methods=["GET", "POST"])
 def programar_vuelos():
