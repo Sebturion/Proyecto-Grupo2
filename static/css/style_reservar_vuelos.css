@@ -478,3 +478,98 @@ footer{
 .can_mod button{
   width: 47%
 }
+/* ----------------------------------------CONFIGURACION DE USUARIO------------------------------ */
+.contenido_configuracion_admin{
+  width: 600px;
+  margin-left: 70px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 90px;
+  margin-bottom: 90px;
+
+}
+
+.infromacion_usuario{
+  margin: auto;
+}
+
+.contenedor_recorte{
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+  margin: auto;
+}
+
+.contenedor_recorte img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.informacion_contacto{
+  display: flex;
+  align-items: center;
+}
+
+.informacion_contacto input{
+  width: 200px;
+  height: 45px;
+}
+
+.informacion_contacto button{
+  width: 45px;
+  height: 45px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mostrar_contra{
+  display: flex;
+  align-items: center;
+}
+
+#correo_usuario{
+  margin-right: 10px;
+}
+
+
+
+.informacion_usuario h5{
+  margin: 20px 0px;
+  font-weight: normal;
+}
+
+.correo input{
+  background-color: var(--oscuroSecundario);
+  border: none;
+  border-radius: 7px;
+  padding: 10px;
+  outline: none;
+}
+.mostrar_contra input{
+  background-color: var(--oscuroSecundario);
+  border: none;
+  border-radius: 7px;
+  padding: 10px;
+  margin-right: 10px;
+  outline: none;
+}
+
+.botones{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.botones button{
+  width: 48%;
+}

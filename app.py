@@ -119,7 +119,7 @@ def plataforma_usuario_verificar():
 def pilotos_registrados():
     return render_template('pilotos_registrados.html')
 
-@app.route('/configuracion_plataforma_usuario', methods=['GET'])
+@app.route('/configuracion-plataforma-usuario', methods=['GET'])
 def configuracion_plataforma_usuario():
     return render_template('configuracion_plataforma_usuario.html')
 
