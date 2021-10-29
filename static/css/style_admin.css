@@ -97,7 +97,7 @@ body{
   width: var(--width-collapsed);
 }
 #separacion-icon{
-  margin-bottom: 170px;
+  margin-bottom: 100px;
 }
 #sidemenu #menu-items .item .icon img{
   margin-left: 21px;
@@ -493,4 +493,50 @@ button:active{
 .informacion_usuario h5{
   margin: 20px 0px;
   font-weight: normal;
+}
+
+/* ------------------------------------------PROGRAMAR VUELOS--------------------------------- */
+
+.programar_vuelos{
+  width: 880px;
+  margin: 90px auto;
+}
+
+.columna_programar{
+  width: 440px;
+}
+
+.origen_destino{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.origen_destino option{
+  width: 200px;
+  height: 45px;
+}
+
+#origen_programar{
+  margin-right: 20px;
+}
+
+.columna_programar select{
+  width: 100%;
+  height: 45px;
+  background-color: var(--oscuroSecundario);
+  margin: 10px 0px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 7px;
+}
+
+#codigo_vuelo{
+  margin-bottom: 10px;
+}
+
+.programar_vuelos h2{
+  margin-bottom: 20px;
 }

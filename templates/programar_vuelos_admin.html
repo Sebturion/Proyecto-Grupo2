@@ -5,10 +5,10 @@
     <h2>Programar Vuelos</h2>
     <div class="contenedor_columnas">
         <div class="columna_programar">
-            <input type="text" name="codigo_vuelo">
+            <input type="text" name="codigo_vuelo" id="codigo_vuelo">
             {% if destinos %}
             <div class="origen_destino">
-                <select name="origen" id="" >
+                <select name="origen" id="origen_programar" >
                     {% for destino in destinos %}
                     {% if destinos %}
                         <option value={{destino['titulo']}} > {{ destino['titulo'] }} </option>
@@ -24,6 +24,15 @@
                 </select>
             </div>
             {% endif %}
+            <select name="piloto" id="">
+                <option value="">Julio Jaramillo</option>
+            </select>
+            <select name="avion" id="">
+                <option value="">Boeig</option>
+            </select>
+            <select name="estado" id="">
+                <option value="">bueno</option>
+            </select>
         </div>
     </div>   
 </div>
