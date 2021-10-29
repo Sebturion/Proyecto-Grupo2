@@ -1,8 +1,10 @@
 {% extends "base-admin.html" %}
 {% block title %} Programar Vuelos{% endblock %}
 {% block content %}
-<div class="programar_vuelos">
+<div class="contenido_titulo">
     <h2>Programar Vuelos</h2>
+</div>
+<div class="programar_vuelos">
     <div class="contenedor_columnas">
         <div class="columna_programar">
             <input type="text" name="codigo_vuelo" id="codigo_vuelo" placeholder="Código del vuelo">
@@ -47,9 +49,38 @@
             <div class="boton">
                 <button class="btn_programar">Programar</button>
             </div>
-    </div>   
-</div>
+        </div>  
 
+    </div>
+    <div class="columna_vista_vuelos">
+        <input type="search" name="" id="buscador_vuelos_programados" placeholder="Ingrese el código del vuelo">
+        <table class="tabla_vuelos_programados">
+            <tr> 
+                <td class="contenedor-vuelo" id="vuelo1">
+                    <div class="vuelo">
+                        <p class="texto-vuelo-superior" id="separacion">codigo 123456-7890 </p> <p class="texto-vuelo-superior">15/10/2021</p>
+                        <p class="texto-vuelo-intermedio">Origen - Destino</p>
+                        <p class="texto-vuelo-inferior" id="separacion">Salida  00 : 00 am</p> <p class="texto-vuelo-inferior">Avion Boing 747</p>
+                    </div>
+                </td>      
+            </tr>
+    
+            <tr> 
+                <td class="contenedor-vuelo" id="vuelo3">
+                    <div class="vuelo">
+                        <p class="texto-vuelo-superior" id="separacion">codigo 123456-7890 </p> <p class="texto-vuelo-superior">15/10/2021</p>
+                        <p class="texto-vuelo-intermedio">Origen - Destino</p>
+                        <p class="texto-vuelo-inferior" id="separacion">Salida  00 : 00 am</p> <p class="texto-vuelo-inferior">Avion Boing 747</p>
+                    </div>
+                </td> 
+            </tr>
+        </table>
+        <div class="botones_actualizar_eliminar">
+            <button>Editar</button>
+            <button>Eliminar</button>
+        </div>
+    </div> 
+</div>
 
 
 {% endblock %}
