@@ -1,11 +1,10 @@
 import re
 from flask_wtf import FlaskForm
 from flask_wtf.recaptcha import validators
-from wtforms.fields.core import BooleanField, DateField, IntegerField, SelectField, StringField, TimeField
-from wtforms import validators, ValidationError
-from wtforms.fields.simple import PasswordField, SubmitField
+from wtforms.fields.core import DateField, IntegerField, StringField, TimeField
+from wtforms import validators
+from wtforms.fields.simple import PasswordField, SubmitField, TextAreaField
 from wtforms.widgets import html5 as h5widgets
-from models import Destinos
 
 
 class formularioRegistro(FlaskForm):
@@ -32,4 +31,11 @@ class buscarVuelos(FlaskForm):
     maximo = IntegerField(widget=h5widgets.NumberInput(), validators=[validators.number_range(min=0), validators.length(max=10)] )
     rango = IntegerField(widget=h5widgets.RangeInput(), validators=[validators.number_range(min=0)] )
     buscar = SubmitField("Buscar")
+
+
+class verificar_comentarios(FlaskForm):
+    codigo = StringField(validators=[validators.length(max=10)])
+    verificar = SubmitField()
+    mensaje = TextAreaField()
+    comentar = SubmitField()
     

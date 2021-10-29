@@ -280,6 +280,16 @@ td{
   text-align: center;
 }
 
+.botonForm {
+  background-color: var(--rosaPrimario);
+  padding: 14px 30px;
+  margin: 10px 0;
+  border-radius: 7px;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+
 button{
   background-color:  var(--rosaPrimario);
   padding: 14px 30px;
@@ -462,6 +472,17 @@ footer{
   outline: none;
   border: none;
   border-radius: 7px;
+}
+
+#textComent2{
+  width: 90%;
+  background-color: var(--oscuroSecundario);
+  padding: 10px;
+  outline: none;
+  border: none;
+  border-radius: 7px;
+  margin-top: 10px;
+  resize: none;
 }
 
 #comentar{
